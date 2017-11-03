@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.pitest.mutationtest.report.html.MutationTotalsTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.mutationtest.report.html.MutationTotalsTest
