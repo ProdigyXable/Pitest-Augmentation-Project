@@ -53,6 +53,7 @@ public final class Mutator {
 
   private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
+    // TODO Add a new line for each new mutator added
   static {
 
     /**
