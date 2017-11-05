@@ -61,10 +61,10 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase name="shouldReplaceOtherCasesWithoutDefaultForInt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.187"/>
-  <testcase name="shouldNotTouchIt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.032"/>
-  <testcase name="shouldChangeLabelInt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.187"/>
+  <testcase name="shouldNotTouchIt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.031"/>
+  <testcase name="shouldChangeLabelInt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.157"/>
   <testcase name="shouldProvideAMeaningfulName" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0"/>
-  <testcase name="shouldReplaceTableLabelsInt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.188"/>
-  <testcase name="shouldChangeLabelChar" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.172"/>
-  <testcase name="shouldChangeLabelEnum" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.187"/>
+  <testcase name="shouldReplaceTableLabelsInt" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.203"/>
+  <testcase name="shouldChangeLabelChar" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.187"/>
+  <testcase name="shouldChangeLabelEnum" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest" time="0.188"/>
 </testsuite>

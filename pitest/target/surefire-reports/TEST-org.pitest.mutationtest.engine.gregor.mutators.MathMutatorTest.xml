@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="3.282" tests="32" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="3.099" tests="32" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,36 +60,36 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldReplaceIntegerShiftLeftWithShiftRight" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceIntegerShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceFloatDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
+  <testcase name="shouldReplaceIntegerShiftLeftWithShiftRight" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceFloatDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
   <testcase name="shouldReplaceLongShiftLeftWithShiftRight" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceLongShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceLongShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
   <testcase name="shouldReplaceFloatMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceLongXORWithAND" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceIntegerModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceIntegerUnsignedShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
-  <testcase name="shouldReplaceIntegerXORWithAND" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
+  <testcase name="shouldReplaceLongXORWithAND" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceIntegerUnsignedShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerXORWithAND" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
   <testcase name="shouldReplaceLongDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
   <testcase name="shouldReplaceIntegerDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceLongModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceIntegerBitwiseAndsWithOrs" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceLongBitwiseAndsWithOrs" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceLongUnsignedShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
-  <testcase name="shouldReplaceIntegerBitwiseOrsWithAnds" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceLongBitwiseOrsWithAnds" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceLongModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerBitwiseAndsWithOrs" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.095"/>
+  <testcase name="shouldReplaceLongBitwiseAndsWithOrs" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
+  <testcase name="shouldReplaceLongUnsignedShiftRightWithShiftLeft" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
+  <testcase name="shouldReplaceIntegerBitwiseOrsWithAnds" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
+  <testcase name="shouldReplaceLongBitwiseOrsWithAnds" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
   <testcase name="shouldReplaceLongMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceIntegerMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceDoubleDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceDoubleAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceFloatModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceIntegerAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceDoubleSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceDoubleDivisionWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.082"/>
+  <testcase name="shouldReplaceDoubleAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceFloatModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceIntegerAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceDoubleSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
   <testcase name="shouldReplaceIntegerSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceFloatAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceFloatAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
   <testcase name="shouldReplaceDoublerModulusWithMultiplication" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
-  <testcase name="shouldReplaceLongAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
-  <testcase name="shouldReplaceFloatSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceLongSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.109"/>
-  <testcase name="shouldReplaceDoubleMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
+  <testcase name="shouldReplaceLongAdditionWithSubtraction" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
+  <testcase name="shouldReplaceFloatSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.094"/>
+  <testcase name="shouldReplaceLongSubtractionWithAddition" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.11"/>
+  <testcase name="shouldReplaceDoubleMultiplicationWithDivision" classname="org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest" time="0.093"/>
 </testsuite>

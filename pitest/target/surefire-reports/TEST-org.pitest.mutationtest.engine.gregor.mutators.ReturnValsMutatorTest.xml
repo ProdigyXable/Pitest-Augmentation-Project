@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.792" tests="12" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.752" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -62,12 +62,12 @@
   </properties>
   <testcase name="shouldAddOneToValueOfLReturn" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
   <testcase name="shouldMutateReturnsOfNonNullObjectsToNull" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
-  <testcase name="shouldMutateReturnsOfFloatNotANumberToMinusOne" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.078"/>
-  <testcase name="shouldMutateFReturnsOfAnyNonZeroValueToInverseOfOnePlusTheValue" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
-  <testcase name="shouldMutateReturnsOfNullObjectsToRuntimeExceptions" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
-  <testcase name="shouldMutateReturnsFalseToReturnsTrue" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
-  <testcase name="shouldMutateIReturnsOf0To1" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.074"/>
-  <testcase name="shouldMutateIReturnsOf1To0" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.078"/>
+  <testcase name="shouldMutateReturnsOfFloatNotANumberToMinusOne" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.064"/>
+  <testcase name="shouldMutateFReturnsOfAnyNonZeroValueToInverseOfOnePlusTheValue" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
+  <testcase name="shouldMutateReturnsOfNullObjectsToRuntimeExceptions" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
+  <testcase name="shouldMutateReturnsFalseToReturnsTrue" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
+  <testcase name="shouldMutateIReturnsOf0To1" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
+  <testcase name="shouldMutateIReturnsOf1To0" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
   <testcase name="shouldMutateIReturnsOfAnyNonZeroValueTo0" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>
   <testcase name="shouldMutateDReturnsOfAnyNonZeroValueToInverseOfOnePlusTheValue" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.063"/>
   <testcase name="shouldMutateReturnsTrueToReturnsFalse" classname="org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutatorTest" time="0.062"/>

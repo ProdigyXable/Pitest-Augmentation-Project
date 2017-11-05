@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.util.IsolationUtilsTest" time="0.031" tests="4" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.util.IsolationUtilsTest" time="0.047" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -63,5 +63,5 @@
   <testcase name="shouldRecogniseClassFromChildOfBootClassLoaderAsFromBootLoader" classname="org.pitest.util.IsolationUtilsTest" time="0"/>
   <testcase name="shouldRecogniseClassFromBootClassLoaderAsFromBootLoader" classname="org.pitest.util.IsolationUtilsTest" time="0"/>
   <testcase name="shouldRecogniseClassFromChildOfChildOfBootClassLoaderAsFromCompatibleLoader" classname="org.pitest.util.IsolationUtilsTest" time="0"/>
-  <testcase name="shouldNotRecogniseClassFromSiblingLoaderAsFromCompatibleLoader" classname="org.pitest.util.IsolationUtilsTest" time="0.031"/>
+  <testcase name="shouldNotRecogniseClassFromSiblingLoaderAsFromCompatibleLoader" classname="org.pitest.util.IsolationUtilsTest" time="0.047"/>
 </testsuite>
