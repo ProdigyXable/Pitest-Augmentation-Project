@@ -31,11 +31,19 @@ import org.pitest.functional.prelude.Prelude;
 import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
+
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIADD;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorISUB;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIMUL;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIDIV;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIREM;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDSUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDREM;
+
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -69,6 +77,12 @@ public final class Mutator {
       add("AOR_MUTATOR_IMUL", AORMutatorIMUL.AOR_MUTATOR_IMUL);
       add("AOR_MUTATOR_IDIV", AORMutatorIDIV.AOR_MUTATOR_IDIV);
       add("AOR_MUTATOR_IREM", AORMutatorIREM.AOR_MUTATOR_IREM);
+      
+      add("AOR_MUTATOR_DADD", AORMutatorDADD.AOR_MUTATOR_DADD);
+      add("AOR_MUTATOR_DSUB", AORMutatorDSUB.AOR_MUTATOR_DSUB);
+      add("AOR_MUTATOR_DMUL", AORMutatorDMUL.AOR_MUTATOR_DMUL);
+      add("AOR_MUTATOR_DDIV", AORMutatorDDIV.AOR_MUTATOR_DDIV);
+      add("AOR_MUTATOR_DREM", AORMutatorDREM.AOR_MUTATOR_DREM);
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -178,7 +192,11 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    
+    // New groups added for mutators in the engine.gregor.mutators.augmented package
     addGroup("AOR_I", aorMutatorInteger());
+    addGroup("AOR_D", aorMutatorDouble());
+    
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -219,6 +237,12 @@ public final class Mutator {
     return group(AORMutatorIADD.AOR_MUTATOR_IADD, AORMutatorISUB.AOR_MUTATOR_ISUB,
             AORMutatorIMUL.AOR_MUTATOR_IMUL, AORMutatorIDIV.AOR_MUTATOR_IDIV, 
             AORMutatorIREM.AOR_MUTATOR_IREM);
+  }
+  
+  public static Collection<MethodMutatorFactory> aorMutatorDouble() {
+    return group(AORMutatorDADD.AOR_MUTATOR_DADD, AORMutatorDSUB.AOR_MUTATOR_DSUB,
+            AORMutatorDMUL.AOR_MUTATOR_DMUL, AORMutatorDDIV.AOR_MUTATOR_DDIV, 
+            AORMutatorDREM.AOR_MUTATOR_DREM);
   }
 
   private static Collection<MethodMutatorFactory> group(
