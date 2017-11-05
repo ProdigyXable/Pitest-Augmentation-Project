@@ -1,24 +1,86 @@
 /*
- * Copyright 2017 org.pitest.
+ * Copyright 2010 Henry Coles
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * See the License for the specific language governing permissions and limitations under the License.
  */
 package org.pitest.mutationtest.engine.gregor.mutators.augmented;
 
-/**
- *
- * @author Sam Benton's PC
- */
-public class AORMutatorDSUB {
+import java.util.HashMap;
+import java.util.Map;
+
+import org.objectweb.asm.MethodVisitor;
+import org.objectweb.asm.Opcodes;
+import org.pitest.mutationtest.engine.gregor.AbstractInsnMutator;
+import org.pitest.mutationtest.engine.gregor.InsnSubstitution;
+import org.pitest.mutationtest.engine.gregor.MethodInfo;
+import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
+import org.pitest.mutationtest.engine.gregor.MutationContext;
+import org.pitest.mutationtest.engine.gregor.ZeroOperandMutation;
+
+/*
+* @author Samuel Benton
+*
+*/
+public enum AORMutatorDSUB implements MethodMutatorFactory {
+
+  AOR_MUTATOR_DSUB;
+
+  @Override
+  public MethodVisitor create(final MutationContext context,
+      final MethodInfo methodInfo, final MethodVisitor methodVisitor) {
+    return new AORDSUBMutatorMethodVisitor(this, methodInfo, context, methodVisitor);
+  }
+
+  @Override
+  public String getGloballyUniqueId() {
+    return this.getClass().getName();
     
+  }
+
+  @Override
+  public String getName() {
+    return name();
+  }
+
+}
+
+class AORDSUBMutatorMethodVisitor extends AbstractInsnMutator {
+
+  AORDSUBMutatorMethodVisitor(final MethodMutatorFactory factory,
+      final MethodInfo methodInfo, final MutationContext context,
+      final MethodVisitor writer) {
+    super(factory, methodInfo, context, writer);
+    
+  }
+
+  private static final Map<Integer, ZeroOperandMutation> MUTATIONS_DSUB = new HashMap<Integer, ZeroOperandMutation>();
+  
+  private static final String MESSAGE_A = "AOR Mutator: Replaced ";
+  private static final String MESSAGE_B = " with ";
+  
+  static {
+        
+    MUTATIONS_DSUB.put(Opcodes.DADD, new InsnSubstitution(Opcodes.DSUB, MESSAGE_A + '+' + MESSAGE_B + '-' + " (double)"));
+    MUTATIONS_DSUB.put(Opcodes.DMUL, new InsnSubstitution(Opcodes.DSUB, MESSAGE_A + '*' + MESSAGE_B + '-' + " (double)"));
+    MUTATIONS_DSUB.put(Opcodes.DDIV, new InsnSubstitution(Opcodes.DSUB, MESSAGE_A + '/' + MESSAGE_B + '-' + " (double)"));
+    MUTATIONS_DSUB.put(Opcodes.DREM, new InsnSubstitution(Opcodes.DSUB, MESSAGE_A + '%' + MESSAGE_B + '-' + " (double)"));    
+   
+  }
+
+  @Override
+  protected Map<Integer, ZeroOperandMutation> getMutations() {
+   
+      return MUTATIONS_DSUB;
+
+  }
+
 }
