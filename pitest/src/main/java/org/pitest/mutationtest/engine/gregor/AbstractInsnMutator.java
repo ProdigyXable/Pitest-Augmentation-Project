@@ -25,7 +25,7 @@ public abstract class AbstractInsnMutator extends MethodVisitor {
   private final MethodMutatorFactory factory;
   private final MutationContext      context;
   private final MethodInfo           methodInfo;
-
+  
   public AbstractInsnMutator(final MethodMutatorFactory factory,
       final MethodInfo methodInfo, final MutationContext context,
       final MethodVisitor delegateMethodVisitor) {
@@ -50,7 +50,7 @@ public abstract class AbstractInsnMutator extends MethodVisitor {
     return getMutations().containsKey(opcode);
   }
 
-  private void createMutationForInsnOpcode(final int opcode) {
+  private void createMutationForInsnOpcode(final int opcode) {    
     final ZeroOperandMutation mutation = getMutations().get(opcode);
 
     final MutationIdentifier newId = this.context.registerMutation(

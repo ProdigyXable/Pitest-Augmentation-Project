@@ -36,6 +36,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\execute\ErrorListener.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\mocksupport\JavassistInterceptor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\execute\CoverageWorker.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIADD.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\bytecode\FrameOptions.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\analysis\ControlFlowAnalyser.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\classinfo\ClassInfo.java
@@ -61,6 +62,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\config\Mutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveIncrementsMutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\SideEffect.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIMUL.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\junit\DescriptionFilter.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\execute\CoverageMinion.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ReturnValsMutator.java
@@ -78,6 +80,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\testapi\TestClassIdentifier.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\F6.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\execute\DefaultReporter.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIREM.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\boot\HotSwapAgent.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\util\StringUtil.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\InsnSubstitution.java
@@ -86,6 +89,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\testng\ForeignClassLoaderTestNGExecutor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\util\Functions.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\util\Preconditions.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIDIV.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\MathMutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\classpath\IOHeavyRoot.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\testapi\TestPluginFactory.java
@@ -158,6 +162,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\MethodCallMethodVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\MutatingClassVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\plugin\ToolClasspathPlugin.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorISUB.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\predicate\Not.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\execute\CommandLineMessage.java

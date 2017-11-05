@@ -31,6 +31,11 @@ import org.pitest.functional.prelude.Prelude;
 import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorISUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIREM;
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -56,6 +61,15 @@ public final class Mutator {
     // TODO Add a new line for each new mutator added
   static {
 
+      /*
+      * New AOR mutators
+      */
+      add("AOR_MUTATOR_IADD", AORMutatorIADD.AOR_MUTATOR_IADD);
+      add("AOR_MUTATOR_ISUB", AORMutatorISUB.AOR_MUTATOR_ISUB);
+      add("AOR_MUTATOR_IMUL", AORMutatorIMUL.AOR_MUTATOR_IMUL);
+      add("AOR_MUTATOR_IDIV", AORMutatorIDIV.AOR_MUTATOR_IDIV);
+      add("AOR_MUTATOR_IREM", AORMutatorIREM.AOR_MUTATOR_IREM);
+      
     /**
      * Default mutator that inverts the negation of integer and floating point
      * numbers.
@@ -164,6 +178,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("AOR_I", aorMutatorInteger());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -195,6 +210,15 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+  /**
+   * Integer-based sub-mutators for the AOR parent mutator
+   */
+  public static Collection<MethodMutatorFactory> aorMutatorInteger() {
+    return group(AORMutatorIADD.AOR_MUTATOR_IADD, AORMutatorISUB.AOR_MUTATOR_ISUB,
+            AORMutatorIMUL.AOR_MUTATOR_IMUL, AORMutatorIDIV.AOR_MUTATOR_IDIV, 
+            AORMutatorIREM.AOR_MUTATOR_IREM);
   }
 
   private static Collection<MethodMutatorFactory> group(

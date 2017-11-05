@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.classinfo.ClassNameTest" time="0.189" tests="22" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.classinfo.ClassNameTest" time="0.171" tests="22" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -69,7 +69,7 @@
   <testcase name="getNameWithoutPackageShouldReturnNameOnlyWhenClassIsOuterClass" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="shouldConvertJavaNamesToInternalNames" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="getNameWithoutPackageShouldReturnNameWhenClassInPackageDefault" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
-  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.classinfo.ClassNameTest" time="0.052"/>
+  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.classinfo.ClassNameTest" time="0.031"/>
   <testcase name="getPackageShouldReturnEmptyPackageWhenClassInPackageDefault" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="shouldConvertInternalNamesToJavaNames" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="getPackageShouldReturnPackageWhenClassWithinAPackage" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
@@ -80,6 +80,6 @@
   <testcase name="shouldProduceDifferentHashCodeForDifferentClasses" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="shouldSortByName" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
   <testcase name="shouldProduceSameHashCodeForSameClass" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
-  <testcase name="stringToClassShouldReturnNoneWhenClassNotKnownToLoader" classname="org.pitest.classinfo.ClassNameTest" time="0.137"/>
+  <testcase name="stringToClassShouldReturnNoneWhenClassNotKnownToLoader" classname="org.pitest.classinfo.ClassNameTest" time="0.14"/>
   <testcase name="nameToClassShouldReturnClassWhenKnownToLoader" classname="org.pitest.classinfo.ClassNameTest" time="0"/>
 </testsuite>
