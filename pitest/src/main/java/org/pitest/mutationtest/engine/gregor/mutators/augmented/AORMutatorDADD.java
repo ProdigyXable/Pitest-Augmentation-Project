@@ -30,14 +30,14 @@ import org.pitest.mutationtest.engine.gregor.ZeroOperandMutation;
 * @author Samuel Benton
 *
 */
-public enum AORMutatorIADD implements MethodMutatorFactory {
+public enum AORMutatorDADD implements MethodMutatorFactory {
 
-  AOR_MUTATOR_IADD;
+  AOR_MUTATOR_DADD;
 
   @Override
   public MethodVisitor create(final MutationContext context,
       final MethodInfo methodInfo, final MethodVisitor methodVisitor) {
-    return new AORIADDMutatorMethodVisitor(this, methodInfo, context, methodVisitor);
+    return new AORDADDMutatorMethodVisitor(this, methodInfo, context, methodVisitor);
   }
 
   @Override
@@ -53,33 +53,33 @@ public enum AORMutatorIADD implements MethodMutatorFactory {
 
 }
 
-class AORIADDMutatorMethodVisitor extends AbstractInsnMutator {
+class AORDADDMutatorMethodVisitor extends AbstractInsnMutator {
 
-  AORIADDMutatorMethodVisitor(final MethodMutatorFactory factory,
+  AORDADDMutatorMethodVisitor(final MethodMutatorFactory factory,
       final MethodInfo methodInfo, final MutationContext context,
       final MethodVisitor writer) {
     super(factory, methodInfo, context, writer);
     
   }
 
-  private static final Map<Integer, ZeroOperandMutation> MUTATIONS_IADD = new HashMap<Integer, ZeroOperandMutation>();
+  private static final Map<Integer, ZeroOperandMutation> MUTATIONS_DADD = new HashMap<Integer, ZeroOperandMutation>();
   
   private static final String MESSAGE_A = "AOR Mutator: Replaced ";
   private static final String MESSAGE_B = " with ";
   
   static {
 
-    MUTATIONS_IADD.put(Opcodes.ISUB, new InsnSubstitution(Opcodes.IADD, MESSAGE_A + '-' + MESSAGE_B + '+' + " (int)"));
-    MUTATIONS_IADD.put(Opcodes.IMUL, new InsnSubstitution(Opcodes.IADD, MESSAGE_A + '*' + MESSAGE_B + '+' + " (int)"));
-    MUTATIONS_IADD.put(Opcodes.IDIV, new InsnSubstitution(Opcodes.IADD, MESSAGE_A + '/' + MESSAGE_B + '+' + " (int)"));
-    MUTATIONS_IADD.put(Opcodes.IREM, new InsnSubstitution(Opcodes.IADD, MESSAGE_A + '%' + MESSAGE_B + '+' + " (int)"));
+    MUTATIONS_DADD.put(Opcodes.DSUB, new InsnSubstitution(Opcodes.DADD, MESSAGE_A + '-' + MESSAGE_B + '+' + " (double)"));
+    MUTATIONS_DADD.put(Opcodes.DMUL, new InsnSubstitution(Opcodes.DADD, MESSAGE_A + '*' + MESSAGE_B + '+' + " (double)"));
+    MUTATIONS_DADD.put(Opcodes.DDIV, new InsnSubstitution(Opcodes.DADD, MESSAGE_A + '/' + MESSAGE_B + '+' + " (double)"));
+    MUTATIONS_DADD.put(Opcodes.DREM, new InsnSubstitution(Opcodes.DADD, MESSAGE_A + '%' + MESSAGE_B + '+' + " (double)"));
     
   }
 
   @Override
   protected Map<Integer, ZeroOperandMutation> getMutations() {
    
-      return MUTATIONS_IADD;
+      return MUTATIONS_DADD;
 
   }
 
