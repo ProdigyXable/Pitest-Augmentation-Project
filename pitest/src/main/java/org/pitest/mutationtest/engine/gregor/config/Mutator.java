@@ -284,12 +284,10 @@ public final class Mutator {
   }
       
     private static Collection<MethodMutatorFactory> aorMutator() {
-    return combine(
-            defaults(),
-            combine(aorMutatorInteger(),
-                    combine(aorMutatorDouble(),
-                            combine(aorMutatorFloat(),
-                                    aorMutatorLong()))));
+    return combine(aorMutatorInteger(),
+                combine(aorMutatorDouble(),
+                        combine(aorMutatorFloat(),
+                                aorMutatorLong())));
   }
 
 
