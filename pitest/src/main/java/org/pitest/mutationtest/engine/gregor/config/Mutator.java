@@ -176,6 +176,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("UOI", uoi());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -207,6 +208,11 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+  public static Collection<MethodMutatorFactory> uoi() {
+    return group(UOIReverseMutator.UOI_REVERSE_MUTATOR, UOIRemoveMutator.UOI_REMOVE_MUTATOR,
+            UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(
