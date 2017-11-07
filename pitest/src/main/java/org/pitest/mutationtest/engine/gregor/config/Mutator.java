@@ -63,6 +63,7 @@ public final class Mutator {
       * UOI Mutators - Mutate ++ and -- unuary operators.
       */
       
+      // TODO Add UOI mutators which add increments/decrements to variables without unary operators
       add("UOI_REVERSE", UOIReverseMutator.UOI_REVERSE_MUTATOR);
       add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
       add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
