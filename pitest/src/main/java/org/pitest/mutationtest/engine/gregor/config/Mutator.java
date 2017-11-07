@@ -48,6 +48,10 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiver
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIReverseMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIRemoveMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddIncrementMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddDecrementMutator;
 
 public final class Mutator {
 
@@ -55,6 +59,15 @@ public final class Mutator {
 
   static {
 
+      /*
+      * UOI Mutators - Mutate ++ and -- unuary operators.
+      */
+      
+      add("UOI_REVERSE", UOIReverseMutator.UOI_REVERSE_MUTATOR);
+      add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
+      add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
+      add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+      
     /**
      * Default mutator that inverts the negation of integer and floating point
      * numbers.
