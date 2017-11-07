@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.junit.JUnitCustomRunnerTestUnitFinderTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 sec - in org.pitest.junit.JUnitCustomRunnerTestUnitFinderTest
+=======
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec - in org.pitest.junit.JUnitCustomRunnerTestUnitFinderTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

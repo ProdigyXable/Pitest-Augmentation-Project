@@ -9,6 +9,10 @@ org\pitest\mutationtest\engine\gregor\mutators\NegateConditionalsMutatorTest$Has
 org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveSwitchMutatorTest$HasMultipleArmIntSwitchWithoutDefault.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasISub.class
 org\pitest\mutationtest\engine\gregor\mutators\ConstructorCallMutatorTest$1.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJUnit8$TheoriesTest.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasShortOverflow.class
 org\pitest\simpletest\steps\CallStepTest.class
 org\pitest\junit\adapter\AdaptingRunListenerTest.class
@@ -22,6 +26,10 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasDoub
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasSIPUSH.class
 org\pitest\testapi\DescriptionTest.class
 org\pitest\classpath\CompoundClassPathRootTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$ParameterisedTest.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 sun\pitest\CodeCoverageStoreTest$1.class
 org\pitest\simpletest\BasicTestUnitFinder$2.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasBooleanReturn.class
@@ -41,16 +49,30 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$1.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasIAnd.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIFNE.class
 com\example\CoveredByABeforeAfterClassTest.class
+<<<<<<< HEAD
 org\pitest\mutationtest\engine\gregor\analysis\InstructionTrackingMethodVisitorTest$HasMethodCallsAndBranches.class
+=======
+org\pitest\TestJUnitConfiguration$JUnit3TestWithSingleStringConstructorAndJUnit4Annotations.class
+org\pitest\mutationtest\engine\gregor\analysis\InstructionTrackingMethodVisitorTest$HasMethodCallsAndBranches.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$EnumWithCustomConstructor.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\ConstructorCallMutatorTest$HasArrayListConstructor.class
 org\pitest\junit\JUnitTestClassIdentifierTest$1.class
 org\pitest\dependency\DependencyExtractorTest$CyclicBar.class
 org\pitest\containers\TestContainersSendCorrectNotifications$1.class
 org\pitest\mutationtest\engine\gregor\mutators\ConstructorCallMutatorTest.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$1.class
+<<<<<<< HEAD
 com\example\JUnitThreeSuite.class
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$One.class
 org\pitest\mutationtest\engine\gregor\MutatorTestBase$3.class
+=======
+org\pitest\TestJUnitConfiguration$HideFromJunit1.class
+com\example\JUnitThreeSuite.class
+org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$One.class
+org\pitest\mutationtest\engine\gregor\MutatorTestBase$3.class
+org\pitest\TestJUnitConfiguration$HasOneMethodAnnotatedAsIgnored.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$ClassRuleField.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$HasCharSwitchWithDefault.class
 com\example\testng\FullyCoveredByTestNGTesteeTest.class
@@ -71,6 +93,10 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasBIPU
 org\pitest\mutationtest\engine\gregor\ClassInfoTest.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$1.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasFDIV.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$TwoMethods.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\RepositoryTest$HasAnnotatedMethod.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$1.class
 org\pitest\mutationtest\MutableIncrement.class
@@ -89,6 +115,10 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasByte
 org\pitest\simpletest\SteppedTestUnit.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\NakedReceiverMutatorTest$CallsMethodsWithGenericTypes.class
 org\pitest\functional\predicate\OrTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$InheritedTest.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\NegateConditionalsMutatorTest$HasIFNE.class
 org\pitest\junit\JUnitTestClassIdentifierTest$NoCategoryTest.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasIntegerICONST1.class
@@ -108,6 +138,10 @@ org\pitest\coverage\codeassist\samples\Bridge$HasBridgeMethod.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$HasLongMethodCall.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$HasTwoTableSwitchStatements.class
 org\pitest\junit\RunnerSuiteFinderTest$ThrowsOnDiscoverySuite.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$MarkerTest1.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\RepositoryTest$ITop.class
 org\pitest\functional\prelude\PreludeTest.class
 org\pitest\coverage\codeassist\samples\HasDefaultConstructor.class
@@ -121,6 +155,11 @@ org\pitest\simpletest\SignatureEqualityStrategyTest$1.class
 sun\pitest\CodeCoverageStoreTest.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$HasArrayMethodOfDifferentType.class
 org\pitest\mutationtest\engine\gregor\mutators\NonVoidMethodCallMutatorTest$HasVoidMethodCall.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJUnit9.class
+org\pitest\TestJUnitConfiguration$BaseTestCaseWithTest.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\JUnitTestClassIdentifierTest$NoCategoryTestFromParentTest.class
 org\pitest\plugin\FeatureSelectorTest.class
 com\example\JUnitThreeSubSuite.class
@@ -129,6 +168,10 @@ org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMutatorTest$H
 org\pitest\junit\RunnerSuiteFinderTest$ThrowsOnDiscoveryRunner.class
 org\pitest\coverage\ClassLineTest.class
 org\pitest\util\SafeDataInputStreamTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJunit4.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\dependency\DependencyClassVisitorTest$HasField.class
 org\pitest\junit\JUnitTestClassIdentifierTest$CategoryBetaFromGrandParentTest.class
 com\example\CoveredByJUnitThreeSuite.class
@@ -169,10 +212,19 @@ org\pitest\junit\JUnitTestClassIdentifierTest$GammaTests.class
 org\pitest\util\FunctionsTest$Foo.class
 com\example\testng\Fails.class
 org\pitest\mutationtest\engine\MutationDetailsMother$MutationDetailsBuilder.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HasAssumptionFailure.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$SwitchStatement.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$NestCustomSuite.class
 org\pitest\simpletest\TestMethodTest.class
 org\pitest\mutationtest\engine\gregor\mutators\NegateConditionalsMutatorTest$HasIF_ICMPGT.class
 org\pitest\coverage\codeassist\ClassUtils$1.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HasMethodAnnotatedAsIgnoredAndBeforeClassAnnotation.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ComputeClassWriterTest$ImplementsICommon1.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasIntegerAtMaxShortValue.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasPrimitiveIntegerReturn.class
@@ -219,6 +271,10 @@ com\example\HasExcludedMethodsTestee.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveSwitchMutatorTest$HasCharSwitchWithDefault.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\MemberVariableMutatorTest$HasConstantFinalPrimitiveMemberVariable.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasPrimitiveFloatReturn.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$CustomSuite.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\ParameterisedJUnitTestFinderTest.class
 org\pitest\util\ResourceFolderByteArraySource.class
 com\example\LoadsResourcesFromClassPath.class
@@ -226,6 +282,10 @@ org\pitest\classinfo\AddlerHashTest.class
 org\pitest\mutationtest\engine\gregor\DoNotMutate.class
 org\pitest\junit\ParameterisedJUnitTestFinderTest$ParameterisedTest.class
 org\pitest\junit\adapter\CustomRunnerExecutorTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJunit4$MixedJUnit3And4SetupAndTearDown.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIFGT.class
 org\pitest\functional\FCollectionTest$6.class
 org\pitest\util\IsolationUtilsTest.class
@@ -237,6 +297,10 @@ org\pitest\plugin\AFeature.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasISHL.class
 org\pitest\coverage\TestInfoNameComparatorTest.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasDoubleDCONST1.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$JUnit4TestWithExpectations.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 com\example\LoadsResourcesFromClassPathTest.class
 org\pitest\functional\OptionTest.class
 org\pitest\classinfo\ClassInfoVisitorTest$HasCategory.class
@@ -250,9 +314,17 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasInte
 org\pitest\simpletest\EqualityStrategy.class
 org\pitest\classpath\ClassPathTest$1.class
 com\example\testng\HasOnePassingAndOneFailingMethod.class
+<<<<<<< HEAD
 org\pitest\mutationtest\engine\gregor\mutators\NonVoidMethodCallMutatorTest$1.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$HasIntMethodCall.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasIntegerICONST4.class
+=======
+org\pitest\TestJUnitConfiguration$NoSuitableConstructor.class
+org\pitest\mutationtest\engine\gregor\mutators\NonVoidMethodCallMutatorTest$1.class
+org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$HasIntMethodCall.class
+org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasIntegerICONST4.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasFinallyBlock.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\adapter\AdaptedJUnitTestUnitTest$2.class
 org\pitest\junit\JUnitTestClassIdentifierTest$NoCategoryTestFromGrandParentTest.class
 org\pitest\mutationtest\engine\gregor\mutators\NegateConditionalsMutatorTest$HasIFGT.class
@@ -264,6 +336,11 @@ org\pitest\functional\FCollectionTest$4.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$HasMultipleArmIntSwitchWithDefault.class
 com\example\testng\AnnotatedAtMethodLevel.class
 org\pitest\simpletest\ConfigurationForTesting$1.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\config\MutatorTest.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$SimpleBranch.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\NonVoidMethodCallMutatorTest$HasIntMethodCall.class
 org\pitest\coverage\codeassist\ClassUtils.class
 org\pitest\coverage\codeassist\samples\ClassWithInitialisedField.class
@@ -277,9 +354,17 @@ org\pitest\junit\JUnit4SuiteFinderTest.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasFSUB.class
+<<<<<<< HEAD
 org\pitest\coverage\codeassist\samples\Bridge.class
 org\pitest\mutationtest\execute\TimeOutDecoratedTestSourceTest.class
 org\pitest\simpletest\ConfigurationForTesting$TestFinder.class
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasMultipleMutations.class
+org\pitest\coverage\codeassist\samples\Bridge.class
+org\pitest\mutationtest\execute\TimeOutDecoratedTestSourceTest.class
+org\pitest\simpletest\ConfigurationForTesting$TestFinder.class
+org\pitest\TestJUnitConfiguration$JUnit3Test.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\functional\FCollectionTest$3.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest.class
 com\example\JUnitThreeTest.class
@@ -294,6 +379,10 @@ org\pitest\mutationtest\execute\TimeOutSystemExitSideEffectTest.class
 org\pitest\testapi\execute\TestPitest.class
 org\pitest\coverage\CoverageTransformerTest.class
 org\pitest\help\PitHelpErrorTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJUnit9$JMockTest.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasIDiv.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveIncrementsMutatorTest$1.class
 org\pitest\simpletest\InstantiationStrategy.class
@@ -303,12 +392,20 @@ org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorT
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIF_ICMPGT.class
 org\pitest\classpath\ArchiveClassPathRootTest.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasLSHL.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$Marker.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMutatorTest.class
 org\pitest\classinfo\NameToClassInfoTest.class
 org\pitest\util\GlobTest.class
 org\pitest\testapi\execute\TestPitest$StaticTestCase.class
 org\pitest\mutationtest\config\CompoundConfigurationTest.class
 org\pitest\reflection\ReflectionTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$TestWithTimeout.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\JUnitTestClassIdentifierTest.class
 com\example\TheoryTest.class
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$CustomSuite.class
@@ -320,18 +417,37 @@ org\pitest\classinfo\ComputeClassWriterTest$ICommon.class
 org\pitest\functional\predicate\AndTest.class
 org\pitest\junit\TestInfoTest$Nested.class
 org\pitest\classinfo\RepositoryTest$1.class
+<<<<<<< HEAD
 org\pitest\mutationtest\engine\gregor\Generated.class
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$1VeryMutable.class
+org\pitest\mutationtest\engine\gregor\GregorMutationEngineTest.class
+org\pitest\mutationtest\engine\gregor\Generated.class
+org\pitest\TestJUnitConfiguration$HasMethodAnnotatedAsIgnored.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\execute\TimeOutDecoratedTestSourceTest$1.class
 org\pitest\junit\JUnit4SuiteFinderTest$HideFromJUnit$AnnotatedJUnit.class
 org\pitest\mutationtest\engine\gregor\mutators\NegateConditionalsMutatorTest$HasIFNULL.class
 com\example\testng\AnnotatedAtClassLevel.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasFinallyBlockAndExceptionHandler.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\util\StreamUtilTest.class
 org\pitest\functional\FCollectionTest.class
 org\pitest\mutationtest\engine\MutationDetailsTest.class
 org\pitest\mutationtest\LocationMother$2.class
+<<<<<<< HEAD
 org\pitest\coverage\codeassist\LineMapperTest.class
 org\pitest\junit\JUnitTestClassIdentifierTest$TwoCategoryTest.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$SwitchEnum.class
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$1.class
+org\pitest\coverage\codeassist\LineMapperTest.class
+org\pitest\junit\JUnitTestClassIdentifierTest$TwoCategoryTest.class
+org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$SwitchEnum.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasAssertStatementAndOtherStatements.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\coverage\analysis\BlockTest.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasFloatMultipleLDC.class
 com\example\LineNumbersSpanBlocks.class
@@ -344,6 +460,10 @@ org\pitest\dependency\DependencyExtractorTest$CyclicFoo.class
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$Three.class
 org\pitest\functional\FCollectionTest$7.class
 org\pitest\mutationtest\engine\MutationDetailsMother.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$MixedJunit3And4Test.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasTwoMutationPoints.class
 org\pitest\mutationtest\mocksupport\BendJavassistToMyWillTransformerTest.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasFloatFCONST2.class
@@ -358,6 +478,10 @@ org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasInte
 org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveSwitchMutatorTest$HasIntSwitchWithDefault.class
 org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMutatorTest$HasIFLE.class
 org\pitest\mutationtest\engine\gregor\mutators\NonVoidMethodCallMutatorTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$OwnSuiteMethod.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\junit\adapter\AdaptedJUnitTestUnitTest$HideFromJUnit$JUnit4Test.class
 org\pitest\mutationtest\engine\gregor\mutators\InvertNegsMutatorTest$NothingToMutate.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasLongLDC.class
@@ -377,6 +501,10 @@ org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasI
 org\pitest\containers\TestContainersSendCorrectNotifications$OnePassingTest.class
 org\pitest\functional\predicate\NotTest.class
 org\pitest\sequence\MatchTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$JUnit3TestWithSingleStringConstructor.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\experimental\SwitchMutatorTest$HasIntSwitchWithDefault.class
 com\example\HasExcludedMethodsTesteeTest.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\MutantStarterTest$TestMutee.class
@@ -420,6 +548,11 @@ org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorT
 org\pitest\mutationtest\LocationMother.class
 org\pitest\classinfo\ClassNameTest.class
 org\pitest\junit\JUnitTestClassIdentifierTest$HasTestAnnotation.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$FallThroughSwitch.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasExceptionBlock.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\bytecode\FrameOptionsTest.class
 org\pitest\dependency\DependencyClassVisitorTest.class
 org\pitest\junit\JUnitTestClassIdentifierTest$CategoryBetaFromParentTest.class
@@ -440,6 +573,10 @@ org\pitest\mutationtest\execute\MutationTimeoutDecoratorTest.class
 org\pitest\util\FunctionsTest.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasIOr.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasISHR.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$MarkerTest2.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\containers\TestContainersSendCorrectNotifications$OneFailingTest.class
 org\pitest\junit\TestInfoTest$2JU3Test.class
 org\pitest\simpletest\EqualitySet.class
@@ -449,6 +586,11 @@ org\pitest\mutationtest\engine\gregor\mutators\experimental\NakedReceiverMutator
 org\pitest\SystemTest.class
 org\pitest\functional\predicate\FalseTest.class
 org\pitest\junit\RunnerSuiteFinderTest$JUnit3SuiteMethod.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$JUnit3SuiteMethod.class
+org\pitest\TestJUnitConfiguration$HideFromJUnit8.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ComputeClassWriterTest$GrandChild.class
 org\pitest\simpletest\BasicTestUnitFinder.class
 com\example\testng\Passes.class
@@ -480,13 +622,24 @@ org\pitest\junit\JUnitTestClassIdentifierTest$AlphaTests.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasObjectReturn.class
 org\pitest\testapi\execute\TestPitest$WrongExceptionThrown.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIFGE.class
+<<<<<<< HEAD
 org\pitest\junit\JUnitTestClassIdentifierTest$HasRunWith.class
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasAssertStatement.class
+org\pitest\junit\JUnitTestClassIdentifierTest$HasRunWith.class
+org\pitest\TestJUnitConfiguration$AnnotatedAsIgnored.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\TestToClassMapperTest.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\NakedReceiverMutatorTest$HasStringMethodCall.class
 org\pitest\functional\FArrayTest$2.class
 org\pitest\classpath\CodeSourceTest.class
 org\pitest\coverage\codeassist\ClassUtils$MyClassLoader.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\MutantStarter.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$HasTwoMutableMethods.class
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$OneStraightThroughMethod.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasPrimitiveLongReturn.class
 sun\pitest\CodeCoverageStoreTest$8.class
 org\pitest\simpletest\SignatureEqualityStrategy.class
@@ -494,9 +647,17 @@ org\pitest\mutationtest\engine\gregor\mutators\experimental\MemberVariableMutato
 org\pitest\mutationtest\Mutable.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\MemberVariableMutatorTest$HasMemberVariable.class
 org\pitest\mutationtest\engine\gregor\mutators\InvertNegsMutatorTest.class
+<<<<<<< HEAD
 sun\pitest\CodeCoverageStoreTest$13.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasDDIV.class
 org\pitest\mutationtest\engine\gregor\mutators\VoidMethodCallMutatorTest$HasVoidMethodCallWithFinallyBlock.class
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater$AnEnum.class
+sun\pitest\CodeCoverageStoreTest$13.class
+org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasDDIV.class
+org\pitest\mutationtest\engine\gregor\mutators\VoidMethodCallMutatorTest$HasVoidMethodCallWithFinallyBlock.class
+org\pitest\TestJUnitConfiguration$OverridesTestInParent.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ClassInfoMother.class
 org\pitest\junit\JUnitTestClassIdentifierTest$DescendentOfTest.class
 org\pitest\mutationtest\mocksupport\JavassistInputStreamInterceptorAdapaterTest.class
@@ -528,11 +689,19 @@ org\pitest\functional\predicate\TrueTest.class
 org\pitest\mutationtest\engine\gregor\mutators\InvertNegsMutatorTest$HasLNeg.class
 org\pitest\mutationtest\engine\gregor\mutators\InvertNegsMutatorTest$HasFNeg.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\RemoveIncrementsMutatorTest.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$SimpleJUnit4Test.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ComputeClassWriterTest.class
 org\pitest\classinfo\RepositoryTest.class
 org\pitest\mutationtest\engine\gregor\AvoidAssertsMethodAdapterTest.class
 org\pitest\testapi\execute\TestPitest$SubclassOfExpectedExceptionThrown.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutatorTest$HasGenericStuff.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\LocationMother$MutationIdentifierBuilder.class
 sun\pitest\CodeCoverageStoreTest$14.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest.class
@@ -543,6 +712,10 @@ org\pitest\simpletest\BasicTestUnitFinder$1.class
 org\pitest\junit\JUnitCustomRunnerTestUnitFinderTest$NoPublicConstructor.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIFEQ.class
 org\pitest\mutationtest\engine\gregor\mutators\InlineConstantMutatorTest$HasIntegerLDC.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$HideFromJunit1$JUnit4TestWithUnmetExpectations.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 sun\pitest\CodeCoverageStoreTest$17.class
 org\pitest\classinfo\ComputeClassWriterTest$ICommon3.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\NakedReceiverMutatorTest$Foo.class
@@ -570,6 +743,10 @@ sun\pitest\CodeCoverageStoreTest$4.class
 org\pitest\mutationtest\engine\gregor\mutators\IncrementsMutatorTest.class
 org\pitest\classinfo\ComputeClassWriterTest$Child2.class
 org\pitest\functional\FArrayTest$3.class
+<<<<<<< HEAD
+=======
+org\pitest\TestJUnitConfiguration$SimpleJUnit3Test.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ComputeClassWriterTest$Parent.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$MyListener.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutatorTest$HasIF_ICMPGE.class
@@ -584,6 +761,10 @@ org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasFMUL.class
 org\pitest\coverage\codeassist\samples\NoDefaultConstructor.class
 org\pitest\testapi\execute\TestPitest$UnexpectedExceptionThrown.class
 org\pitest\functional\FArrayTest$4.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\TestGregorMutater.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 sun\pitest\CodeCoverageStoreTest$5.class
 org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationMutatorTest$OnlyFirstArgumentHasMatchingType.class
 org\pitest\mutationtest\engine\gregor\mutators\MathMutatorTest$HasIAdd.class

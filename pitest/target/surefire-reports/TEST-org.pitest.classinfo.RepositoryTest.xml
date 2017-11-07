@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.classinfo.RepositoryTest" time="0.052" tests="26" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.classinfo.RepositoryTest" time="0.104" tests="26" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,6 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldOnlyLookForKnownClassOnce" classname="org.pitest.classinfo.RepositoryTest" time="0.012"/>
   <testcase name="shouldReturnFalseWhenAskedForUnknownClass" classname="org.pitest.classinfo.RepositoryTest" time="0"/>
   <testcase name="doesNotTreatInterfacesAsPartOfClassHierachy" classname="org.pitest.classinfo.RepositoryTest" time="0.004"/>
@@ -86,4 +91,32 @@
   <testcase name="shouldDetectConcreteClassesAsNotAbstract" classname="org.pitest.classinfo.RepositoryTest" time="0.012"/>
   <testcase name="shouldOnlyQuerySourceForAnUnknownClassOnce" classname="org.pitest.classinfo.RepositoryTest" time="0"/>
   <testcase name="shouldReportSuperClassAsObjectWhenNoneDeclared" classname="org.pitest.classinfo.RepositoryTest" time="0"/>
+=======
+  <testcase name="shouldOnlyLookForKnownClassOnce" classname="org.pitest.classinfo.RepositoryTest" time="0.02"/>
+  <testcase name="shouldReturnFalseWhenAskedForUnknownClass" classname="org.pitest.classinfo.RepositoryTest" time="0.002"/>
+  <testcase name="doesNotTreatInterfacesAsPartOfClassHierachy" classname="org.pitest.classinfo.RepositoryTest" time="0.011"/>
+  <testcase name="shouldReportOuterClassForNonStaticInnerClasses" classname="org.pitest.classinfo.RepositoryTest" time="0.004"/>
+  <testcase name="shouldRecordSourceFile" classname="org.pitest.classinfo.RepositoryTest" time="0.003"/>
+  <testcase name="shouldReportCodeLines" classname="org.pitest.classinfo.RepositoryTest" time="0.002"/>
+  <testcase name="shouldOnlyCheckSourceForUnknownClassesOnce" classname="org.pitest.classinfo.RepositoryTest" time="0"/>
+  <testcase name="shouldReportInnermstOuterClassForNestedInnerClasses" classname="org.pitest.classinfo.RepositoryTest" time="0.006"/>
+  <testcase name="shouldReportOuterClassForStaticInnerClasses" classname="org.pitest.classinfo.RepositoryTest" time="0.003"/>
+  <testcase name="shouldOnlyLookForUnknownClassesOnce" classname="org.pitest.classinfo.RepositoryTest" time="0.003"/>
+  <testcase name="shouldDetectConcreteClassesAsNotInterfaces" classname="org.pitest.classinfo.RepositoryTest" time="0.004"/>
+  <testcase name="shouldReturnNoneWhenAskedForUnknownClass" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldReportNoSuperClassForObject" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldReportOuterClassForLocalClasses" classname="org.pitest.classinfo.RepositoryTest" time="0.002"/>
+  <testcase name="shouldDetectInterfacesAsAbstract" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldReturnTrueWhenAskedForKnownClass" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldDetectInterfacesAsInterfaces" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldCorrectlyNegotiateClassHierachies" classname="org.pitest.classinfo.RepositoryTest" time="0.009"/>
+  <testcase name="shouldReportSuperClass" classname="org.pitest.classinfo.RepositoryTest" time="0.004"/>
+  <testcase name="shouldRecordClassLevelAnnotations" classname="org.pitest.classinfo.RepositoryTest" time="0.002"/>
+  <testcase name="shouldRecordMethodLevelAnnotations" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldCalculateHashForSuppledClass" classname="org.pitest.classinfo.RepositoryTest" time="0.002"/>
+  <testcase name="shouldReturnInfoForClassOnClassPath" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldDetectConcreteClassesAsNotAbstract" classname="org.pitest.classinfo.RepositoryTest" time="0.015"/>
+  <testcase name="shouldOnlyQuerySourceForAnUnknownClassOnce" classname="org.pitest.classinfo.RepositoryTest" time="0.001"/>
+  <testcase name="shouldReportSuperClassAsObjectWhenNoneDeclared" classname="org.pitest.classinfo.RepositoryTest" time="0.004"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 </testsuite>

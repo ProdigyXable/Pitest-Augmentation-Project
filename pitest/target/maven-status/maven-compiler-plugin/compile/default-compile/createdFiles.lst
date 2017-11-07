@@ -15,6 +15,10 @@ org\pitest\extension\common\CompoundTestSuiteFinder.class
 org\pitest\mutationtest\engine\gregor\ClassContext.class
 org\pitest\bytecode\NullVisitor$1.class
 org\pitest\mutationtest\engine\gregor\GregorMutationEngine.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\config\GregorEngineFactory$1.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\Mutant.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutator$Choice.class
 org\pitest\sequence\SlotWrite.class
@@ -37,6 +41,10 @@ org\pitest\mutationtest\config\ConfigurationFactory.class
 org\pitest\mutationtest\MutationStatusTestPair.class
 org\pitest\classinfo\ClassInfo$2.class
 org\pitest\coverage\TestInfoNameComparator.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\config\Mutator$1.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\analysis\InstructionTrackingMethodVisitor.class
 org\pitest\mutationtest\config\CompoundConfiguration.class
 org\pitest\functional\FunctionalIterable.class
@@ -62,9 +70,17 @@ org\pitest\coverage\analysis\ArrayProbeCoverageMethodVisitor.class
 org\pitest\mutationtest\engine\gregor\ClassContext$2.class
 org\pitest\junit\RunnerSuiteFinder$2.class
 org\pitest\functional\FArray.class
+<<<<<<< HEAD
 org\pitest\dependency\IgnoreCoreClasses.class
 org\pitest\functional\prelude\Prelude$4.class
 org\pitest\coverage\analysis\LocalVariableCoverageMethodVisitor.class
+=======
+org\pitest\mutationtest\engine\gregor\config\GregorEngineFactory.class
+org\pitest\dependency\IgnoreCoreClasses.class
+org\pitest\functional\prelude\Prelude$4.class
+org\pitest\coverage\analysis\LocalVariableCoverageMethodVisitor.class
+org\pitest\classpath\ClassPath$1.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\AvoidStringSwitchedMethodAdapter.class
 org\pitest\testapi\TestClassIdentifier.class
 org\pitest\dependency\DependencyExtractor$5.class
@@ -80,6 +96,10 @@ org\pitest\functional\prelude\Prelude$6.class
 org\pitest\plugin\ProvidesFeature.class
 org\pitest\mutationtest\engine\gregor\mutators\ReturnValsMethodVisitor$1.class
 org\pitest\mutationtest\execute\MinionArguments.class
+<<<<<<< HEAD
+=======
+org\pitest\classpath\ClassPath.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMethodVisitor.class
 org\pitest\classpath\CompoundClassPathRoot.class
 org\pitest\mutationtest\engine\gregor\mutators\VoidMethodCallMutator$1.class
@@ -111,6 +131,10 @@ org\pitest\testapi\execute\ResultType$4.class
 org\pitest\testapi\TestUnit.class
 org\pitest\mutationtest\engine\gregor\mutators\VoidMethodCallMutator.class
 org\pitest\extension\common\TestUnitDecorator.class
+<<<<<<< HEAD
+=======
+org\pitest\classpath\ClassPath$3.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\ClassInfoVisitor$ClassAnnotationValueVisitor.class
 org\pitest\classinfo\HierarchicalClassId.class
 org\pitest\coverage\TestInfo$1.class
@@ -232,12 +256,20 @@ org\pitest\testapi\TestUnitState.class
 org\pitest\mutationtest\engine\Location.class
 org\pitest\sequence\Split.class
 org\pitest\testapi\execute\ResultType$1.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\AbstractInsnMutator.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classpath\ClassFilter.class
 org\pitest\classinfo\ClassInfo$3.class
 org\pitest\classinfo\ClassInfoBuilder.class
 org\pitest\mutationtest\engine\gregor\blocks\ConcreteBlockCounter.class
 org\pitest\junit\JUnitCompatibleConfiguration.class
 org\pitest\coverage\execute\DependencyFilter.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\mutators\IncrementsMutator.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\coverage\ClassLine.class
 org\pitest\util\IsolationUtils$1.class
 org\pitest\sequence\QueryParams.class
@@ -247,9 +279,17 @@ org\pitest\coverage\CoverageReceiver.class
 org\pitest\plugin\ClientClasspathPlugin.class
 org\pitest\classinfo\InfoMethodVisitor.class
 org\pitest\testapi\AbstractTestUnit.class
+<<<<<<< HEAD
 org\pitest\mutationtest\engine\gregor\GregorMutater$4.class
 org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutator$1.class
 org\pitest\functional\Option$None.class
+=======
+org\pitest\mutationtest\engine\MutationDetails.class
+org\pitest\mutationtest\engine\gregor\GregorMutater$4.class
+org\pitest\mutationtest\engine\gregor\mutators\experimental\ReturnValuesMutator$1.class
+org\pitest\functional\Option$None.class
+org\pitest\mutationtest\engine\gregor\mutators\IncrementsMethodVisitor.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\testapi\execute\ResultType$6.class
 org\pitest\mutationtest\engine\MutationEngine.class
 org\pitest\testng\ForeignClassLoaderTestNGExecutor.class
@@ -278,6 +318,10 @@ org\pitest\util\Id.class
 org\pitest\classinfo\CachingByteArraySource.class
 org\pitest\help\PitHelpError.class
 org\pitest\mutationtest\engine\gregor\MutatingClassVisitor.class
+<<<<<<< HEAD
+=======
+org\pitest\classpath\ClassPath$2.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classpath\ClassPathByteArraySource.class
 org\pitest\testapi\execute\ResultType$ResultToListenerSideEffect.class
 org\pitest\dependency\DependencyExtractor$6.class
@@ -343,16 +387,28 @@ org\pitest\classinfo\ClassByteArraySource.class
 org\pitest\dependency\DependencyExtractor$2.class
 org\pitest\mutationtest\execute\Reporter.class
 org\pitest\mutationtest\execute\TimeOutDecoratedTestSource.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\config\Mutator$2.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\classinfo\DefaultClassPointer.class
 org\pitest\mutationtest\engine\gregor\AbstractJumpMutator.class
 org\pitest\dependency\DependencyExtractor.class
 org\pitest\mutationtest\config\CompoundConfiguration$3.class
+<<<<<<< HEAD
+=======
+org\pitest\mutationtest\engine\gregor\config\Mutator.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\functional\prelude\Prelude$8.class
 org\pitest\mutationtest\execute\MutationTestMinion$1.class
 org\pitest\testapi\foreignclassloader\Skipped.class
 org\pitest\mutationtest\config\LegacyTestFrameworkPlugin.class
 org\pitest\dependency\DependencyExtractor$1.class
 org\pitest\plugin\FeatureSelector.class
+<<<<<<< HEAD
+=======
+org\pitest\classpath\OtherClassLoaderClassPathRoot.class
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 org\pitest\functional\prelude\Prelude$9.class
 org\pitest\mutationtest\execute\MutationTimeoutDecorator.class
 org\pitest\mutationtest\config\CompoundConfiguration$4.class

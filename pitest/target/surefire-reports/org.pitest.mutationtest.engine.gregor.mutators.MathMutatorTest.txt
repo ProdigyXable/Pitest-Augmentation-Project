@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.524 sec - in org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest
+=======
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.479 sec - in org.pitest.mutationtest.engine.gregor.mutators.MathMutatorTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

@@ -37,7 +37,10 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\mocksupport\JavassistInterceptor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\execute\CoverageWorker.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\bytecode\FrameOptions.java
+<<<<<<< HEAD
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddDecrementMutator.java
+=======
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\analysis\ControlFlowAnalyser.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\classinfo\ClassInfo.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\junit\TestInfo.java
@@ -159,11 +162,17 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\MethodCallMethodVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\MutatingClassVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\plugin\ToolClasspathPlugin.java
+<<<<<<< HEAD
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIReverseMutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationVisitor.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\predicate\Not.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\execute\CommandLineMessage.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIRemoveMutator.java
+=======
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationVisitor.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\predicate\Not.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\execute\CommandLineMessage.java
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\junit\adapter\ForeignClassLoaderAdaptingRunListener.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\functional\FunctionalList.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\classpath\NameCachingRoot.java
@@ -173,7 +182,10 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\execute\TimeOutSystemExitSideEffect.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\Location.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\sequence\Slot.java
+<<<<<<< HEAD
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddIncrementMutator.java
+=======
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\testapi\TestGroupConfig.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\AbstractJumpMutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\sequence\SequenceQuery.java

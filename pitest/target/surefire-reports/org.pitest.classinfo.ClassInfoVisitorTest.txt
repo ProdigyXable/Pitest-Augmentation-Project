@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.classinfo.ClassInfoVisitorTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec - in org.pitest.classinfo.ClassInfoVisitorTest
+=======
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in org.pitest.classinfo.ClassInfoVisitorTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

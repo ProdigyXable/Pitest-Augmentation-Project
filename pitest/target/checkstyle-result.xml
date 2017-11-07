@@ -284,6 +284,7 @@
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationVisitor.java">
 </file>
+<<<<<<< HEAD
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddDecrementMutator.java">
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddIncrementMutator.java">
@@ -292,6 +293,8 @@
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIReverseMutator.java">
 </file>
+=======
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMutator.java">
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ConstructorCallMutator.java">

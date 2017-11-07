@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.376 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest
+=======
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

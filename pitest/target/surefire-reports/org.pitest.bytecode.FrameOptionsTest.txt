@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.bytecode.FrameOptionsTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.bytecode.FrameOptionsTest
+=======
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in org.pitest.bytecode.FrameOptionsTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

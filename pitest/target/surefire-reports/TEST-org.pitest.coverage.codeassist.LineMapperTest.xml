@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.coverage.codeassist.LineMapperTest" time="0.012" tests="6" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.coverage.codeassist.LineMapperTest" time="0.02" tests="6" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,10 +64,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldMapAllLinesWhenMethodContainsThreeMultiLineBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.004"/>
   <testcase name="shouldMapAllLinesWhenMethodContainsSingleBlock" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0"/>
   <testcase name="shouldIncludeLastLinesConstructorsInBlock" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0"/>
   <testcase name="shouldMapAllLinesWhenMethodContainsThreeBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0"/>
   <testcase name="shouldMapLinesWhenLinesSpanBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.004"/>
+=======
+  <testcase name="shouldMapAllLinesWhenMethodContainsThreeMultiLineBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.003"/>
+  <testcase name="shouldMapAllLinesWhenMethodContainsSingleBlock" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.004"/>
+  <testcase name="shouldIncludeLastLinesConstructorsInBlock" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.004"/>
+  <testcase name="shouldMapAllLinesWhenMethodContainsThreeBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.002"/>
+  <testcase name="shouldMapLinesWhenLinesSpanBlocks" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.003"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
   <testcase name="shouldI" classname="org.pitest.coverage.codeassist.LineMapperTest" time="0.004"/>
 </testsuite>

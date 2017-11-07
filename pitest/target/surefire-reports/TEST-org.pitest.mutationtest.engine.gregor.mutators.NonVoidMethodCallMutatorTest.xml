@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.884" tests="14" errors="0" skipped="1" failures="0">
+=======
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="1.116" tests="14" errors="0" skipped="1" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,6 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldNotRemoveVoidMethodCalls" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.028"/>
   <testcase name="shouldNotRemoveConstructorCalls" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.036"/>
   <testcase name="shouldRemoveNonVoidMethodCallReturningDoubleType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.072"/>
@@ -73,6 +78,21 @@
   <testcase name="shouldRemoveNonVoidMethodCallReturningByteType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.076"/>
   <testcase name="shouldReplaceAssignmentsFromIntMethodCallsWithZero" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.072"/>
   <testcase name="shouldRemoveNonVoidMethods" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.076"/>
+=======
+  <testcase name="shouldNotRemoveVoidMethodCalls" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.037"/>
+  <testcase name="shouldNotRemoveConstructorCalls" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.043"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningDoubleType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.092"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningCharType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.099"/>
+  <testcase name="canCauseNullPointerExceptionWhenMethodCallRemoved" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.098"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningObjectType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.098"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningFloatType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.089"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningShortType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.096"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningLongType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.099"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningBooleanType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.092"/>
+  <testcase name="shouldRemoveNonVoidMethodCallReturningByteType" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.086"/>
+  <testcase name="shouldReplaceAssignmentsFromIntMethodCallsWithZero" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.092"/>
+  <testcase name="shouldRemoveNonVoidMethods" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0.095"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
   <testcase name="shouldNotGenerateRunErrorsWhenMutatingLoggers" classname="org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest" time="0">
     <skipped message="functionality moving to filter"/>
   </testcase>

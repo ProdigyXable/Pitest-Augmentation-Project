@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.08 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest
+=======
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.386 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutatorTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

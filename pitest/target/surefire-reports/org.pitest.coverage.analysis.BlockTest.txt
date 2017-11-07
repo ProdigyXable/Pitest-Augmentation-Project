@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.coverage.analysis.BlockTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec - in org.pitest.coverage.analysis.BlockTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec - in org.pitest.coverage.analysis.BlockTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

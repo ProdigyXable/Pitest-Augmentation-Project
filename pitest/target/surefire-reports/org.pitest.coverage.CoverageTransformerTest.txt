@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.coverage.CoverageTransformerTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.264 sec - in org.pitest.coverage.CoverageTransformerTest
+=======
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.486 sec - in org.pitest.coverage.CoverageTransformerTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

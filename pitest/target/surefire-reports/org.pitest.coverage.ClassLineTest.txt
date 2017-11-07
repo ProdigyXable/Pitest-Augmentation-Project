@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.coverage.ClassLineTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in org.pitest.coverage.ClassLineTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in org.pitest.coverage.ClassLineTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
