@@ -44,6 +44,9 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNXORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNANDMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -55,6 +58,15 @@ public final class Mutator {
 
   static {
 
+    /*
+    * OBBN Mutators which mutates logical operators
+    */
+    
+    add("OBBN_OR", OBBNORMutator.OBBN_OR_MUTATOR);
+    add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
+    add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
+    
+      
     /**
      * Default mutator that inverts the negation of integer and floating point
      * numbers.
@@ -163,6 +175,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("OBBN", obbn());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -194,6 +207,12 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+  public static Collection<MethodMutatorFactory> obbn() {
+    return group(OBBNORMutator.OBBN_OR_MUTATOR,
+            OBBNANDMutator.OBBN_AND_MUTATOR,
+            OBBNXORMutator.OBBN_XOR_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(

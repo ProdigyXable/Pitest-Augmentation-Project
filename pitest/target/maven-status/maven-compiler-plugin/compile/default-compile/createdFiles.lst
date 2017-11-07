@@ -15,7 +15,6 @@ org\pitest\extension\common\CompoundTestSuiteFinder.class
 org\pitest\mutationtest\engine\gregor\ClassContext.class
 org\pitest\bytecode\NullVisitor$1.class
 org\pitest\mutationtest\engine\gregor\GregorMutationEngine.class
-org\pitest\mutationtest\engine\gregor\config\GregorEngineFactory$1.class
 org\pitest\mutationtest\engine\Mutant.class
 org\pitest\mutationtest\engine\gregor\mutators\RemoveConditionalMutator$Choice.class
 org\pitest\sequence\SlotWrite.class
@@ -38,7 +37,6 @@ org\pitest\mutationtest\config\ConfigurationFactory.class
 org\pitest\mutationtest\MutationStatusTestPair.class
 org\pitest\classinfo\ClassInfo$2.class
 org\pitest\coverage\TestInfoNameComparator.class
-org\pitest\mutationtest\engine\gregor\config\Mutator$1.class
 org\pitest\mutationtest\engine\gregor\analysis\InstructionTrackingMethodVisitor.class
 org\pitest\mutationtest\config\CompoundConfiguration.class
 org\pitest\functional\FunctionalIterable.class
@@ -64,7 +62,6 @@ org\pitest\coverage\analysis\ArrayProbeCoverageMethodVisitor.class
 org\pitest\mutationtest\engine\gregor\ClassContext$2.class
 org\pitest\junit\RunnerSuiteFinder$2.class
 org\pitest\functional\FArray.class
-org\pitest\mutationtest\engine\gregor\config\GregorEngineFactory.class
 org\pitest\dependency\IgnoreCoreClasses.class
 org\pitest\functional\prelude\Prelude$4.class
 org\pitest\coverage\analysis\LocalVariableCoverageMethodVisitor.class
@@ -354,12 +351,10 @@ org\pitest\classinfo\ClassByteArraySource.class
 org\pitest\dependency\DependencyExtractor$2.class
 org\pitest\mutationtest\execute\Reporter.class
 org\pitest\mutationtest\execute\TimeOutDecoratedTestSource.class
-org\pitest\mutationtest\engine\gregor\config\Mutator$2.class
 org\pitest\classinfo\DefaultClassPointer.class
 org\pitest\mutationtest\engine\gregor\AbstractJumpMutator.class
 org\pitest\dependency\DependencyExtractor.class
 org\pitest\mutationtest\config\CompoundConfiguration$3.class
-org\pitest\mutationtest\engine\gregor\config\Mutator.class
 org\pitest\functional\prelude\Prelude$8.class
 org\pitest\mutationtest\execute\MutationTestMinion$1.class
 org\pitest\testapi\foreignclassloader\Skipped.class
