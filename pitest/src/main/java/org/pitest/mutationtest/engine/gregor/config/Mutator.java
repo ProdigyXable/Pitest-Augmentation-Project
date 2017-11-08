@@ -73,6 +73,10 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiver
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIReverseMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIRemoveMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddIncrementMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddDecrementMutator;
 
 public final class Mutator {
 
@@ -82,6 +86,7 @@ public final class Mutator {
   static {
 
       /*
+<<<<<<< HEAD
       * New AOR mutators
       */
       add("AOR_MUTATOR_IADD", AORMutatorIADD.AOR_MUTATOR_IADD);
@@ -107,6 +112,16 @@ public final class Mutator {
       add("AOR_MUTATOR_LMUL", AORMutatorLMUL.AOR_MUTATOR_LMUL);
       add("AOR_MUTATOR_LDIV", AORMutatorLDIV.AOR_MUTATOR_LDIV);
       add("AOR_MUTATOR_LREM", AORMutatorLREM.AOR_MUTATOR_LREM);
+=======
+      * UOI Mutators - Mutate ++ and -- unuary operators.
+      */
+      
+      // TODO Add UOI mutators which add increments/decrements to variables without unary operators
+      add("UOI_REVERSE", UOIReverseMutator.UOI_REVERSE_MUTATOR);
+      add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
+      add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
+      add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+>>>>>>> refs/remotes/origin/UOI-Mutator
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -216,6 +231,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+<<<<<<< HEAD
     
     // New groups added for mutators in the engine.gregor.mutators.augmented package
     addGroup("AOR_I", aorMutatorInteger());
@@ -223,6 +239,9 @@ public final class Mutator {
     addGroup("AOR_F", aorMutatorFloat());
     addGroup("AOR_L", aorMutatorLong());
     addGroup("AOR", aorMutator());
+=======
+    addGroup("UOI", uoi());
+>>>>>>> refs/remotes/origin/UOI-Mutator
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -256,6 +275,7 @@ public final class Mutator {
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
   
+<<<<<<< HEAD
   /**
    * Integer-based sub-mutators for the AOR parent mutator
    */
@@ -290,6 +310,12 @@ public final class Mutator {
                                 aorMutatorLong())));
   }
 
+=======
+  public static Collection<MethodMutatorFactory> uoi() {
+    return group(UOIReverseMutator.UOI_REVERSE_MUTATOR, UOIRemoveMutator.UOI_REMOVE_MUTATOR,
+            UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+  }
+>>>>>>> refs/remotes/origin/UOI-Mutator
 
   private static Collection<MethodMutatorFactory> group(
       final MethodMutatorFactory... ms) {
