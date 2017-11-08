@@ -122,6 +122,7 @@ C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\classinfo\MethodFilteringAdapter.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\util\Log.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\analysis\DefaultInstructionCounter.java
+C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\ABSMutator.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\coverage\CoverageResult.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\help\PitHelpError.java
 C:\Users\Sam Benton's PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\MethodName.java

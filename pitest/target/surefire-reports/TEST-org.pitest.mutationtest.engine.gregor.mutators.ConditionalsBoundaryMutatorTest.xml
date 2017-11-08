@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="2.086" tests="9" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="1.578" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,13 +60,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldReplaceIFGTwithIFGE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.209"/>
-  <testcase name="shouldReplaceIF_ICMPLTwithIF_ICMPGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.348"/>
-  <testcase name="shouldReplaceIF_ICMPGEwithIF_ICMPGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.32"/>
-  <testcase name="shouldReplaceIFGEwithIFGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.209"/>
-  <testcase name="shouldReplaceIF_ICMPGTwithIF_ICMPGE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.32"/>
-  <testcase name="shouldReplaceICMPLEwithIF_ICMPLT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.294"/>
-  <testcase name="shouldProvideAMeaningfulName" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.004"/>
-  <testcase name="shouldReplaceIFLEwithILT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.194"/>
-  <testcase name="shouldReplaceIFLTwithIFLE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.188"/>
+  <testcase name="shouldReplaceIFGTwithIFGE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.156"/>
+  <testcase name="shouldReplaceIF_ICMPLTwithIF_ICMPGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.234"/>
+  <testcase name="shouldReplaceIF_ICMPGEwithIF_ICMPGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.235"/>
+  <testcase name="shouldReplaceIFGEwithIFGT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.171"/>
+  <testcase name="shouldReplaceIF_ICMPGTwithIF_ICMPGE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.25"/>
+  <testcase name="shouldReplaceICMPLEwithIF_ICMPLT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.219"/>
+  <testcase name="shouldProvideAMeaningfulName" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.016"/>
+  <testcase name="shouldReplaceIFLEwithILT" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.141"/>
+  <testcase name="shouldReplaceIFLTwithIFLE" classname="org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutatorTest" time="0.156"/>
 </testsuite>

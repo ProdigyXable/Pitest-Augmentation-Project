@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.214" tests="15" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.265" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,19 +60,19 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.112"/>
-  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.021"/>
-  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0.002"/>
-  <testcase name="shouldReportTestMethodStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.008"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfullyInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.008"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFails" classname="org.pitest.testng.TestNGTestUnitTest" time="0.003"/>
-  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.002"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFailsInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.018"/>
-  <testcase name="shouldReportTestClassStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailureInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.011"/>
-  <testcase name="shouldReportTestClassStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
-  <testcase name="shouldReportTestSkippedInForeignClassloader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.006"/>
-  <testcase name="shouldReportTestSkipped" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
+  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.187"/>
+  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
+  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestMethodStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
+  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfullyInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestEndWithThrowableWhenTestFails" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.015"/>
+  <testcase name="shouldReportTestEndWithThrowableWhenTestFailsInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
+  <testcase name="shouldReportTestClassStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldSkipPassingTestsAfterAFailureInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestClassStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.015"/>
+  <testcase name="shouldReportTestSkippedInForeignClassloader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestSkipped" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
 </testsuite>

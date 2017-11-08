@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.classinfo.ClassInfoVisitorTest" time="0.03" tests="8" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.classinfo.ClassInfoVisitorTest" time="0.031" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,12 +60,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="shouldRecordSourceFile" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.005"/>
-  <testcase name="shouldNotDetectCodeLineAtClassDeclarationsWhenClassHasNoDefaultConstructor" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.009"/>
-  <testcase name="shouldNotRecordLineNumbersFromSyntheticBridgeMethods" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.002"/>
-  <testcase name="shouldStoreTypeArrayValuesAsClassNames" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.005"/>
-  <testcase name="shouldRecordClassAnnotationArrayValues" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.002"/>
+  <testcase name="shouldRecordSourceFile" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.015"/>
+  <testcase name="shouldNotDetectCodeLineAtClassDeclarationsWhenClassHasNoDefaultConstructor" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
+  <testcase name="shouldNotRecordLineNumbersFromSyntheticBridgeMethods" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
+  <testcase name="shouldStoreTypeArrayValuesAsClassNames" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
+  <testcase name="shouldRecordClassAnnotationArrayValues" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
   <testcase name="shouldDetectStandardCodeLines" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
-  <testcase name="shouldDetectCodeLineAtClassDeclarationsWhenClassHasDefaultConstructor" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.002"/>
-  <testcase name="shouldRecordClassAnnotationValues" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.005"/>
+  <testcase name="shouldDetectCodeLineAtClassDeclarationsWhenClassHasDefaultConstructor" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0"/>
+  <testcase name="shouldRecordClassAnnotationValues" classname="org.pitest.classinfo.ClassInfoVisitorTest" time="0.016"/>
 </testsuite>

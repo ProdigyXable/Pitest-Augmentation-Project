@@ -48,6 +48,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiver
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
 
 public final class Mutator {
 
@@ -55,6 +56,8 @@ public final class Mutator {
 
   static {
 
+      add("ABS", ABSMutator.ABS_MUTATOR);
+      
     /**
      * Default mutator that inverts the negation of integer and floating point
      * numbers.

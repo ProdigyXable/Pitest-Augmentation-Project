@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.TestJUnitConfiguration" time="0.001" tests="25" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.TestJUnitConfiguration" time="0.016" tests="25" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -79,7 +79,7 @@
   <testcase name="shouldNotReportAnErrorWhenCorrectJUnitVersionOnClasspath" classname="org.pitest.TestJUnitConfiguration" time="0"/>
   <testcase name="shouldSplitTestInSuitesIntoSeperateUnitsWhenUsingNonStandardSuiteRunners" classname="org.pitest.TestJUnitConfiguration" time="0"/>
   <testcase name="shouldFindTestsInClassWithASuiteMethod" classname="org.pitest.TestJUnitConfiguration" time="0"/>
-  <testcase name="shouldTimeTestsOut" classname="org.pitest.TestJUnitConfiguration" time="0.001"/>
+  <testcase name="shouldTimeTestsOut" classname="org.pitest.TestJUnitConfiguration" time="0.016"/>
   <testcase name="shouldRunOtherMethodsInAClassWithOneIgnoredTest" classname="org.pitest.TestJUnitConfiguration" time="0"/>
   <testcase name="shouldCallSingleStringArgumentsConstructorWithTestName" classname="org.pitest.TestJUnitConfiguration" time="0"/>
   <testcase name="shouldPassTestsThatThrowExpectedException" classname="org.pitest.TestJUnitConfiguration" time="0"/>

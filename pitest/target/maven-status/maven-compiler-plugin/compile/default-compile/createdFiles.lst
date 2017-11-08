@@ -131,6 +131,7 @@ org\pitest\util\Preconditions.class
 org\pitest\mutationtest\config\CompoundTestClassIdentifier$1.class
 org\pitest\testng\FailureTracker.class
 org\pitest\testapi\execute\ResultType$5.class
+org\pitest\mutationtest\engine\gregor\mutators\augmented\ABSMethodVisitor.class
 org\pitest\junit\TestInfo.class
 org\pitest\plugin\FeatureSelector$3.class
 org\pitest\junit\TestInfo$1.class
@@ -383,6 +384,7 @@ org\pitest\classinfo\ClassInfoVisitor$ClassAnnotationValueVisitor$1.class
 org\pitest\testng\TestNGConfiguration.class
 org\pitest\testapi\foreignclassloader\Events.class
 org\pitest\junit\adapter\AdaptingRunListener.class
+org\pitest\mutationtest\engine\gregor\mutators\augmented\ABSMutator.class
 org\pitest\functional\prelude\Prelude.class
 org\pitest\dependency\DependencyClassVisitor$DependencyAnalysisMethodVisitor.class
 org\pitest\util\Functions.class

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.functional.OptionTest" time="0.032" tests="21" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.functional.OptionTest" time="0.031" tests="21" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -66,7 +66,7 @@
   <testcase name="shouldBeEqualsWhenConstructedWithSameValue" classname="org.pitest.functional.OptionTest" time="0"/>
   <testcase name="shouldMapSuppliedValue" classname="org.pitest.functional.OptionTest" time="0"/>
   <testcase name="shouldFlatMapSuppliedValue" classname="org.pitest.functional.OptionTest" time="0"/>
-  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.functional.OptionTest" time="0.032"/>
+  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.functional.OptionTest" time="0.031"/>
   <testcase name="shouldIterateOverNonValuesWhenNoneArePresent" classname="org.pitest.functional.OptionTest" time="0"/>
   <testcase name="shouldFilterSuppliedValue" classname="org.pitest.functional.OptionTest" time="0"/>
   <testcase name="noneShouldNotHaveSome" classname="org.pitest.functional.OptionTest" time="0"/>
