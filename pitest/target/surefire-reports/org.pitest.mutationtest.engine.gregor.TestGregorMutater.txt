@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.mutationtest.engine.gregor.TestGregorMutater
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.725 sec - in org.pitest.mutationtest.engine.gregor.TestGregorMutater
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.5 sec - in org.pitest.mutationtest.engine.gregor.TestGregorMutater

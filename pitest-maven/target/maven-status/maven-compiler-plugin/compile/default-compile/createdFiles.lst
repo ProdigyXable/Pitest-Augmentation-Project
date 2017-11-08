@@ -23,7 +23,6 @@ org\pitest\maven\MojoToReportOptionsConverter$3.class
 org\pitest\maven\AbstractPitMojo.class
 org\pitest\maven\ScmMojo.class
 org\pitest\maven\PathToJavaClassConverter.class
-HelpMojo.class
 org\pitest\maven\report\generator\ReportGenerationStrategy.class
 org\pitest\maven\AbstractPitMojo$RunDecision.class
 org\pitest\maven\report\generator\ReportGenerationManager.class

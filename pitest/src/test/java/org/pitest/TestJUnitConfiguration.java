@@ -262,7 +262,6 @@ public class TestJUnitConfiguration {
         try {
           Thread.sleep(1000);
         } catch (final InterruptedException e) {
-          // TODO Auto-generated catch block
           e.printStackTrace();
         }
       }
