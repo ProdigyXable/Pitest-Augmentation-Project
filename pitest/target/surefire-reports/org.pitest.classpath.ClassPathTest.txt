@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.classpath.ClassPathTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classpath.ClassPathTest
+=======
+<<<<<<< HEAD
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classpath.ClassPathTest
+=======
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.pitest.classpath.ClassPathTest
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.219" tests="4" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.272" tests="4" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.321" tests="4" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,8 +68,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldInvertFNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.063"/>
   <testcase name="shouldInvertINegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.062"/>
   <testcase name="shouldInvertLNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.063"/>
   <testcase name="shouldFindNoMutationsWhenNonePossible" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.031"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldInvertFNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.076"/>
+  <testcase name="shouldInvertINegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.076"/>
+  <testcase name="shouldInvertLNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.08"/>
+  <testcase name="shouldFindNoMutationsWhenNonePossible" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.04"/>
+=======
+  <testcase name="shouldInvertFNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.085"/>
+  <testcase name="shouldInvertINegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.092"/>
+  <testcase name="shouldInvertLNegs" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.096"/>
+  <testcase name="shouldFindNoMutationsWhenNonePossible" classname="org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutatorTest" time="0.048"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>

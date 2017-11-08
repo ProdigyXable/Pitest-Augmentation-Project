@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.functional.MutableListTest" time="0" tests="29" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.functional.MutableListTest" time="0" tests="29" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.functional.MutableListTest" time="0.001" tests="29" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -80,7 +88,15 @@
   <testcase name="containsAllShouldReturnFalseIfAllValuesNotInList" classname="org.pitest.functional.MutableListTest" time="0"/>
   <testcase name="containsShouldReturnFalseIfValueNotInList" classname="org.pitest.functional.MutableListTest" time="0"/>
   <testcase name="removeShouldRemoveItemFromListAndReturnTrueWhenItemPresent" classname="org.pitest.functional.MutableListTest" time="0"/>
+<<<<<<< HEAD
   <testcase name="shouldApplyMapToAllEntries" classname="org.pitest.functional.MutableListTest" time="0"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldApplyMapToAllEntries" classname="org.pitest.functional.MutableListTest" time="0"/>
+=======
+  <testcase name="shouldApplyMapToAllEntries" classname="org.pitest.functional.MutableListTest" time="0.001"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <testcase name="shouldConvertToTypedArray" classname="org.pitest.functional.MutableListTest" time="0"/>
   <testcase name="isEmptyShouldReturnFalseWhenListIsNotEmpty" classname="org.pitest.functional.MutableListTest" time="0"/>
   <testcase name="removeAllShouldReturnFalseWhenItemsNotPresent" classname="org.pitest.functional.MutableListTest" time="0"/>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.297" tests="6" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.376" tests="6" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.492" tests="6" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,10 +68,28 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldNotReplaceMethodCallWhenDifferentReturnType" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.016"/>
   <testcase name="shouldNotMutateVoidMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.031"/>
   <testcase name="shouldRemoveDslMethods" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.063"/>
   <testcase name="willReplaceCallToMethodWithDifferentGenericTypeDueToTypeErasure" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.078"/>
   <testcase name="shouldReplaceMethodCallOnString" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.078"/>
   <testcase name="shouldNotMutateStaticMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.031"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldNotReplaceMethodCallWhenDifferentReturnType" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.032"/>
+  <testcase name="shouldNotMutateVoidMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.036"/>
+  <testcase name="shouldRemoveDslMethods" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.076"/>
+  <testcase name="willReplaceCallToMethodWithDifferentGenericTypeDueToTypeErasure" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.092"/>
+  <testcase name="shouldReplaceMethodCallOnString" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.104"/>
+  <testcase name="shouldNotMutateStaticMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.036"/>
+=======
+  <testcase name="shouldNotReplaceMethodCallWhenDifferentReturnType" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.027"/>
+  <testcase name="shouldNotMutateVoidMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.048"/>
+  <testcase name="shouldRemoveDslMethods" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.105"/>
+  <testcase name="willReplaceCallToMethodWithDifferentGenericTypeDueToTypeErasure" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.114"/>
+  <testcase name="shouldReplaceMethodCallOnString" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.131"/>
+  <testcase name="shouldNotMutateStaticMethodCall" classname="org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutatorTest" time="0.067"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>

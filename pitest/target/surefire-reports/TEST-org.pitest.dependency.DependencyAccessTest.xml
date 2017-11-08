@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.dependency.DependencyAccessTest" time="0" tests="1" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.dependency.DependencyAccessTest" time="0.004" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.dependency.DependencyAccessTest" time="0.022" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,5 +68,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.dependency.DependencyAccessTest" time="0"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.dependency.DependencyAccessTest" time="0.004"/>
+=======
+  <testcase name="shouldObeyHashcodeEqualsContract" classname="org.pitest.dependency.DependencyAccessTest" time="0.022"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>

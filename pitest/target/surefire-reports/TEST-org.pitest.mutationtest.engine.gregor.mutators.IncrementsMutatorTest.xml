@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.11" tests="2" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.1" tests="2" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.154" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,6 +68,16 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldRecordCorrectLineNumberForMutations" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.032"/>
   <testcase name="shouldNegateArgumentsToIInc" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.078"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldRecordCorrectLineNumberForMutations" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.028"/>
+  <testcase name="shouldNegateArgumentsToIInc" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.072"/>
+=======
+  <testcase name="shouldRecordCorrectLineNumberForMutations" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.037"/>
+  <testcase name="shouldNegateArgumentsToIInc" classname="org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutatorTest" time="0.117"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>

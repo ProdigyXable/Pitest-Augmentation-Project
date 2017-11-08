@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="org.pitest.classpath.DirectoryClassPathRootTest" time="0.015" tests="2" errors="0" skipped="0" failures="0">
+=======
+<<<<<<< HEAD
+<testsuite name="org.pitest.classpath.DirectoryClassPathRootTest" time="0.036" tests="2" errors="0" skipped="0" failures="0">
+=======
+<testsuite name="org.pitest.classpath.DirectoryClassPathRootTest" time="0.034" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -61,5 +69,13 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase name="getDataShouldReturnNullForUnknownClass" classname="org.pitest.classpath.DirectoryClassPathRootTest" time="0"/>
+<<<<<<< HEAD
   <testcase name="shouldReturnClassNames" classname="org.pitest.classpath.DirectoryClassPathRootTest" time="0.015"/>
+=======
+<<<<<<< HEAD
+  <testcase name="shouldReturnClassNames" classname="org.pitest.classpath.DirectoryClassPathRootTest" time="0.036"/>
+=======
+  <testcase name="shouldReturnClassNames" classname="org.pitest.classpath.DirectoryClassPathRootTest" time="0.034"/>
+>>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
+>>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>
