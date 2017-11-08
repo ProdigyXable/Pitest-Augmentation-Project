@@ -69,6 +69,9 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNXORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNANDMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -85,6 +88,7 @@ public final class Mutator {
     // TODO Add a new line for each new mutator added
   static {
 
+<<<<<<< HEAD
       /*
 <<<<<<< HEAD
       * New AOR mutators
@@ -122,6 +126,16 @@ public final class Mutator {
       add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
       add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
 >>>>>>> refs/remotes/origin/UOI-Mutator
+=======
+    /*
+    * OBBN Mutators which mutates logical operators
+    */
+    
+    add("OBBN_OR", OBBNORMutator.OBBN_OR_MUTATOR);
+    add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
+    add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
+    
+>>>>>>> refs/remotes/origin/OBBN-Mutator
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -232,6 +246,7 @@ public final class Mutator {
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     // New groups added for mutators in the engine.gregor.mutators.augmented package
     addGroup("AOR_I", aorMutatorInteger());
@@ -242,6 +257,9 @@ public final class Mutator {
 =======
     addGroup("UOI", uoi());
 >>>>>>> refs/remotes/origin/UOI-Mutator
+=======
+    addGroup("OBBN", obbn());
+>>>>>>> refs/remotes/origin/OBBN-Mutator
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -275,6 +293,7 @@ public final class Mutator {
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
   
+<<<<<<< HEAD
 <<<<<<< HEAD
   /**
    * Integer-based sub-mutators for the AOR parent mutator
@@ -316,6 +335,13 @@ public final class Mutator {
             UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
   }
 >>>>>>> refs/remotes/origin/UOI-Mutator
+=======
+  public static Collection<MethodMutatorFactory> obbn() {
+    return group(OBBNORMutator.OBBN_OR_MUTATOR,
+            OBBNANDMutator.OBBN_AND_MUTATOR,
+            OBBNXORMutator.OBBN_XOR_MUTATOR);
+  }
+>>>>>>> refs/remotes/origin/OBBN-Mutator
 
   private static Collection<MethodMutatorFactory> group(
       final MethodMutatorFactory... ms) {
