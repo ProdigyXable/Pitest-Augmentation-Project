@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="org.pitest.dependency.DependencyClassVisitorTest" time="0.141" tests="3" errors="0" skipped="0" failures="0">
-=======
-<<<<<<< HEAD
 <testsuite name="org.pitest.dependency.DependencyClassVisitorTest" time="0.14" tests="3" errors="0" skipped="0" failures="0">
-=======
-<testsuite name="org.pitest.dependency.DependencyClassVisitorTest" time="0.19" tests="3" errors="0" skipped="0" failures="0">
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -68,19 +60,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase name="shouldRecordDirectDependenciesFromCallingNew" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.047"/>
+  <testcase name="shouldRecordDirectDependenciesFromCallingNew" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.062"/>
   <testcase name="shouldRecordDependenciesFromMethodCalls" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.047"/>
-  <testcase name="shouldRecordDependenciesFromInitializedFields" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.047"/>
-=======
-<<<<<<< HEAD
-  <testcase name="shouldRecordDirectDependenciesFromCallingNew" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.04"/>
-  <testcase name="shouldRecordDependenciesFromMethodCalls" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.052"/>
-  <testcase name="shouldRecordDependenciesFromInitializedFields" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.048"/>
-=======
-  <testcase name="shouldRecordDirectDependenciesFromCallingNew" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.061"/>
-  <testcase name="shouldRecordDependenciesFromMethodCalls" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.063"/>
-  <testcase name="shouldRecordDependenciesFromInitializedFields" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.066"/>
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
+  <testcase name="shouldRecordDependenciesFromInitializedFields" classname="org.pitest.dependency.DependencyClassVisitorTest" time="0.031"/>
 </testsuite>

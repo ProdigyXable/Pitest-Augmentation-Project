@@ -88,7 +88,6 @@ public final class Mutator {
     // TODO Add a new line for each new mutator added
   static {
 
-<<<<<<< HEAD
       /*
 <<<<<<< HEAD
       * New AOR mutators
@@ -116,7 +115,8 @@ public final class Mutator {
       add("AOR_MUTATOR_LMUL", AORMutatorLMUL.AOR_MUTATOR_LMUL);
       add("AOR_MUTATOR_LDIV", AORMutatorLDIV.AOR_MUTATOR_LDIV);
       add("AOR_MUTATOR_LREM", AORMutatorLREM.AOR_MUTATOR_LREM);
-=======
+    
+      /*
       * UOI Mutators - Mutate ++ and -- unuary operators.
       */
       
@@ -125,8 +125,8 @@ public final class Mutator {
       add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
       add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
       add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
->>>>>>> refs/remotes/origin/UOI-Mutator
-=======
+
+      
     /*
     * OBBN Mutators which mutates logical operators
     */
@@ -135,7 +135,6 @@ public final class Mutator {
     add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
     add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
     
->>>>>>> refs/remotes/origin/OBBN-Mutator
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -245,8 +244,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     
     // New groups added for mutators in the engine.gregor.mutators.augmented package
     addGroup("AOR_I", aorMutatorInteger());
@@ -254,12 +252,10 @@ public final class Mutator {
     addGroup("AOR_F", aorMutatorFloat());
     addGroup("AOR_L", aorMutatorLong());
     addGroup("AOR", aorMutator());
-=======
     addGroup("UOI", uoi());
->>>>>>> refs/remotes/origin/UOI-Mutator
-=======
+    
     addGroup("OBBN", obbn());
->>>>>>> refs/remotes/origin/OBBN-Mutator
+
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -293,8 +289,7 @@ public final class Mutator {
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
   
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   /**
    * Integer-based sub-mutators for the AOR parent mutator
    */
@@ -329,19 +324,16 @@ public final class Mutator {
                                 aorMutatorLong())));
   }
 
-=======
   public static Collection<MethodMutatorFactory> uoi() {
     return group(UOIReverseMutator.UOI_REVERSE_MUTATOR, UOIRemoveMutator.UOI_REMOVE_MUTATOR,
             UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
   }
->>>>>>> refs/remotes/origin/UOI-Mutator
-=======
+
   public static Collection<MethodMutatorFactory> obbn() {
     return group(OBBNORMutator.OBBN_OR_MUTATOR,
             OBBNANDMutator.OBBN_AND_MUTATOR,
             OBBNXORMutator.OBBN_XOR_MUTATOR);
   }
->>>>>>> refs/remotes/origin/OBBN-Mutator
 
   private static Collection<MethodMutatorFactory> group(
       final MethodMutatorFactory... ms) {

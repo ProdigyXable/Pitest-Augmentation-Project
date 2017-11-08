@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.109" tests="15" errors="0" skipped="0" failures="0">
-=======
-<<<<<<< HEAD
-<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.236" tests="15" errors="0" skipped="0" failures="0">
-=======
-<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.214" tests="15" errors="0" skipped="0" failures="0">
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
+<testsuite name="org.pitest.testng.TestNGTestUnitTest" time="0.094" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -68,55 +60,19 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.062"/>
-  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.032"/>
+  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.015"/>
+  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
   <testcase name="shouldReportTestMethodStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfullyInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldReportTestEndWithThrowableWhenTestFails" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
+  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.016"/>
   <testcase name="shouldReportTestEndWithThrowableWhenTestFailsInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldReportTestClassStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldSkipPassingTestsAfterAFailureInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.015"/>
   <testcase name="shouldReportTestClassStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldReportTestSkippedInForeignClassloader" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
   <testcase name="shouldReportTestSkipped" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-=======
-<<<<<<< HEAD
-  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.18"/>
-  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.012"/>
-  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestMethodStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfullyInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFails" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFailsInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.008"/>
-  <testcase name="shouldReportTestClassStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailureInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestClassStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestSkippedInForeignClassloader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestSkipped" classname="org.pitest.testng.TestNGTestUnitTest" time="0"/>
-=======
-  <testcase name="shouldNotRunTestsInExcludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.112"/>
-  <testcase name="shouldRunTestsInNextTestClassAferFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.021"/>
-  <testcase name="shouldOnlyRunTestsInIncludedGroups" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfully" classname="org.pitest.testng.TestNGTestUnitTest" time="0.002"/>
-  <testcase name="shouldReportTestMethodStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.008"/>
-  <testcase name="shouldReportTestEndWithoutErorWhenTestRunsSuccessfullyInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.008"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFails" classname="org.pitest.testng.TestNGTestUnitTest" time="0.003"/>
-  <testcase name="shouldReportTestMethodStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.002"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailure" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldReportTestEndWithThrowableWhenTestFailsInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.018"/>
-  <testcase name="shouldReportTestClassStartWhenExecutingInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.004"/>
-  <testcase name="shouldSkipPassingTestsAfterAFailureInForeignClassLoader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.011"/>
-  <testcase name="shouldReportTestClassStart" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
-  <testcase name="shouldReportTestSkippedInForeignClassloader" classname="org.pitest.testng.TestNGTestUnitTest" time="0.006"/>
-  <testcase name="shouldReportTestSkipped" classname="org.pitest.testng.TestNGTestUnitTest" time="0.005"/>
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
 </testsuite>

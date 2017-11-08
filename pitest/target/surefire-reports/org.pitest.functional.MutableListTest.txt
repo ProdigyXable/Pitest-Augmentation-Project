@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.functional.MutableListTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
 Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.MutableListTest
-=======
-<<<<<<< HEAD
-Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.functional.MutableListTest
-=======
-Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.functional.MutableListTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator

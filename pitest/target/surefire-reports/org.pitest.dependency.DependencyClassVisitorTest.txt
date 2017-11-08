@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.dependency.DependencyClassVisitorTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec - in org.pitest.dependency.DependencyClassVisitorTest
-=======
-<<<<<<< HEAD
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.152 sec - in org.pitest.dependency.DependencyClassVisitorTest
-=======
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 sec - in org.pitest.dependency.DependencyClassVisitorTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.156 sec - in org.pitest.dependency.DependencyClassVisitorTest

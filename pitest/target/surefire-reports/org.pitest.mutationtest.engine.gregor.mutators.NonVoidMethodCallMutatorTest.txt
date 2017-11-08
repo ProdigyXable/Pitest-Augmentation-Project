@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.739 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
-=======
-<<<<<<< HEAD
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.884 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
-=======
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 1.118 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
->>>>>>> refs/remotes/origin/UOI-Mutator
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.812 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
