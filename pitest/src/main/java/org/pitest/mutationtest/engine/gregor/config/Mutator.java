@@ -44,11 +44,12 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSLoadMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSStoreMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
 
 public final class Mutator {
 
@@ -56,7 +57,12 @@ public final class Mutator {
 
   static {
 
-      add("ABS", ABSMutator.ABS_MUTATOR);
+      /*
+      * Set of ABS Mutators. Captures LOAD instructions, STORE instructions,
+      * and IINC instructions (which would bypass both LOAD and STORE instructions)
+      */
+      add("ABS_LOAD", ABSLoadMutator.ABS_LOAD_MUTATOR);
+      add("ABS_STORE", ABSStoreMutator.ABS_STORE_MUTATOR);
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -166,6 +172,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("ABS", abs());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -197,6 +204,14 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+  /*
+  * Group for ABS Mutators
+  */
+  public static Collection<MethodMutatorFactory> abs() {
+    return group(ABSLoadMutator.ABS_LOAD_MUTATOR,
+            ABSStoreMutator.ABS_STORE_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(
