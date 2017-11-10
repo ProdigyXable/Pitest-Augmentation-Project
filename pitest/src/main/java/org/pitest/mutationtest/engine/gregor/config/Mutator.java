@@ -44,6 +44,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSIincMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSLoadMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSStoreMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
@@ -63,6 +64,7 @@ public final class Mutator {
       */
       add("ABS_LOAD", ABSLoadMutator.ABS_LOAD_MUTATOR);
       add("ABS_STORE", ABSStoreMutator.ABS_STORE_MUTATOR);
+      add("ABS_IINC", ABSIincMutator.ABS_IINC_MUTATOR);
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -211,7 +213,8 @@ public final class Mutator {
   */
   public static Collection<MethodMutatorFactory> abs() {
     return group(ABSLoadMutator.ABS_LOAD_MUTATOR,
-            ABSStoreMutator.ABS_STORE_MUTATOR);
+            ABSStoreMutator.ABS_STORE_MUTATOR,
+            ABSIincMutator.ABS_IINC_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(

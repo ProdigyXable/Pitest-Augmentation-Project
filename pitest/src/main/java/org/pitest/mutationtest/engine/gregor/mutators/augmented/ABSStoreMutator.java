@@ -55,7 +55,6 @@ class ABSStoreMethodVisitor extends MethodVisitor {
     this.context = context;
     
   }
-  
 
     @Override
     public void visitVarInsn(final int opcode, final int var) {
