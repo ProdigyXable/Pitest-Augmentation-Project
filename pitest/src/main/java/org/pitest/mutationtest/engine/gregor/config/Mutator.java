@@ -70,6 +70,10 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.C
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODFirstMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODLastMutator;
+
+
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFEQ;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGE;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGT;
@@ -96,6 +100,9 @@ public final class Mutator {
 
     // TODO Add a new line for each new mutator added
   static {
+      
+    add("AOD_FIRST", AODFirstMutator.AOD_FIRST);
+    add("AOD_LAST", AODLastMutator.AOD_LAST);
 
       add("ROR_IFEQ", RORMutatorIFEQ.ROR_IFEQ_MUTATOR);
       add("ROR_IFGE", RORMutatorIFGE.ROR_IFGE_MUTATOR);
@@ -259,8 +266,6 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
-    addGroup("ROR", ror());
-
     
     // New groups added for mutators in the engine.gregor.mutators.augmented package
     addGroup("AOR_I", aorMutatorInteger());
@@ -270,6 +275,8 @@ public final class Mutator {
     addGroup("AOR", aorMutator());
     addGroup("UOI", uoi());    
     addGroup("OBBN", obbn());
+    addGroup("AOD", aod());
+    addGroup("ROR", ror());
 
   }
 
@@ -304,6 +311,9 @@ public final class Mutator {
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
   
+
+    public static Collection<MethodMutatorFactory> aod() {
+    return group(AODFirstMutator.AOD_FIRST, AODLastMutator.AOD_LAST);
 
   public static Collection<MethodMutatorFactory> ror() {
     return group(RORMutatorIFEQ.ROR_IFEQ_MUTATOR,
@@ -356,7 +366,6 @@ public final class Mutator {
     return group(OBBNORMutator.OBBN_OR_MUTATOR,
             OBBNANDMutator.OBBN_AND_MUTATOR,
             OBBNXORMutator.OBBN_XOR_MUTATOR);
-
   }
 
   private static Collection<MethodMutatorFactory> group(
