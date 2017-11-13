@@ -31,6 +31,31 @@ import org.pitest.functional.prelude.Prelude;
 import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorISUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorIREM;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDSUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorDREM;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorFADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorFSUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorFMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorFDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorFREM;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorLADD;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorLSUB;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorLMUL;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorLDIV;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutatorLREM;
+
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -44,21 +69,32 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFEQ;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGE;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGT;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFLE;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFLT;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFNE;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNXORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNANDMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIReverseMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIRemoveMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddIncrementMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddDecrementMutator;
 
 public final class Mutator {
 
   private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
+    // TODO Add a new line for each new mutator added
   static {
 
       add("ROR_IFEQ", RORMutatorIFEQ.ROR_IFEQ_MUTATOR);
@@ -67,6 +103,53 @@ public final class Mutator {
       add("ROR_IFLE", RORMutatorIFLE.ROR_IFLE_MUTATOR);
       add("ROR_IFLT", RORMutatorIFLT.ROR_IFLT_MUTATOR);
       add("ROR_IFNE", RORMutatorIFNE.ROR_IFNE_MUTATOR);
+      /*
+      * New AOR mutators
+      */
+      add("AOR_MUTATOR_IADD", AORMutatorIADD.AOR_MUTATOR_IADD);
+      add("AOR_MUTATOR_ISUB", AORMutatorISUB.AOR_MUTATOR_ISUB);
+      add("AOR_MUTATOR_IMUL", AORMutatorIMUL.AOR_MUTATOR_IMUL);
+      add("AOR_MUTATOR_IDIV", AORMutatorIDIV.AOR_MUTATOR_IDIV);
+      add("AOR_MUTATOR_IREM", AORMutatorIREM.AOR_MUTATOR_IREM);
+      
+      add("AOR_MUTATOR_DADD", AORMutatorDADD.AOR_MUTATOR_DADD);
+      add("AOR_MUTATOR_DSUB", AORMutatorDSUB.AOR_MUTATOR_DSUB);
+      add("AOR_MUTATOR_DMUL", AORMutatorDMUL.AOR_MUTATOR_DMUL);
+      add("AOR_MUTATOR_DDIV", AORMutatorDDIV.AOR_MUTATOR_DDIV);
+      add("AOR_MUTATOR_DREM", AORMutatorDREM.AOR_MUTATOR_DREM);
+      
+      add("AOR_MUTATOR_FADD", AORMutatorFADD.AOR_MUTATOR_FADD);
+      add("AOR_MUTATOR_FSUB", AORMutatorFSUB.AOR_MUTATOR_FSUB);
+      add("AOR_MUTATOR_FMUL", AORMutatorFMUL.AOR_MUTATOR_FMUL);
+      add("AOR_MUTATOR_FDIV", AORMutatorFDIV.AOR_MUTATOR_FDIV);
+      add("AOR_MUTATOR_FREM", AORMutatorFREM.AOR_MUTATOR_FREM);
+      
+      add("AOR_MUTATOR_LADD", AORMutatorLADD.AOR_MUTATOR_LADD);
+      add("AOR_MUTATOR_LSUB", AORMutatorLSUB.AOR_MUTATOR_LSUB);
+      add("AOR_MUTATOR_LMUL", AORMutatorLMUL.AOR_MUTATOR_LMUL);
+      add("AOR_MUTATOR_LDIV", AORMutatorLDIV.AOR_MUTATOR_LDIV);
+      add("AOR_MUTATOR_LREM", AORMutatorLREM.AOR_MUTATOR_LREM);
+    
+      /*
+      * UOI Mutators - Mutate ++ and -- unuary operators.
+      */
+      
+      // TODO Add UOI mutators which add increments/decrements to variables without unary operators
+      add("UOI_REVERSE", UOIReverseMutator.UOI_REVERSE_MUTATOR);
+      add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
+      add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
+      add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+
+      
+    /*
+    * OBBN Mutators which mutates logical operators
+    */
+    
+    add("OBBN_OR", OBBNORMutator.OBBN_OR_MUTATOR);
+    add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
+    add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
+    
+
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -177,6 +260,17 @@ public final class Mutator {
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
     addGroup("ROR", ror());
+
+    
+    // New groups added for mutators in the engine.gregor.mutators.augmented package
+    addGroup("AOR_I", aorMutatorInteger());
+    addGroup("AOR_D", aorMutatorDouble());
+    addGroup("AOR_F", aorMutatorFloat());
+    addGroup("AOR_L", aorMutatorLong());
+    addGroup("AOR", aorMutator());
+    addGroup("UOI", uoi());    
+    addGroup("OBBN", obbn());
+
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -210,6 +304,7 @@ public final class Mutator {
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
   
+
   public static Collection<MethodMutatorFactory> ror() {
     return group(RORMutatorIFEQ.ROR_IFEQ_MUTATOR,
             RORMutatorIFGE.ROR_IFGE_MUTATOR,
@@ -217,6 +312,51 @@ public final class Mutator {
             RORMutatorIFLE.ROR_IFLE_MUTATOR,
             RORMutatorIFLT.ROR_IFLT_MUTATOR,
             RORMutatorIFNE.ROR_IFNE_MUTATOR);
+
+  /**
+   * Integer-based sub-mutators for the AOR parent mutator
+   */
+  public static Collection<MethodMutatorFactory> aorMutatorInteger() {
+    return group(AORMutatorIADD.AOR_MUTATOR_IADD, AORMutatorISUB.AOR_MUTATOR_ISUB,
+            AORMutatorIMUL.AOR_MUTATOR_IMUL, AORMutatorIDIV.AOR_MUTATOR_IDIV, 
+            AORMutatorIREM.AOR_MUTATOR_IREM);
+  }
+  
+  public static Collection<MethodMutatorFactory> aorMutatorDouble() {
+    return group(AORMutatorDADD.AOR_MUTATOR_DADD, AORMutatorDSUB.AOR_MUTATOR_DSUB,
+            AORMutatorDMUL.AOR_MUTATOR_DMUL, AORMutatorDDIV.AOR_MUTATOR_DDIV, 
+            AORMutatorDREM.AOR_MUTATOR_DREM);
+  }
+  
+    public static Collection<MethodMutatorFactory> aorMutatorFloat() {
+    return group(AORMutatorFADD.AOR_MUTATOR_FADD, AORMutatorFSUB.AOR_MUTATOR_FSUB,
+            AORMutatorFMUL.AOR_MUTATOR_FMUL, AORMutatorFDIV.AOR_MUTATOR_FDIV, 
+            AORMutatorFREM.AOR_MUTATOR_FREM);
+    }
+    
+      public static Collection<MethodMutatorFactory> aorMutatorLong() {
+    return group(AORMutatorLADD.AOR_MUTATOR_LADD, AORMutatorLSUB.AOR_MUTATOR_LSUB,
+            AORMutatorLMUL.AOR_MUTATOR_LMUL, AORMutatorLDIV.AOR_MUTATOR_LDIV, 
+            AORMutatorLREM.AOR_MUTATOR_LREM);
+  }
+      
+    private static Collection<MethodMutatorFactory> aorMutator() {
+    return combine(aorMutatorInteger(),
+                combine(aorMutatorDouble(),
+                        combine(aorMutatorFloat(),
+                                aorMutatorLong())));
+  }
+
+  public static Collection<MethodMutatorFactory> uoi() {
+    return group(UOIReverseMutator.UOI_REVERSE_MUTATOR, UOIRemoveMutator.UOI_REMOVE_MUTATOR,
+            UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+  }
+
+  public static Collection<MethodMutatorFactory> obbn() {
+    return group(OBBNORMutator.OBBN_OR_MUTATOR,
+            OBBNANDMutator.OBBN_AND_MUTATOR,
+            OBBNXORMutator.OBBN_XOR_MUTATOR);
+
   }
 
   private static Collection<MethodMutatorFactory> group(
@@ -269,5 +409,4 @@ public final class Mutator {
       }
     };
   }
-
 }

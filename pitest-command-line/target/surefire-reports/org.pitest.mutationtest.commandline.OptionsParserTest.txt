@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: org.pitest.mutationtest.commandline.OptionsParserTest
+-------------------------------------------------------------------------------
+Tests run: 59, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.34 sec <<< FAILURE! - in org.pitest.mutationtest.commandline.OptionsParserTest
+shouldHandleNotCanonicalLaunchClasspathElements(org.pitest.mutationtest.commandline.OptionsParserTest)  Time elapsed: 0.111 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected size:<1> but was:<0> in:
+<[]>
+	at org.pitest.mutationtest.commandline.OptionsParserTest.shouldHandleNotCanonicalLaunchClasspathElements(OptionsParserTest.java:478)
+
+shouldAcceptFileWithListOfAdditionalClassPathElements(org.pitest.mutationtest.commandline.OptionsParserTest)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.pitest.mutationtest.commandline.OptionsParserTest.shouldAcceptFileWithListOfAdditionalClassPathElements(OptionsParserTest.java:313)
+

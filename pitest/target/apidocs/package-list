@@ -22,6 +22,7 @@ org.pitest.mutationtest.engine.gregor.analysis
 org.pitest.mutationtest.engine.gregor.blocks
 org.pitest.mutationtest.engine.gregor.config
 org.pitest.mutationtest.engine.gregor.mutators
+org.pitest.mutationtest.engine.gregor.mutators.augmented
 org.pitest.mutationtest.engine.gregor.mutators.experimental
 org.pitest.mutationtest.execute
 org.pitest.mutationtest.mocksupport
