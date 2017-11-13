@@ -81,6 +81,11 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNXORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNANDMutator;
 
+=======
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSIincMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSLoadMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSStoreMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -149,6 +154,13 @@ public final class Mutator {
     add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
     add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
     
+      /*
+      * Set of ABS Mutators. Captures LOAD instructions, STORE instructions,
+      * and IINC instructions (which would bypass both LOAD and STORE instructions)
+      */
+      add("ABS_LOAD", ABSLoadMutator.ABS_LOAD_MUTATOR);
+      add("ABS_STORE", ABSStoreMutator.ABS_STORE_MUTATOR);
+      add("ABS_IINC", ABSIincMutator.ABS_IINC_MUTATOR);
 
       
     /**
@@ -270,6 +282,7 @@ public final class Mutator {
     addGroup("AOR", aorMutator());
     addGroup("UOI", uoi());    
     addGroup("OBBN", obbn());
+    addGroup("ABS", abs());
 
   }
 
@@ -303,7 +316,6 @@ public final class Mutator {
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
   }
-  
 
   public static Collection<MethodMutatorFactory> ror() {
     return group(RORMutatorIFEQ.ROR_IFEQ_MUTATOR,
@@ -357,6 +369,13 @@ public final class Mutator {
             OBBNANDMutator.OBBN_AND_MUTATOR,
             OBBNXORMutator.OBBN_XOR_MUTATOR);
 
+  /*
+  * Group for ABS Mutators
+  */
+  public static Collection<MethodMutatorFactory> abs() {
+    return group(ABSLoadMutator.ABS_LOAD_MUTATOR,
+            ABSStoreMutator.ABS_STORE_MUTATOR,
+            ABSIincMutator.ABS_IINC_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(
