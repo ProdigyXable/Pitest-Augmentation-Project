@@ -44,6 +44,12 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFEQ;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGE;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFGT;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFLE;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFLT;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFNE;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -55,6 +61,13 @@ public final class Mutator {
 
   static {
 
+      add("ROR_IFEQ", RORMutatorIFEQ.ROR_IFEQ_MUTATOR);
+      add("ROR_IFGE", RORMutatorIFGE.ROR_IFGE_MUTATOR);
+      add("ROR_IFGT", RORMutatorIFGT.ROR_IFGT_MUTATOR);
+      add("ROR_IFLE", RORMutatorIFLE.ROR_IFLE_MUTATOR);
+      add("ROR_IFLT", RORMutatorIFLT.ROR_IFLT_MUTATOR);
+      add("ROR_IFNE", RORMutatorIFNE.ROR_IFNE_MUTATOR);
+      
     /**
      * Default mutator that inverts the negation of integer and floating point
      * numbers.
@@ -163,6 +176,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("ROR", ror());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -194,6 +208,15 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+  public static Collection<MethodMutatorFactory> ror() {
+    return group(RORMutatorIFEQ.ROR_IFEQ_MUTATOR,
+            RORMutatorIFGE.ROR_IFGE_MUTATOR,
+            RORMutatorIFGT.ROR_IFGT_MUTATOR,
+            RORMutatorIFLE.ROR_IFLE_MUTATOR,
+            RORMutatorIFLT.ROR_IFLT_MUTATOR,
+            RORMutatorIFNE.ROR_IFNE_MUTATOR);
   }
 
   private static Collection<MethodMutatorFactory> group(
