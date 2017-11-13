@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.maven.ScmMojoTest" time="0.366" tests="9" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.maven.ScmMojoTest" time="0.273" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,13 +60,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testThrowsAnExceptionWhenNoScmConfigured" classname="org.pitest.maven.ScmMojoTest" time="0.096"/>
-  <testcase name="testLastCommitIsMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.042"/>
-  <testcase name="testUsesCorrectConnectionWhenDeveloperConnectionSet" classname="org.pitest.maven.ScmMojoTest" time="0.04"/>
-  <testcase name="testClassesAddedToScmAreMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.035"/>
-  <testcase name="testUnknownAndDeletedClassesAreNotMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.029"/>
-  <testcase name="testDoesNotAnalysePomProjects" classname="org.pitest.maven.ScmMojoTest" time="0.029"/>
-  <testcase name="testCanOverrideInspectedStatus" classname="org.pitest.maven.ScmMojoTest" time="0.033"/>
-  <testcase name="testModifiedClassesAreMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.031"/>
-  <testcase name="testUsesCorrectConnectionWhenNonDeveloperConnectionSet" classname="org.pitest.maven.ScmMojoTest" time="0.031"/>
+  <testcase name="testThrowsAnExceptionWhenNoScmConfigured" classname="org.pitest.maven.ScmMojoTest" time="0.063"/>
+  <testcase name="testLastCommitIsMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.031"/>
+  <testcase name="testUsesCorrectConnectionWhenDeveloperConnectionSet" classname="org.pitest.maven.ScmMojoTest" time="0.028"/>
+  <testcase name="testClassesAddedToScmAreMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.029"/>
+  <testcase name="testUnknownAndDeletedClassesAreNotMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.024"/>
+  <testcase name="testDoesNotAnalysePomProjects" classname="org.pitest.maven.ScmMojoTest" time="0.024"/>
+  <testcase name="testCanOverrideInspectedStatus" classname="org.pitest.maven.ScmMojoTest" time="0.027"/>
+  <testcase name="testModifiedClassesAreMutationTested" classname="org.pitest.maven.ScmMojoTest" time="0.023"/>
+  <testcase name="testUsesCorrectConnectionWhenNonDeveloperConnectionSet" classname="org.pitest.maven.ScmMojoTest" time="0.024"/>
 </testsuite>

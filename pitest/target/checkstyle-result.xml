@@ -284,6 +284,60 @@
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ArgumentPropagationVisitor.java">
 </file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorDADD.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorDDIV.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorDMUL.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorDREM.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorDSUB.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorFADD.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorFDIV.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorFMUL.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorFREM.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorFSUB.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIADD.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIDIV.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIMUL.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorIREM.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorISUB.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorLADD.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorLDIV.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorLMUL.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorLREM.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\AORMutatorLSUB.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\OBBNANDMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\OBBNORMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\OBBNXORMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddDecrementMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIAddIncrementMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIRemoveMutator.java">
+</file>
+<file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\augmented\UOIReverseMutator.java">
+</file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ConditionalsBoundaryMutator.java">
 </file>
 <file name="C:\Users\Sam Benton&apos;s PC\Documents\GitHub\Pitest-Augmentation-Project\pitest\src\main\java\org\pitest\mutationtest\engine\gregor\mutators\ConstructorCallMutator.java">
