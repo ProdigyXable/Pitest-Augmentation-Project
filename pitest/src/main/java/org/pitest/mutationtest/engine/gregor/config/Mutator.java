@@ -70,6 +70,13 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.C
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorAddOne;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorNegate;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorReplaceOne;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorReplaceZero;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorSubOne;
+
+
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODFirstMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODLastMutator;
 
@@ -84,7 +91,6 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutatorIFNE;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNXORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNANDMutator;
-
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -95,12 +101,16 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddIncrementM
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddDecrementMutator;
 
 public final class Mutator {
-
   private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
     // TODO Add a new line for each new mutator added
   static {
-      
+       add("CRCR_NEGATE", CRCRMutatorNegate.CRCR_MUTATOR_NEGATE);
+        add("CRCR_REPLACE_ONE", CRCRMutatorReplaceOne.CRCR_MUTATOR_REPLACE_ONE);
+        add("CRCR_REPLACE_ZERO", CRCRMutatorReplaceZero.CRCR_MUTATOR_REPLACE_ZERO);
+        add("CRCR_ADD_ONE", CRCRMutatorAddOne.CRCR_MUTATOR_ADD_ONE);
+        add("CRCR_SUB_ONE", CRCRMutatorSubOne.CRCR_MUTATOR_SUB_ONE);
+    
     add("AOD_FIRST", AODFirstMutator.AOD_FIRST);
     add("AOD_LAST", AODLastMutator.AOD_LAST);
 
@@ -147,7 +157,6 @@ public final class Mutator {
       add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
       add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
 
-      
     /*
     * OBBN Mutators which mutates logical operators
     */
@@ -155,8 +164,6 @@ public final class Mutator {
     add("OBBN_OR", OBBNORMutator.OBBN_OR_MUTATOR);
     add("OBBN_XOR", OBBNXORMutator.OBBN_XOR_MUTATOR);
     add("OBBN_AND", OBBNANDMutator.OBBN_AND_MUTATOR);
-    
-
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -257,8 +264,10 @@ public final class Mutator {
     add("EXPERIMENTAL_ARGUMENT_PROPAGATION",
         ArgumentPropagationMutator.ARGUMENT_PROPAGATION_MUTATOR);
 
+
     /**
-     * Experimental mutator that replaces method call with this
+     * Default set of mutators - designed to provide balance between strength
+     * and performance
      */
     add("EXPERIMENTAL_NAKED_RECEIVER", NakedReceiverMutator.NAKED_RECEIVER);
 
@@ -277,6 +286,7 @@ public final class Mutator {
     addGroup("OBBN", obbn());
     addGroup("AOD", aod());
     addGroup("ROR", ror());
+    addGroup("CRCR", crcr());
 
   }
 
@@ -313,7 +323,9 @@ public final class Mutator {
   
 
     public static Collection<MethodMutatorFactory> aod() {
-    return group(AODFirstMutator.AOD_FIRST, AODLastMutator.AOD_LAST);
+    return group(AODFirstMutator.AOD_FIRST,
+                 AODLastMutator.AOD_LAST);
+    }
 
   public static Collection<MethodMutatorFactory> ror() {
     return group(RORMutatorIFEQ.ROR_IFEQ_MUTATOR,
@@ -322,6 +334,16 @@ public final class Mutator {
             RORMutatorIFLE.ROR_IFLE_MUTATOR,
             RORMutatorIFLT.ROR_IFLT_MUTATOR,
             RORMutatorIFNE.ROR_IFNE_MUTATOR);
+  }
+  
+      public static Collection<MethodMutatorFactory> crcr() {
+        return group(CRCRMutatorNegate.CRCR_MUTATOR_NEGATE,
+                CRCRMutatorReplaceOne.CRCR_MUTATOR_REPLACE_ONE,
+                CRCRMutatorReplaceZero.CRCR_MUTATOR_REPLACE_ZERO,
+                CRCRMutatorAddOne.CRCR_MUTATOR_ADD_ONE,
+                CRCRMutatorSubOne.CRCR_MUTATOR_SUB_ONE);
+    }
+
 
   /**
    * Integer-based sub-mutators for the AOR parent mutator
