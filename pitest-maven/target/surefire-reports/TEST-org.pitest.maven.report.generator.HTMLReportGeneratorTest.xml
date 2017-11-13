@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.19" tests="5" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.169" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -60,9 +60,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testCopyFails" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.148"/>
-  <testcase name="testCopySkipsTimestampedReportsSubDirectories" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.024"/>
-  <testcase name="testName" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.002"/>
-  <testcase name="testSourceDataFormat" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.004"/>
-  <testcase name="testCopySuccess" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.012"/>
+  <testcase name="testCopyFails" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.129"/>
+  <testcase name="testCopySkipsTimestampedReportsSubDirectories" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.023"/>
+  <testcase name="testName" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.003"/>
+  <testcase name="testSourceDataFormat" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.003"/>
+  <testcase name="testCopySuccess" classname="org.pitest.maven.report.generator.HTMLReportGeneratorTest" time="0.011"/>
 </testsuite>
