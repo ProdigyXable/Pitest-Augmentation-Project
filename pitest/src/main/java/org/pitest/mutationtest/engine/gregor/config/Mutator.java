@@ -45,6 +45,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.C
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODFirstMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODLastMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -57,6 +58,7 @@ public final class Mutator {
   static {
       
     add("AOD_FIRST", AODFirstMutator.AOD_FIRST);
+    add("AOD_LAST", AODLastMutator.AOD_LAST);
 
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -166,6 +168,7 @@ public final class Mutator {
     addGroup("DEFAULTS", defaults());
     addGroup("STRONGER", stronger());
     addGroup("ALL", all());
+    addGroup("AOD", aod());
   }
 
   public static Collection<MethodMutatorFactory> all() {
@@ -197,6 +200,10 @@ public final class Mutator {
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
         IncrementsMutator.INCREMENTS_MUTATOR);
+  }
+  
+    public static Collection<MethodMutatorFactory> aod() {
+    return group(AODFirstMutator.AOD_FIRST, AODLastMutator.AOD_LAST);
   }
 
   private static Collection<MethodMutatorFactory> group(

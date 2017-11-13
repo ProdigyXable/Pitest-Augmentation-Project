@@ -60,27 +60,27 @@ class AODFirstMethodVisitor extends AbstractInsnMutator {
   static
   {
       MUTATIONS.put(Opcodes.IADD, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from an addition formula (int)"));
-      MUTATIONS.put(Opcodes.DADD, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from an addition formula (double)"));
+      MUTATIONS.put(Opcodes.DADD, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from an addition formula (double)"));
       MUTATIONS.put(Opcodes.FADD, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from an addition formula (float)"));
       MUTATIONS.put(Opcodes.LADD, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from an addition formula (long)"));
       
       MUTATIONS.put(Opcodes.ISUB, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a subtraction formula (int)"));
-      MUTATIONS.put(Opcodes.DSUB, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a subtraction formula (double)"));
+      MUTATIONS.put(Opcodes.DSUB, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a subtraction formula (double)"));
       MUTATIONS.put(Opcodes.FSUB, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a subtraction formula (float)"));
       MUTATIONS.put(Opcodes.LSUB, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a subtraction formula (long)"));
       
       MUTATIONS.put(Opcodes.IMUL, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a multiplication formula (int)"));
-      MUTATIONS.put(Opcodes.DMUL, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a multiplication formula (double)"));
+      MUTATIONS.put(Opcodes.DMUL, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a multiplication formula (double)"));
       MUTATIONS.put(Opcodes.FMUL, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a multiplication formula (float)"));
       MUTATIONS.put(Opcodes.LMUL, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a multiplication formula (long)"));
       
       MUTATIONS.put(Opcodes.IDIV, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a division formula (int)"));
-      MUTATIONS.put(Opcodes.DDIV, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a division formula (double)"));
+      MUTATIONS.put(Opcodes.DDIV, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a division formula (double)"));
       MUTATIONS.put(Opcodes.FDIV, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a division formula (float)"));
       MUTATIONS.put(Opcodes.LDIV, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a division formula (long)"));
       
       MUTATIONS.put(Opcodes.IREM, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a modulus formula (int)"));
-      MUTATIONS.put(Opcodes.DREM, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a modulus formula (double)"));
+      MUTATIONS.put(Opcodes.DREM, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a modulus formula (double)"));
       MUTATIONS.put(Opcodes.FREM, new InsnSubstitution(Opcodes.POP, "AOD Mutator: Removed the second operator from a modulus formula (float)"));
       MUTATIONS.put(Opcodes.LREM, new InsnSubstitution(Opcodes.POP2, "AOD Mutator: Removed the second operator from a modulus formula (long)"));
   }

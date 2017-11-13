@@ -29,7 +29,6 @@ public enum AODLastMutator implements MethodMutatorFactory {
   public MethodVisitor create(final MutationContext context,
       final MethodInfo methodInfo, final MethodVisitor methodVisitor) {
     return new AODLastMethodVisitor(this, context, methodVisitor);
-   
   }
 
   @Override
@@ -57,87 +56,105 @@ class AODLastMethodVisitor extends MethodVisitor {
   
   @Override
   public void visitInsn(int opcode) {
-      if ((opcode == Opcodes.IADD) || (opcode == Opcodes.DADD) || (opcode == Opcodes.FADD) ) {
-          replaceNotLongAddOperand();
-      }  else if ((opcode == Opcodes.ISUB) || (opcode == Opcodes.DSUB) || (opcode == Opcodes.FSUB)) {
-          replaceNotLongSubOperand();
-       } else if ((opcode == Opcodes.IMUL) || (opcode == Opcodes.DMUL) || (opcode == Opcodes.FMUL)) {
-          replaceNotLongMulOperand();
-      } else if ((opcode == Opcodes.IDIV) || (opcode == Opcodes.DDIV) || (opcode == Opcodes.FDIV)) {
-          replaceNotLongDivOperand();
-          
-       // TODO Determine why none of the REM/modulus opcodes properly work with this function
-       /* Detecint modulus operations is faulty; it makes all other mutants survive  
-          } else if ((opcode == Opcodes.IREM) || (opcode == Opcodes.DREM) || (opcode == Opcodes.FREM)) {
-          replaceNotLongRemOperand();
-       */ 
+      if ((opcode == Opcodes.IADD) || (opcode == Opcodes.FADD) ) {
+          replaceSmallAddOperand(opcode);
+      }  else if ((opcode == Opcodes.ISUB) || (opcode == Opcodes.FSUB)) {
+          replaceSmallSubOperand(opcode);
+       } else if ((opcode == Opcodes.IMUL) || (opcode == Opcodes.FMUL)) {
+          replaceSmallMulOperand(opcode);
+      } else if ((opcode == Opcodes.IDIV) || (opcode == Opcodes.FDIV)) {
+          replaceSmallDivOperand(opcode);
+      } else if ((opcode == Opcodes.IREM) || (opcode == Opcodes.DREM) || (opcode == Opcodes.FREM)) {
+          replaceSmallRemOperand(opcode);    
       }  else if ((opcode == Opcodes.LADD) || (opcode == Opcodes.LSUB) || (opcode == Opcodes.LMUL) || (opcode == Opcodes.LDIV) /* || (opcode == Opcodes.LREM) */ ) {
-          replaceLongOperand();
-      }  else {
-          this.mv.visitInsn(opcode);
+          replaceLongOperand(opcode);
+      }  else if ((opcode == Opcodes.DADD) || (opcode == Opcodes.DSUB) || (opcode == Opcodes.DMUL) || (opcode == Opcodes.DDIV) /* || (opcode == Opcodes.DREM) */ ) {
+          replaceDoubleOperand(opcode);
+      } else {
+          super.visitInsn(opcode);
       }
   
   }
 
-  private void replaceNotLongAddOperand() {
+  private void replaceSmallAddOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of addition formula");
       
       if (this.context.shouldMutate(muID)) {
-          removeNotLongFirstOperand();
+          removeSmallFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void replaceNotLongSubOperand() {
+  private void replaceSmallSubOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of subtraction formula");
       
       if (this.context.shouldMutate(muID)) {
-          removeNotLongFirstOperand();
+          removeSmallFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void replaceNotLongMulOperand() {
+  private void replaceSmallMulOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of multiplication formula");
       
       if (this.context.shouldMutate(muID)) {
-          removeNotLongFirstOperand();
+          removeSmallFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void replaceNotLongDivOperand() {
+  private void replaceSmallDivOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of division formula");
       
       if (this.context.shouldMutate(muID)) {
-          removeNotLongFirstOperand();
+          removeSmallFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void replaceNotLongRemOperand() {
+  private void replaceSmallRemOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of modulus formula");
       
       if (this.context.shouldMutate(muID)) {
-          removeNotLongFirstOperand();
+          removeSmallFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void replaceLongOperand() {
+  private void replaceLongOperand(int opcode) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of a formula involving longs");
       
       if (this.context.shouldMutate(muID)) {
-          removeLongFirstOperand();
+          removeLargeFirstOperand();
+      } else {
+        super.visitInsn(opcode);
+      }
+  }
+  private void replaceDoubleOperand(int opcode) {
+      final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of a formula involving doubless");
+      
+      if (this.context.shouldMutate(muID)) {
+          removeLargeFirstOperand();
+      } else {
+        super.visitInsn(opcode);
       }
   }
   
-  private void removeNotLongFirstOperand() {
-      this.mv.visitInsn(Opcodes.DUP2);
-      this.mv.visitInsn(Opcodes.POP);
-      this.mv.visitInsn(Opcodes.POP);
+  private void removeSmallFirstOperand() {
+      super.visitInsn(Opcodes.SWAP);
       
+      super.visitInsn(Opcodes.POP);
   }
   
-  private void removeLongFirstOperand() {
-      this.mv.visitInsn(Opcodes.DUP2_X2);
-      this.mv.visitInsn(Opcodes.POP);
-      this.mv.visitInsn(Opcodes.POP);
+  private void removeLargeFirstOperand() {
+      super.visitInsn(Opcodes.DUP2_X2);
+      super.visitInsn(Opcodes.POP2);
+      
+      super.visitInsn(Opcodes.POP2);
   }
-  
 }
