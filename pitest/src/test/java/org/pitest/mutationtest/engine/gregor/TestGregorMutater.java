@@ -93,8 +93,7 @@ public class TestGregorMutater extends MutatorTestBase {
     Foo, Bar;
   }
 
-  // TODO Figure out why this test fails for the ABS mutator
-  // @Test This test forces Pitest to fail in fixed situations
+   @Test
   public void shouldNotMutateCodeGeneratedByCompilerToImplementEnums() {
     createTesteeWith(Mutator.all());
     final Collection<MutationDetails> actualDetails = findMutationsFor(AnEnum.class);

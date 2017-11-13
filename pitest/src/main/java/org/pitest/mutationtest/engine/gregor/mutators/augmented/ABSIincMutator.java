@@ -16,7 +16,6 @@ package org.pitest.mutationtest.engine.gregor.mutators.augmented;
 
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
-import org.pitest.mutationtest.engine.MutationIdentifier;
 import org.pitest.mutationtest.engine.gregor.MethodInfo;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
 import org.pitest.mutationtest.engine.gregor.MutationContext;
@@ -55,6 +54,7 @@ class ABSIincMethodVisitor extends MethodVisitor {
     this.context = context;    
   }
   
+/*
   @Override
   public void visitIincInsn(int var, int increment) {
       final MutationIdentifier muID = this.context.registerMutation(factory, "ABS Mutator: Negated value of IINC instruction, local variable [" + var + "]");
@@ -67,6 +67,6 @@ class ABSIincMethodVisitor extends MethodVisitor {
       super.visitIincInsn(var, increment);
 
   }
-  
+*/  
 
 }

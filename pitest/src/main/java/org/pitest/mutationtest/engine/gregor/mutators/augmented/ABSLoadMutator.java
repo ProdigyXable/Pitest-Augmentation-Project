@@ -23,92 +23,78 @@ import org.pitest.mutationtest.engine.gregor.MutationContext;
 
 public enum ABSLoadMutator implements MethodMutatorFactory {
 
-  ABS_LOAD_MUTATOR;
+    ABS_LOAD_MUTATOR;
 
-  @Override
-  public MethodVisitor create(final MutationContext context,
-      final MethodInfo methodInfo, final MethodVisitor methodVisitor) {
-    return new ABSLoadMethodVisitor(this, context, methodVisitor);
-  }
+    @Override
+    public MethodVisitor create(final MutationContext context,
+            final MethodInfo methodInfo, final MethodVisitor methodVisitor) {
+        return new ABSLoadMethodVisitor(this, context, methodVisitor, methodInfo);
+    }
 
-  @Override
-  public String getGloballyUniqueId() {
-    return this.getClass().getName();
-  }
+    @Override
+    public String getGloballyUniqueId() {
+        return this.getClass().getName();
+    }
 
-  @Override
-  public String getName() {
-    return name();
-  }
+    @Override
+    public String getName() {
+        return name();
+    }
 }
 
 class ABSLoadMethodVisitor extends MethodVisitor {
 
-  private final MethodMutatorFactory factory;
-  private final MutationContext      context;
-  private final String              messageA = "ABS Mutator: Variable value negated immediately after load [";
-  
-  ABSLoadMethodVisitor(final MethodMutatorFactory factory,
-      final MutationContext context, final MethodVisitor delegateMethodVisitor) {
-    super(Opcodes.ASM6, delegateMethodVisitor);
-    this.factory = factory;
-    this.context = context;
-    
-  }
-  
+    private final MethodMutatorFactory factory;
+    private final MutationContext context;
+    private final MethodInfo methodInfo;
+    private final String messageA = "ABS Mutator: Variable value negated immediately after load [";
+
+    ABSLoadMethodVisitor(final MethodMutatorFactory factory,
+            final MutationContext context, final MethodVisitor delegateMethodVisitor, final MethodInfo methodInfo) {
+        super(Opcodes.ASM6, delegateMethodVisitor);
+        this.factory = factory;
+        this.context = context;
+        this.methodInfo = methodInfo;
+
+    }
 
     @Override
     public void visitVarInsn(final int opcode, final int var) {
-        String mutatorMessage;
+        String mutatorMessage = "";
         int newOpCode = 0;
-        
-        // Let the super visitVarInsn execute as originally intended
-        super.visitVarInsn(opcode, var);
-        
-        if (opcode == Opcodes.ILOAD) {
-            mutatorMessage = var + "] (integer)";
-            final MutationIdentifier muID = this.context.registerMutation(this.factory,
-                    this.messageA + mutatorMessage);      
-            
-            if (this.context.shouldMutate(muID)) {
+
+        if (!this.methodInfo.isConstructor()) {
+            // Let the super visitVarInsn execute as originally intended
+            super.visitVarInsn(opcode, var);
+
+            if (opcode == Opcodes.ILOAD) {
+                mutatorMessage = var + "] (integer)";
                 newOpCode = Opcodes.INEG;
-            }
-            
-        } else if (opcode == Opcodes.FLOAD) {
-            mutatorMessage = var + "] (float)";
-            final MutationIdentifier muID = this.context.registerMutation(this.factory,
-                    this.messageA + mutatorMessage);      
-            
-            if (this.context.shouldMutate(muID)) {
+
+            } else if (opcode == Opcodes.FLOAD) {
+                mutatorMessage = var + "] (float)";
                 newOpCode = Opcodes.FNEG;
-            }
-            
-        } else if (opcode == Opcodes.DLOAD) {
-            mutatorMessage = var + "] (double)";
-            final MutationIdentifier muID = this.context.registerMutation(this.factory,
-                    this.messageA + mutatorMessage);      
-            
-            if (this.context.shouldMutate(muID)) {
+
+            } else if (opcode == Opcodes.DLOAD) {
+                mutatorMessage = var + "] (double)";
                 newOpCode = Opcodes.DNEG;
-            }
-            
-        } else if (opcode == Opcodes.LLOAD) {
-            mutatorMessage = var + "] (long)";
-            final MutationIdentifier muID = this.context.registerMutation(this.factory,
-                    this.messageA + mutatorMessage);      
-            
-            if (this.context.shouldMutate(muID)) {
+
+            } else if (opcode == Opcodes.LLOAD) {
+                mutatorMessage = var + "] (long)";
                 newOpCode = Opcodes.LNEG;
-            }            
-        }
+            }
 
-        if (newOpCode != 0) {
-            
-            // Performs the appropriate negation command on the top of the stack *AFTER* the variable is loaded
-            super.visitInsn(newOpCode);
+            if (newOpCode != 0) {
+                final MutationIdentifier muID = this.context.registerMutation(factory, messageA + mutatorMessage);
+
+                if (this.context.shouldMutate(muID)) {
+                    // Performs the appropriate negation command on the top of the stack *AFTER* the variable is loaded
+                    super.visitInsn(newOpCode);
+
+                }
+            }
+        } else {
+            super.visitVarInsn(opcode, var);
         }
-                
     }
-
-
 }
