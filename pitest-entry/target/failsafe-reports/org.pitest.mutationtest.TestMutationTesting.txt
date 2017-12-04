@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.pitest.mutationtest.TestMutationTesting
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 16.269 sec - in org.pitest.mutationtest.TestMutationTesting
