@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.maven.report.generator.XMLReportGeneratorTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec - in org.pitest.maven.report.generator.XMLReportGeneratorTest
