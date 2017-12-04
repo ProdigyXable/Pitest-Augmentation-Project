@@ -108,12 +108,20 @@ public final class Mutator {
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
     static {
+
+        //////////////////////////// Beginning OF AUGMENTED MUTATORS ///////////////////////////////
+        /*
+         * CRCR Mutators
+         */
         add("CRCR_NEGATE", CRCRMutatorNegate.CRCR_MUTATOR_NEGATE);
         add("CRCR_REPLACE_ONE", CRCRMutatorReplaceOne.CRCR_MUTATOR_REPLACE_ONE);
         add("CRCR_REPLACE_ZERO", CRCRMutatorReplaceZero.CRCR_MUTATOR_REPLACE_ZERO);
         add("CRCR_ADD_ONE", CRCRMutatorAddOne.CRCR_MUTATOR_ADD_ONE);
         add("CRCR_SUB_ONE", CRCRMutatorSubOne.CRCR_MUTATOR_SUB_ONE);
 
+        /*
+         * AOD Mutators
+         */
         add("AOD_FIRST", AODFirstMutator.AOD_FIRST);
         add("AOD_LAST", AODLastMutator.AOD_LAST);
 
