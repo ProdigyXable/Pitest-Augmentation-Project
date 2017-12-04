@@ -1,5 +1,0 @@
-org\pitest\mutationtest\commandline\OptionsParser.class
-org\pitest\mutationtest\commandline\ParseResult.class
-org\pitest\mutationtest\commandline\PluginFilter$1.class
-org\pitest\mutationtest\commandline\PluginFilter.class
-org\pitest\mutationtest\commandline\MutationCoverageReport.class
