@@ -117,14 +117,19 @@ public final class Mutator {
         add("AOD_FIRST", AODFirstMutator.AOD_FIRST);
         add("AOD_LAST", AODLastMutator.AOD_LAST);
 
+        /*
+         * ROR Mutators
+         */
         add("ROR_IFEQ", RORMutatorIFEQ.ROR_IFEQ_MUTATOR);
         add("ROR_IFGE", RORMutatorIFGE.ROR_IFGE_MUTATOR);
         add("ROR_IFGT", RORMutatorIFGT.ROR_IFGT_MUTATOR);
         add("ROR_IFLE", RORMutatorIFLE.ROR_IFLE_MUTATOR);
         add("ROR_IFLT", RORMutatorIFLT.ROR_IFLT_MUTATOR);
         add("ROR_IFNE", RORMutatorIFNE.ROR_IFNE_MUTATOR);
+
         /*
          * New AOR mutators
+         * AOR mutators
          */
         add("AOR_MUTATOR_IADD", AORMutatorIADD.AOR_MUTATOR_IADD);
         add("AOR_MUTATOR_ISUB", AORMutatorISUB.AOR_MUTATOR_ISUB);
@@ -149,6 +154,26 @@ public final class Mutator {
         add("AOR_MUTATOR_LMUL", AORMutatorLMUL.AOR_MUTATOR_LMUL);
         add("AOR_MUTATOR_LDIV", AORMutatorLDIV.AOR_MUTATOR_LDIV);
         add("AOR_MUTATOR_LREM", AORMutatorLREM.AOR_MUTATOR_LREM);
+        add("AOR_IADD", AORMutatorIADD.AOR_MUTATOR_IADD);
+        add("AOR_ISUB", AORMutatorISUB.AOR_MUTATOR_ISUB);
+        add("AOR_IMUL", AORMutatorIMUL.AOR_MUTATOR_IMUL);
+        add("AOR_IDIV", AORMutatorIDIV.AOR_MUTATOR_IDIV);
+        add("AOR_IREM", AORMutatorIREM.AOR_MUTATOR_IREM);
+        add("AOR_DADD", AORMutatorDADD.AOR_MUTATOR_DADD);
+        add("AOR_DSUB", AORMutatorDSUB.AOR_MUTATOR_DSUB);
+        add("AOR_DMUL", AORMutatorDMUL.AOR_MUTATOR_DMUL);
+        add("AOR_DDIV", AORMutatorDDIV.AOR_MUTATOR_DDIV);
+        add("AOR_DREM", AORMutatorDREM.AOR_MUTATOR_DREM);
+        add("AOR_FADD", AORMutatorFADD.AOR_MUTATOR_FADD);
+        add("AOR_FSUB", AORMutatorFSUB.AOR_MUTATOR_FSUB);
+        add("AOR_FMUL", AORMutatorFMUL.AOR_MUTATOR_FMUL);
+        add("AOR_FDIV", AORMutatorFDIV.AOR_MUTATOR_FDIV);
+        add("AOR_FREM", AORMutatorFREM.AOR_MUTATOR_FREM);
+        add("AOR_LADD", AORMutatorLADD.AOR_MUTATOR_LADD);
+        add("AOR_LSUB", AORMutatorLSUB.AOR_MUTATOR_LSUB);
+        add("AOR_LMUL", AORMutatorLMUL.AOR_MUTATOR_LMUL);
+        add("AOR_LDIV", AORMutatorLDIV.AOR_MUTATOR_LDIV);
+        add("AOR_LREM", AORMutatorLREM.AOR_MUTATOR_LREM);
 
         /*
          * UOI Mutators - Mutate ++ and -- unuary operators.
@@ -174,6 +199,7 @@ public final class Mutator {
         add("ABS_STORE", ABSStoreMutator.ABS_STORE_MUTATOR);
         add("ABS_IINC", ABSIincMutator.ABS_IINC_MUTATOR);
 
+        //////////////////////////// END OF AUGMENTED MUTATORS ///////////////////////////////
         /*
          * Default mutator that inverts the negation of integer and
          * floating point numbers.
@@ -343,6 +369,8 @@ public final class Mutator {
                                         combine(aorMutator(),
                                                 combine(uoi(),
                                                         ror()
+                                                        combine(ror(),
+                                                                crcr())
                                                 )
                                         )
                                 )
@@ -420,6 +448,7 @@ public final class Mutator {
         return group(ABSLoadMutator.ABS_LOAD_MUTATOR,
                 ABSStoreMutator.ABS_STORE_MUTATOR,
                 ABSIincMutator.ABS_IINC_MUTATOR);
+                ABSStoreMutator.ABS_STORE_MUTATOR);
     }
 
     private static Collection<MethodMutatorFactory> group(

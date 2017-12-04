@@ -58,6 +58,7 @@ class CRCRMutatorReplaceOneMethodVisitor extends MethodVisitor {
     public void visitLdcInsn(Object cst) {
         if (cst instanceof Number) {
             final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of constant with 1. " + cst.getClass().getTypeName());
+            final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of constant with 1 " + cst.getClass().getTypeName());
 
             if (this.context.shouldMutate(muID)) {
                 if (cst instanceof Integer) {
@@ -72,6 +73,8 @@ class CRCRMutatorReplaceOneMethodVisitor extends MethodVisitor {
             } else {
                 super.visitLdcInsn(cst);
             }
+        } else {
+            super.visitLdcInsn(cst);
         }
         super.visitLdcInsn(cst);
 
@@ -91,6 +94,8 @@ class CRCRMutatorReplaceOneMethodVisitor extends MethodVisitor {
                     super.visitInsn(Opcodes.FCONST_1);
                 } else if ((opcode == Opcodes.DCONST_0)) {
                     super.visitInsn(Opcodes.DCONST_1);
+                } else {
+                    super.visitInsn(opcode);
                 }
             } else {
                 super.visitInsn(opcode);
@@ -107,6 +112,7 @@ class CRCRMutatorReplaceOneMethodVisitor extends MethodVisitor {
 
             if (this.context.shouldMutate(muID)) {
                 super.visitInsn(Opcodes.ICONST_1);
+                super.visitIntInsn(opcode, Opcodes.ICONST_1);
             } else {
                 super.visitIntInsn(opcode, operand);
             }

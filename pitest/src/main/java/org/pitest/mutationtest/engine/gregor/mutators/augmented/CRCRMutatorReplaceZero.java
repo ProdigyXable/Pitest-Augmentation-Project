@@ -58,6 +58,7 @@ class CRCRMutatorReplaceZeroMethodVisitor extends MethodVisitor {
     public void visitLdcInsn(Object cst) {
         if (cst instanceof Number) {
             final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of constant with 0. " + cst.getClass().getTypeName());
+            final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of constant with 0 " + cst.getClass().getTypeName());
 
             if (this.context.shouldMutate(muID)) {
                 if (cst instanceof Integer) {
@@ -81,6 +82,7 @@ class CRCRMutatorReplaceZeroMethodVisitor extends MethodVisitor {
     public void visitInsn(int opcode) {
         if ((opcode == Opcodes.ICONST_1) || (opcode == Opcodes.ICONST_2) || (opcode == Opcodes.ICONST_3) || (opcode == Opcodes.ICONST_4) || (opcode == Opcodes.ICONST_5) || (opcode == Opcodes.ICONST_M1) || (opcode == Opcodes.LCONST_1) || (opcode == Opcodes.FCONST_1) || (opcode == Opcodes.FCONST_2) || (opcode == Opcodes.DCONST_1)) {
             final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of common constant with 0 (visitInsn)");
+            final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Replaced value of common constant with 0 (visitInsn).");
 
             if (this.context.shouldMutate(muID)) {
                 if ((opcode == Opcodes.ICONST_1) || (opcode == Opcodes.ICONST_2) || (opcode == Opcodes.ICONST_3) || (opcode == Opcodes.ICONST_4) || (opcode == Opcodes.ICONST_5) || (opcode == Opcodes.ICONST_M1)) {
@@ -108,6 +110,7 @@ class CRCRMutatorReplaceZeroMethodVisitor extends MethodVisitor {
             if (this.context.shouldMutate(muID)) {
 
                 super.visitInsn(Opcodes.ICONST_0);
+                super.visitIntInsn(opcode, Opcodes.ICONST_0);
             } else {
                 super.visitIntInsn(opcode, operand);
             }
