@@ -68,6 +68,8 @@ class CRCRMutatorReplaceZeroMethodVisitor extends MethodVisitor {
                     super.visitInsn(Opcodes.DCONST_0);
                 } else if (cst instanceof Long) {
                     super.visitInsn(Opcodes.LCONST_0);
+                } else {
+                    super.visitLdcInsn(cst);
                 }
             } else {
                 super.visitLdcInsn(cst);

@@ -112,4 +112,3 @@ class CRCRMutatorNegateMethodVisitor extends MethodVisitor {
     }
 
 }
-

@@ -81,6 +81,7 @@ class CRCRMutatorAddOneMethodVisitor extends MethodVisitor {
     public void visitInsn(int opcode) {
 
         super.visitInsn(opcode);
+
         if ((opcode == Opcodes.ICONST_0) || (opcode == Opcodes.ICONST_1) || (opcode == Opcodes.ICONST_2) || (opcode == Opcodes.ICONST_3) || (opcode == Opcodes.ICONST_4) || (opcode == Opcodes.ICONST_5) || (opcode == Opcodes.ICONST_M1) || (opcode == Opcodes.LCONST_0) || (opcode == Opcodes.LCONST_1) || (opcode == Opcodes.FCONST_0) || (opcode == Opcodes.FCONST_1) || (opcode == Opcodes.FCONST_2) || (opcode == Opcodes.DCONST_0) || (opcode == Opcodes.DCONST_1)) {
             final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Incremented value of common constant (visitInsn)");
 
@@ -110,7 +111,6 @@ class CRCRMutatorAddOneMethodVisitor extends MethodVisitor {
             final MutationIdentifier muID = this.context.registerMutation(factory, "CRCR Mutator: Incremented value of custom constant");
 
             if (this.context.shouldMutate(muID)) {
-
                 super.visitIntInsn(opcode, operand + 1);
             } else {
                 super.visitIntInsn(opcode, operand);
