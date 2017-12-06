@@ -1,2 +1,0 @@
-show onlyShortestPaths allResults
-check absenceOfPackageCycles > 3 in org.pitest.*	OK

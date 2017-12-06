@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
--------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.922 sec - in org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutatorTest
