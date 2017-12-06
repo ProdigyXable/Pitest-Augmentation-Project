@@ -44,11 +44,9 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorAddOne;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorNegate;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorReplaceOne;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorReplaceZero;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutatorSubOne;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -60,11 +58,18 @@ public final class Mutator {
 
     static {
 
-        add("CRCR_NEGATE", CRCRMutatorNegate.CRCR_MUTATOR_NEGATE);
-        add("CRCR_REPLACE_ONE", CRCRMutatorReplaceOne.CRCR_MUTATOR_REPLACE_ONE);
-        add("CRCR_REPLACE_ZERO", CRCRMutatorReplaceZero.CRCR_MUTATOR_REPLACE_ZERO);
-        add("CRCR_ADD_ONE", CRCRMutatorAddOne.CRCR_MUTATOR_ADD_ONE);
-        add("CRCR_SUB_ONE", CRCRMutatorSubOne.CRCR_MUTATOR_SUB_ONE);
+        /*
+         * Group of CRCR Mutators - These mutators negate a constant,
+         * replace a constant with one,
+         * replace a constant with zero
+         * increment a constant,
+         * or decrement a constant
+         */
+        add("CRCR_NEGATE", new CRCRMutator(CRCRMutator.MutantType.NEGATE));
+        add("CRCR_REPLACE_ONE", new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE));
+        add("CRCR_REPLACE_ZERO", new CRCRMutator(CRCRMutator.MutantType.REPLACE_ZERO));
+        add("CRCR_ADD_ONE", new CRCRMutator(CRCRMutator.MutantType.ADD));
+        add("CRCR_SUB_ONE", new CRCRMutator(CRCRMutator.MutantType.SUB));
 
         /**
          * Default mutator that inverts the negation of integer and floating
@@ -207,11 +212,11 @@ public final class Mutator {
     }
 
     public static Collection<MethodMutatorFactory> crcr() {
-        return group(CRCRMutatorNegate.CRCR_MUTATOR_NEGATE,
-                CRCRMutatorReplaceOne.CRCR_MUTATOR_REPLACE_ONE,
-                CRCRMutatorReplaceZero.CRCR_MUTATOR_REPLACE_ZERO,
-                CRCRMutatorAddOne.CRCR_MUTATOR_ADD_ONE,
-                CRCRMutatorSubOne.CRCR_MUTATOR_SUB_ONE);
+        return group(new CRCRMutator(CRCRMutator.MutantType.NEGATE),
+                new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE),
+                new CRCRMutator(CRCRMutator.MutantType.REPLACE_ZERO),
+                new CRCRMutator(CRCRMutator.MutantType.ADD),
+                new CRCRMutator(CRCRMutator.MutantType.SUB));
     }
 
     private static Collection<MethodMutatorFactory> group(
