@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.testng.TestNGTestUnitTest
--------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec - in org.pitest.testng.TestNGTestUnitTest
