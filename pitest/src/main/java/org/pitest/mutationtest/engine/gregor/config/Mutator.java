@@ -52,6 +52,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
@@ -59,7 +60,6 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchM
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
 
 public final class Mutator {
-
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
     static {
@@ -254,7 +254,10 @@ public final class Mutator {
         addGroup("CRCR", crcr());
       
       addGroup("OBBN", obbn());
+    
       addGroup("ROR", ror());
+    
+    addGroup("UOI", uoi());
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -358,6 +361,14 @@ public final class Mutator {
         return group(new AODMutator(AODMutator.MutantType.FIRST),
                 new AODMutator(AODMutator.MutantType.LAST)); 
     }
+  
+    public static Collection<MethodMutatorFactory> uoi() {
+    return group(new UOIMutator(UOIMutator.MutantType.REVERSE),
+            new UOIMutator(UOIMutator.MutantType.REMOVE),
+            new UOIMutator(UOIMutator.MutantType.INCREMENT),
+            new UOIMutator(UOIMutator.MutantType.DECREMENT));
+  }
+
   
     /*
      * Group for ABS Mutators
