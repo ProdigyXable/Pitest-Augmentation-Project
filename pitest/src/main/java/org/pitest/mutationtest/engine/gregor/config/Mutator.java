@@ -48,6 +48,8 @@ import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -59,9 +61,20 @@ public final class Mutator {
 
     // TODO Add a new line for each new mutator added
     static {
+      
+         /**
+         * Set of AOD Mutators
+         */
 
         add("AOD_FIRST", new AODMutator(AODMutator.MutantType.FIRST));
         add("AOD_LAST", new AODMutator(AODMutator.MutantType.LAST));
+
+         /**
+         * Set of ABS Mutators. Intercepts LOAD instructions, STORE instructions
+         * and negates the value before/after the instruction respectively
+         */
+        add("ABS_LOAD", new ABSMutator(ABSMutator.MutantType.LOAD));
+        add("ABS_STORE", new ABSMutator(ABSMutator.MutantType.STORE));
 
         /**
          * Default mutator that inverts the negation of integer and floating
@@ -169,8 +182,10 @@ public final class Mutator {
         addGroup("DEFAULTS", defaults());
         addGroup("STRONGER", stronger());
         addGroup("ALL", all());
-        
+
         addGroup("AOD", aod());
+        addGroup("ABS", abs());
+
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -207,6 +222,12 @@ public final class Mutator {
     public static Collection<MethodMutatorFactory> aod() {
         return group(new AODMutator(AODMutator.MutantType.FIRST),
                 new AODMutator(AODMutator.MutantType.LAST));
+    /*
+     * Group for ABS Mutators
+     */
+    public static Collection<MethodMutatorFactory> abs() {
+        return group(new ABSMutator(ABSMutator.MutantType.LOAD),
+                new ABSMutator(ABSMutator.MutantType.STORE));
     }
 
     private static Collection<MethodMutatorFactory> group(
