@@ -32,9 +32,6 @@ import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
 
-
-
-
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -54,6 +51,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.RORMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
@@ -66,6 +64,13 @@ public final class Mutator {
 
     static {
 
+        add("ROR_IFEQ", new RORMutator(RORMutator.MutantType.IFEQ));
+        add("ROR_IFGE", new RORMutator(RORMutator.MutantType.IFGE));
+        add("ROR_IFGT", new RORMutator(RORMutator.MutantType.IFGT));
+        add("ROR_IFLE", new RORMutator(RORMutator.MutantType.IFLE));
+        add("ROR_IFLT", new RORMutator(RORMutator.MutantType.IFLT));
+        add("ROR_IFNE", new RORMutator(RORMutator.MutantType.IFNE));
+      
         /*
          * OBBN Mutators which mutates logical operators
          */
@@ -234,6 +239,7 @@ public final class Mutator {
         addGroup("DEFAULTS", defaults());
         addGroup("STRONGER", stronger());
         addGroup("ALL", all());
+        
 
         // New groups added for mutators in the engine.gregor.mutators.augmented package
         addGroup("AOR_I", aorMutatorInteger());
@@ -248,6 +254,7 @@ public final class Mutator {
         addGroup("CRCR", crcr());
       
       addGroup("OBBN", obbn());
+      addGroup("ROR", ror());
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -267,8 +274,8 @@ public final class Mutator {
         l.addAll(b);
         return l;
     }
-
-    /**
+  
+  /**
      * Default set of mutators - designed to provide balance between strength
      * and performance
      */
@@ -281,6 +288,17 @@ public final class Mutator {
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
 
+
+    public static Collection<MethodMutatorFactory> ror() {
+        return group(new RORMutator(RORMutator.MutantType.IFEQ),
+                new RORMutator(RORMutator.MutantType.IFGT),
+                new RORMutator(RORMutator.MutantType.IFGE),
+                new RORMutator(RORMutator.MutantType.IFLT),
+                new RORMutator(RORMutator.MutantType.IFLE),
+                new RORMutator(RORMutator.MutantType.IFNE));
+    }
+    
+  
     public static Collection<MethodMutatorFactory> obbn() {
         return group(new OBBNMutator(OBBNMutator.MutantType.OR),
                 new OBBNMutator(OBBNMutator.MutantType.AND),
