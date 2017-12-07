@@ -48,11 +48,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiver
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIReverseMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIRemoveMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddIncrementMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIAddDecrementMutator;
-
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.UOIMutator;
 public final class Mutator {
 
   private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
@@ -64,10 +60,10 @@ public final class Mutator {
       */
       
       // TODO Add UOI mutators which add increments/decrements to variables without unary operators
-      add("UOI_REVERSE", UOIReverseMutator.UOI_REVERSE_MUTATOR);
-      add("UOI_REMOVE", UOIRemoveMutator.UOI_REMOVE_MUTATOR);
-      add("UOI_ADD_INCREMENT", UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR);
-      add("UOI_ADD_DECREMENT", UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+      add("UOI_REVERSE", new UOIMutator(UOIMutator.MutantType.REVERSE));
+      add("UOI_REMOVE", new UOIMutator(UOIMutator.MutantType.REMOVE));
+      add("UOI_ADD_INCREMENT", new UOIMutator(UOIMutator.MutantType.INCREMENT));
+      add("UOI_ADD_DECREMENT", new UOIMutator(UOIMutator.MutantType.DECREMENT));
       
     /**
      * Default mutator that inverts the negation of integer and floating point
@@ -212,8 +208,10 @@ public final class Mutator {
   }
   
   public static Collection<MethodMutatorFactory> uoi() {
-    return group(UOIReverseMutator.UOI_REVERSE_MUTATOR, UOIRemoveMutator.UOI_REMOVE_MUTATOR,
-            UOIAddIncrementMutator.UOI_ADD_INCREMENT_MUTATOR, UOIAddDecrementMutator.UOI_ADD_DECREMENT_MUTATOR);
+    return group(new UOIMutator(UOIMutator.MutantType.REVERSE),
+            new UOIMutator(UOIMutator.MutantType.REMOVE),
+            new UOIMutator(UOIMutator.MutantType.INCREMENT),
+            new UOIMutator(UOIMutator.MutantType.DECREMENT));
   }
 
   private static Collection<MethodMutatorFactory> group(

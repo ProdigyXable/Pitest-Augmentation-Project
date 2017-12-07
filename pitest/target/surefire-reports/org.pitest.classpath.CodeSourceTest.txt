@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.classpath.CodeSourceTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.classpath.CodeSourceTest
-=======
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.classpath.CodeSourceTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

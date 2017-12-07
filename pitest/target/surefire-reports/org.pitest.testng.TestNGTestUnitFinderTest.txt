@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.testng.TestNGTestUnitFinderTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in org.pitest.testng.TestNGTestUnitFinderTest
-=======
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in org.pitest.testng.TestNGTestUnitFinderTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

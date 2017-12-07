@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.mutationtest.execute.MutationTimeoutDecoratorTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec - in org.pitest.mutationtest.execute.MutationTimeoutDecoratorTest
-=======
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.pitest.mutationtest.execute.MutationTimeoutDecoratorTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

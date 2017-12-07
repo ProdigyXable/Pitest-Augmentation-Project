@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutatorTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.604 sec - in org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutatorTest
-=======
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.184 sec - in org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutatorTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

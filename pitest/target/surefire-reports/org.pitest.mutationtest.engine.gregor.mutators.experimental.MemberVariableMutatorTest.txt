@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutatorTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.516 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutatorTest
-=======
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.661 sec - in org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutatorTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b

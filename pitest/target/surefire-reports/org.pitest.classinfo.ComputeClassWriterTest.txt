@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.pitest.classinfo.ComputeClassWriterTest
--------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in org.pitest.classinfo.ComputeClassWriterTest
-=======
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in org.pitest.classinfo.ComputeClassWriterTest
->>>>>>> b151e0c5a1088119b7eec1e30f126115ee3eab4b
