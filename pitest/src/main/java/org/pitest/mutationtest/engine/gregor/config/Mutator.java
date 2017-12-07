@@ -52,6 +52,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
@@ -62,8 +63,20 @@ public final class Mutator {
 
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
-    // TODO Add a new line for each new mutator added
     static {
+
+        /*
+         * Group of CRCR Mutators - These mutators negate a constant,
+         * replace a constant with one,
+         * replace a constant with zero
+         * increment a constant,
+         * or decrement a constant
+         */
+        add("CRCR_NEGATE", new CRCRMutator(CRCRMutator.MutantType.NEGATE));
+        add("CRCR_REPLACE_ONE", new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE));
+        add("CRCR_REPLACE_ZERO", new CRCRMutator(CRCRMutator.MutantType.REPLACE_ZERO));
+        add("CRCR_ADD_ONE", new CRCRMutator(CRCRMutator.MutantType.ADD));
+        add("CRCR_SUB_ONE", new CRCRMutator(CRCRMutator.MutantType.SUB));
 
         /*
          * AOR mutators - These mutators swap the given operand with
@@ -223,8 +236,8 @@ public final class Mutator {
 
         addGroup("AOD", aod());
         addGroup("ABS", abs());
-
-
+      
+        addGroup("CRCR", crcr());
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -257,6 +270,13 @@ public final class Mutator {
                 ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
+
+    public static Collection<MethodMutatorFactory> crcr() {
+        return group(new CRCRMutator(CRCRMutator.MutantType.NEGATE),
+                new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE),
+                new CRCRMutator(CRCRMutator.MutantType.REPLACE_ZERO),
+                new CRCRMutator(CRCRMutator.MutantType.ADD),
+                new CRCRMutator(CRCRMutator.MutantType.SUB));
 
     /**
      * Integer-based sub-mutators for the AOR parent mutator
