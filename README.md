@@ -38,13 +38,13 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
 
 * AUGMENTED - Adds all newly implemented mutators at once
 --------------------------------------------------------
-* ABS - Adds the ABS mutators listed below
+* <b>ABS - Adds the ABS mutators listed below</b>
   * ABS_STORE - Inverts a variable's value immediately before the variable is stored
   * ABS_LOAD - Inverts a variable's value immediately after the variable is loaded
-* AOD - Adds the AOD mutators listed below
+* <b>AOD - Adds the AOD mutators listed below</b>
   * AOD_FIRST - Removes the second operator and the instruction in an ADD, SUB, MUL, DIV, and REM instruction
   * AOD_LAST - Removes the first operator and the instruction in an ADD, SUB, MUL, DIV, and REM instruction
-* AOR - Adds the AOR mutators listed below
+* <b>AOR - Adds the AOR mutators listed below</b>
   * AOR_I - Adds all the below integer-based arithmetic mutators
     * AOR_IADD - Changes the + operator into the -, *, /, and % operators for integers
     * AOR_ISUB - Changes the - operator into the +, *, /, and % operators for integers
@@ -69,24 +69,24 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
     * AOR_LMUL - Changes the * operator into the +, -, /, and % operators for longs
     * AOR_LDIV - Changes the / operator into the +, -, *, and % operators for longs
     * AOR_LREM - Changes the % operator into the +, -, *, and / operators for longs
-* CRCR - Adds the CRCR mutators listed below
+* <b>CRCR - Adds the CRCR mutators listed below</b>
   * CRCR_ADD_ONE - Increments a constant by one; x -> x + 1
   * CRCR_SUB_ONE - Decrements a constant by one; x -> x - 1
   * CRCR_NEGATE - Negates a constant; x -> -x
   * CRCR_REPLACE_ONE - Replaces a constant by one, if not already one; x -> 1
   * CRCR_REPLACE_ZERO - Replaces a constant by zero, if not already zero; x -> 0
-* OBBN - Adds the OBBN mutators listed below
+* <b>OBBN - Adds the OBBN mutators listed below</b>
   * OBBN_OR - Replaces the | boolean operator with the & and ^ boolean operators
   * OBBN_XOR - Replaces the ^ boolean operator with the & and | boolean operators
   * OBBN_AND - Replaces the & boolean operator with the | and ^ boolean operators
-* ROR - Adds the ROR mutators listed below
+* <b>ROR - Adds the ROR mutators listed below</b>
   * ROR_IFEQ - Replaces the == operator with the >=, >, <=. <, and != operators
   * ROR_IFGE - Replaces the >= operator with the ==, >, <=. <, and != operators
   * ROR_IFGT - Replaces the > operator with the >=, ==, <=. <, and != operators
   * ROR_IFLE - Replaces the <= operator with the >=, >, ==. <, and != operators
   * ROR_IFLT - Replaces the < operator with the >=, >, <=. ==, and != operators
   * ROR_IFNE - Replaces the != operator with the >=, >, <=. <, and == operators
-* UOI - Adds the UOI mutators listed below
+* <b>UOI - Adds the UOI mutators listed below</b>
   * UOI_REVERSE - Reverses a variable's unary increment; ++x -> --x
   * UOI_REMOVE - Removes a variable's unary increment; ++x -> x
   * UOI_INCREMENT - Increases a variable's unary increment; ++x -> ++++x
