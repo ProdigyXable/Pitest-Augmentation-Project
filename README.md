@@ -39,9 +39,55 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
 * AUGMENTED - Adds all newly implemented mutators at once
 --------------------------------------------------------
 * ABS - Adds ABS Mutator
+  * ABS_STORE
+  * ABS_LOAD
 * AOD - Adds AOD Mutator
+  * AOD_FIRST
+  * AOD_LAST
 * AOR - Adds AOR Mutator
+  * AOR_I
+    * AOR_IADD
+    * AOR_ISUB
+    * AOR_IMUL
+    * AOR_IDIV
+    * AOR_IREM
+  * AOR_D
+    * AOR_DADD
+    * AOR_DSUB
+    * AOR_DMUL
+    * AOR_DIDIV
+    * AOR_dREM
+  * AOR_F
+    * AOR_FADD
+    * AOR_FSUB
+    * AOR_FMUL
+    * AOR_FDIV
+    * AOR_FREM
+  * AOR_L
+    * AOR_LADD
+    * AOR_LSUB
+    * AOR_LMUL
+    * AOR_LDIV
+    * AOR_LREM
 * CRCR - Adds CRCR Mutator
+  * CRCR_ADD_ONE
+  * CRCR_SUB_ONE
+  * CRCR_NEGATE
+  * CRCR_REPLACE_ONE
+  * CRCR_REPLACE_ZERO
 * OBBN - Adds OBBN Mutator
+  * OBBN_OR
+  * OBBN_XOR
+  * OBBN_AND
 * ROR - Adds ROR Mutator
+  * ROR_IFEQ
+  * ROR_IFGE
+  * ROR_IFGT
+  * ROR_IFLE
+  * ROR_IFLT
+  * ROR_IFNE
 * UOI - Adds UOI Mutator
+  * UOI_REVERSE
+  * UOI_REMOVE
+  * UOI_INCREMENT
+  * UOI_DECREMENT
