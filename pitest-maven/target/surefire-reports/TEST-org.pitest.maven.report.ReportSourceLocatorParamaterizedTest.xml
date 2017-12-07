@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0.005" tests="8" errors="0" skipped="0" failures="0">
+<testsuite name="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -66,6 +66,6 @@
   <testcase name="test[3: reportSourceLocator(isDirectory: true, directoryName: &quot;abc2015def0304gh&quot;, canWrite: false, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0"/>
   <testcase name="test[4: reportSourceLocator(isDirectory: false, directoryName: &quot;20150304&quot;, canWrite: true, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0"/>
   <testcase name="test[5: reportSourceLocator(isDirectory: false, directoryName: &quot;20150304&quot;, canWrite: false, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0"/>
-  <testcase name="test[6: reportSourceLocator(isDirectory: false, directoryName: &quot;abc2015def0304gh&quot;, canWrite: true, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0.003"/>
-  <testcase name="test[7: reportSourceLocator(isDirectory: false, directoryName: &quot;abc2015def0304gh&quot;, canWrite: false, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0.002"/>
+  <testcase name="test[6: reportSourceLocator(isDirectory: false, directoryName: &quot;abc2015def0304gh&quot;, canWrite: true, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0"/>
+  <testcase name="test[7: reportSourceLocator(isDirectory: false, directoryName: &quot;abc2015def0304gh&quot;, canWrite: false, shouldBeValid: false)]" classname="org.pitest.maven.report.ReportSourceLocatorParamaterizedTest" time="0"/>
 </testsuite>

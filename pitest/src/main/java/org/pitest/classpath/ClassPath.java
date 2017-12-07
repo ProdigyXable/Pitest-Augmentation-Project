@@ -62,7 +62,6 @@ public class ClassPath {
     return this.root.classNames();
   }
 
-  // fixme should not be determining type here
   private static List<ClassPathRoot> createRoots(final Collection<File> files) {
     File lastFile = null;
     try {
@@ -174,7 +173,6 @@ public class ClassPath {
     };
   }
 
-  /** FIXME move somewhere common */
   private static List<String> getClassPathElementsAsAre() {
     final String classPath = System.getProperty("java.class.path");
     final String separator = File.pathSeparator;

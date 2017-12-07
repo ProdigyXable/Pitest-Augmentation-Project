@@ -91,7 +91,6 @@ public final class MutationDetails {
    */
   @Deprecated
   public String getHtmlSafeDescription() {
-    // fixme this should not be here used in string template
     return StringUtil.escapeBasicHtmlChars(this.description);
   }
 
@@ -102,7 +101,6 @@ public final class MutationDetails {
    */
   @Deprecated
   public String getLocation() {
-    // fixme this should not be here used in string template
     return this.id.getLocation().describe();
   }
 
