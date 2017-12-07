@@ -35,8 +35,8 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
 ```
 
 ## Section 4 - New Pitest Mutators (Mutator_Code)
-
-* AUGMENTED - Adds all newly implemented mutators at once
+```
+* <b><i>AUGMENTED - Adds all newly implemented mutators at once</i></b>
 --------------------------------------------------------
 * <b>ABS - Adds the ABS mutators listed below</b>
   * ABS_STORE - Inverts a variable's value immediately before the variable is stored
@@ -91,3 +91,4 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
   * UOI_REMOVE - Removes a variable's unary increment; ++x -> x
   * UOI_INCREMENT - Increases a variable's unary increment; ++x -> ++++x
   * UOI_DECREMENT - Decreases a variable's unary increment; ++++x -> ++x
+```
