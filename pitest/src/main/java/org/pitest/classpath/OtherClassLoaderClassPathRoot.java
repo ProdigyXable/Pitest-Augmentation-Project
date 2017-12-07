@@ -37,7 +37,6 @@ public class OtherClassLoaderClassPathRoot implements ClassPathRoot {
 
   @Override
   public InputStream getData(final String name) throws IOException {
-    // TODO will this work for archives? Need to consider remote hetrogenous os
     return this.loader.getResourceAsStream(name.replace(".", "/") + ".class");
   }
 

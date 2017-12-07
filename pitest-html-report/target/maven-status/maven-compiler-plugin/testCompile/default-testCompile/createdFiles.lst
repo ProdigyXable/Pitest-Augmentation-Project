@@ -1,0 +1,9 @@
+org\pitest\mutationtest\report\html\InputStreamLineIterableTest$1.class
+org\pitest\mutationtest\report\html\MutationHtmlReportListenerTest.class
+org\pitest\mutationtest\report\html\MutationTestSummaryDataTest.class
+org\pitest\mutationtest\report\html\MutationTotalsTest.class
+org\pitest\mutationtest\report\html\MutationTestSummaryDataFileNameComparatorTest.class
+org\pitest\mutationtest\report\html\ResultComparatorTest.class
+org\pitest\mutationtest\report\html\InputStreamLineIterableTest.class
+org\pitest\mutationtest\report\html\PackageSummaryDataTest.class
+org\pitest\mutationtest\report\html\ConfidenceMapTest.class
