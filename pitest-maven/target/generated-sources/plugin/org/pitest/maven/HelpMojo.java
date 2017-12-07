@@ -1,5 +1,5 @@
-package org.pitest.maven;
 
+package org.pitest.maven;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;

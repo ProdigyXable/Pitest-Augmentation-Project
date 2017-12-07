@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.pitest.coverage.execute.CoverageProcessSystemTest
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.161 sec - in org.pitest.coverage.execute.CoverageProcessSystemTest
