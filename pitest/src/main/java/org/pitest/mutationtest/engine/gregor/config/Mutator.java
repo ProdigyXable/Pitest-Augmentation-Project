@@ -32,6 +32,9 @@ import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
 
+
+
+
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -46,9 +49,9 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.C
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
-
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
@@ -61,6 +64,34 @@ public final class Mutator {
 
     // TODO Add a new line for each new mutator added
     static {
+
+        /*
+         * AOR mutators - These mutators swap the given operand with
+         * all other operands of the same type
+         */
+        add("AOR_MUTATOR_IADD", new AORMutator(AORMutator.MutantType.IADD));
+        add("AOR_MUTATOR_ISUB", new AORMutator(AORMutator.MutantType.ISUB));
+        add("AOR_MUTATOR_IMUL", new AORMutator(AORMutator.MutantType.IMUL));
+        add("AOR_MUTATOR_IDIV", new AORMutator(AORMutator.MutantType.IDIV));
+        add("AOR_MUTATOR_IREM", new AORMutator(AORMutator.MutantType.IREM));
+
+        add("AOR_MUTATOR_DADD", new AORMutator(AORMutator.MutantType.DADD));
+        add("AOR_MUTATOR_DSUB", new AORMutator(AORMutator.MutantType.DSUB));
+        add("AOR_MUTATOR_DMUL", new AORMutator(AORMutator.MutantType.DMUL));
+        add("AOR_MUTATOR_DDIV", new AORMutator(AORMutator.MutantType.DDIV));
+        add("AOR_MUTATOR_DREM", new AORMutator(AORMutator.MutantType.DREM));
+
+        add("AOR_MUTATOR_FADD", new AORMutator(AORMutator.MutantType.DADD));
+        add("AOR_MUTATOR_FSUB", new AORMutator(AORMutator.MutantType.FSUB));
+        add("AOR_MUTATOR_FMUL", new AORMutator(AORMutator.MutantType.FMUL));
+        add("AOR_MUTATOR_FDIV", new AORMutator(AORMutator.MutantType.FDIV));
+        add("AOR_MUTATOR_FREM", new AORMutator(AORMutator.MutantType.FREM));
+
+        add("AOR_MUTATOR_LADD", new AORMutator(AORMutator.MutantType.LADD));
+        add("AOR_MUTATOR_LSUB", new AORMutator(AORMutator.MutantType.LSUB));
+        add("AOR_MUTATOR_LMUL", new AORMutator(AORMutator.MutantType.LMUL));
+        add("AOR_MUTATOR_LDIV", new AORMutator(AORMutator.MutantType.LDIV));
+        add("AOR_MUTATOR_LREM", new AORMutator(AORMutator.MutantType.LREM));
       
          /**
          * Set of AOD Mutators
@@ -183,8 +214,16 @@ public final class Mutator {
         addGroup("STRONGER", stronger());
         addGroup("ALL", all());
 
+        // New groups added for mutators in the engine.gregor.mutators.augmented package
+        addGroup("AOR_I", aorMutatorInteger());
+        addGroup("AOR_D", aorMutatorDouble());
+        addGroup("AOR_F", aorMutatorFloat());
+        addGroup("AOR_L", aorMutatorLong());
+        addGroup("AOR", aorMutator());
+
         addGroup("AOD", aod());
         addGroup("ABS", abs());
+
 
     }
 
@@ -219,6 +258,47 @@ public final class Mutator {
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
 
+    /**
+     * Integer-based sub-mutators for the AOR parent mutator
+     */
+    public static Collection<MethodMutatorFactory> aorMutatorInteger() {
+        return group(new AORMutator(AORMutator.MutantType.IADD),
+                new AORMutator(AORMutator.MutantType.ISUB),
+                new AORMutator(AORMutator.MutantType.IMUL),
+                new AORMutator(AORMutator.MutantType.IDIV),
+                new AORMutator(AORMutator.MutantType.IREM));
+    }
+
+    public static Collection<MethodMutatorFactory> aorMutatorDouble() {
+        return group(new AORMutator(AORMutator.MutantType.DADD),
+                new AORMutator(AORMutator.MutantType.DSUB),
+                new AORMutator(AORMutator.MutantType.DMUL),
+                new AORMutator(AORMutator.MutantType.DDIV),
+                new AORMutator(AORMutator.MutantType.DREM));
+    }
+
+    public static Collection<MethodMutatorFactory> aorMutatorFloat() {
+        return group(new AORMutator(AORMutator.MutantType.FADD),
+                new AORMutator(AORMutator.MutantType.FSUB),
+                new AORMutator(AORMutator.MutantType.FMUL),
+                new AORMutator(AORMutator.MutantType.FDIV),
+                new AORMutator(AORMutator.MutantType.FREM));
+    }
+
+    public static Collection<MethodMutatorFactory> aorMutatorLong() {
+        return group(new AORMutator(AORMutator.MutantType.LADD),
+                new AORMutator(AORMutator.MutantType.LSUB),
+                new AORMutator(AORMutator.MutantType.LMUL),
+                new AORMutator(AORMutator.MutantType.LDIV),
+                new AORMutator(AORMutator.MutantType.LREM));
+    }
+
+    private static Collection<MethodMutatorFactory> aorMutator() {
+        return combine(aorMutatorInteger(),
+                combine(aorMutatorDouble(),
+                        combine(aorMutatorFloat(),
+                                aorMutatorLong())));
+      
     public static Collection<MethodMutatorFactory> aod() {
         return group(new AODMutator(AODMutator.MutantType.FIRST),
                 new AODMutator(AODMutator.MutantType.LAST));
