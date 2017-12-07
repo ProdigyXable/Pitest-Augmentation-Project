@@ -32,7 +32,8 @@ import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
 
-import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
+
+
 
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
@@ -47,6 +48,11 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
+
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
@@ -86,6 +92,20 @@ public final class Mutator {
         add("AOR_MUTATOR_LMUL", new AORMutator(AORMutator.MutantType.LMUL));
         add("AOR_MUTATOR_LDIV", new AORMutator(AORMutator.MutantType.LDIV));
         add("AOR_MUTATOR_LREM", new AORMutator(AORMutator.MutantType.LREM));
+      
+         /**
+         * Set of AOD Mutators
+         */
+
+        add("AOD_FIRST", new AODMutator(AODMutator.MutantType.FIRST));
+        add("AOD_LAST", new AODMutator(AODMutator.MutantType.LAST));
+
+         /**
+         * Set of ABS Mutators. Intercepts LOAD instructions, STORE instructions
+         * and negates the value before/after the instruction respectively
+         */
+        add("ABS_LOAD", new ABSMutator(ABSMutator.MutantType.LOAD));
+        add("ABS_STORE", new ABSMutator(ABSMutator.MutantType.STORE));
 
         /**
          * Default mutator that inverts the negation of integer and floating
@@ -200,6 +220,11 @@ public final class Mutator {
         addGroup("AOR_F", aorMutatorFloat());
         addGroup("AOR_L", aorMutatorLong());
         addGroup("AOR", aorMutator());
+
+        addGroup("AOD", aod());
+        addGroup("ABS", abs());
+
+
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -273,6 +298,16 @@ public final class Mutator {
                 combine(aorMutatorDouble(),
                         combine(aorMutatorFloat(),
                                 aorMutatorLong())));
+      
+    public static Collection<MethodMutatorFactory> aod() {
+        return group(new AODMutator(AODMutator.MutantType.FIRST),
+                new AODMutator(AODMutator.MutantType.LAST));
+    /*
+     * Group for ABS Mutators
+     */
+    public static Collection<MethodMutatorFactory> abs() {
+        return group(new ABSMutator(ABSMutator.MutantType.LOAD),
+                new ABSMutator(ABSMutator.MutantType.STORE));
     }
 
     private static Collection<MethodMutatorFactory> group(
@@ -325,5 +360,4 @@ public final class Mutator {
             }
         };
     }
-
 }
