@@ -16,7 +16,7 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
 7. Execute Pitest's "mutationCoverage" Maven goal within the project in question
 8. View Pitest's results (located in the project's <b>target\pit-report\\</b>)
 
-## Section 3 - Pitest Mavan Code Snippet
+## Section 3 - Pitest Maven Code Snippet
 
 ```xml
 <plugin>
