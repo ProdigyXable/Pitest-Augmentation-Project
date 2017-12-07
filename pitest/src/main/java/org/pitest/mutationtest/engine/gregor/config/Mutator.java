@@ -53,6 +53,7 @@ import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.AORMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.CRCRMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.OBBNMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
@@ -65,6 +66,13 @@ public final class Mutator {
 
     static {
 
+        /*
+         * OBBN Mutators which mutates logical operators
+         */
+        add("OBBN_OR", new OBBNMutator(OBBNMutator.MutantType.OR));
+        add("OBBN_XOR", new OBBNMutator(OBBNMutator.MutantType.XOR));
+        add("OBBN_AND", new OBBNMutator(OBBNMutator.MutantType.AND));
+      
         /*
          * Group of CRCR Mutators - These mutators negate a constant,
          * replace a constant with one,
@@ -238,6 +246,8 @@ public final class Mutator {
         addGroup("ABS", abs());
       
         addGroup("CRCR", crcr());
+      
+      addGroup("OBBN", obbn());
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -271,13 +281,19 @@ public final class Mutator {
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
 
+    public static Collection<MethodMutatorFactory> obbn() {
+        return group(new OBBNMutator(OBBNMutator.MutantType.OR),
+                new OBBNMutator(OBBNMutator.MutantType.AND),
+                new OBBNMutator(OBBNMutator.MutantType.XOR));
+    }
     public static Collection<MethodMutatorFactory> crcr() {
         return group(new CRCRMutator(CRCRMutator.MutantType.NEGATE),
                 new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE),
                 new CRCRMutator(CRCRMutator.MutantType.REPLACE_ZERO),
                 new CRCRMutator(CRCRMutator.MutantType.ADD),
                 new CRCRMutator(CRCRMutator.MutantType.SUB));
-
+    }
+  
     /**
      * Integer-based sub-mutators for the AOR parent mutator
      */
@@ -318,10 +334,13 @@ public final class Mutator {
                 combine(aorMutatorDouble(),
                         combine(aorMutatorFloat(),
                                 aorMutatorLong())));
+    }
       
     public static Collection<MethodMutatorFactory> aod() {
         return group(new AODMutator(AODMutator.MutantType.FIRST),
-                new AODMutator(AODMutator.MutantType.LAST));
+                new AODMutator(AODMutator.MutantType.LAST)); 
+    }
+  
     /*
      * Group for ABS Mutators
      */
