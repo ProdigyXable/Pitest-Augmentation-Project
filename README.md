@@ -26,16 +26,16 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
   <configuration>
       <mutators>
         <mutator>DEFAULTS</mutator>
-        <mutator>AUGMENTED</mutator>
         <mutator>EXPERIMENTAL</mutator>
-        <mutator>[other mutators_code as needed...]</mutator>
+        <mutator>ABS_STORE</mutator>
+        <mutator>AOR</mutator>
+        <mutator>[other mutators_code as needed... (shown in section 4)]</mutator>
       </mutators>
   </configuration>
   </plugin>
 ```
 
 ## Section 4 - New Pitest Mutators (Mutator_Code)
-```
 * <b><i>AUGMENTED - Adds all newly implemented mutators at once</i></b>
 --------------------------------------------------------
 * <b>ABS - Adds the ABS mutators listed below</b>
@@ -91,4 +91,3 @@ a. See <b>Section 3 - Pitest Maven Code Snippet</b> for template code to copy/pa
   * UOI_REMOVE - Removes a variable's unary increment; ++x -> x
   * UOI_INCREMENT - Increases a variable's unary increment; ++x -> ++++x
   * UOI_DECREMENT - Decreases a variable's unary increment; ++++x -> ++x
-```
