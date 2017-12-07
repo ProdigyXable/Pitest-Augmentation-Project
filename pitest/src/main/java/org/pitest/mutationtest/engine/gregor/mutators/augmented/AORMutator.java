@@ -102,7 +102,7 @@ public class AORMutator implements MethodMutatorFactory {
 
     @Override
     public String getName() {
-        return "AOD Mutator - " + this.mutatorType.name();
+        return "AOR Mutator - " + this.mutatorType.name();
     }
 
 }

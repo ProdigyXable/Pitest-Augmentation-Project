@@ -58,7 +58,7 @@ public class AODMutator implements MethodMutatorFactory {
 
     @Override
     public String getName() {
-        return "AOD_Mutator - " + this.mutatorType.name();
+        return "AOD Mutator - " + this.mutatorType.name();
     }
 }
 
@@ -201,7 +201,7 @@ class AODLastMethodVisitor extends MethodVisitor {
     }
 
     private void replaceDoubleOperand(int opcode) {
-        final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of a formula involving doubless");
+        final MutationIdentifier muID = this.context.registerMutation(factory, "AOD_Mutator: removed the first operand of a formula involving doubles");
 
         if (this.context.shouldMutate(muID)) {
             removeLargeFirstOperand();

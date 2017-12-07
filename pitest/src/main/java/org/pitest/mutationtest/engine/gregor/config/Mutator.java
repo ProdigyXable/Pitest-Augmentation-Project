@@ -60,24 +60,35 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchM
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
 
 public final class Mutator {
+
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
     static {
+        /*
+         * UOI Mutators
+         */
+        add("UOI_REVERSE", new UOIMutator(UOIMutator.MutantType.REVERSE));
+        add("UOI_REMOVE", new UOIMutator(UOIMutator.MutantType.REMOVE));
+        add("UOI_INCREMENT", new UOIMutator(UOIMutator.MutantType.INCREMENT));
+        add("UOI_DECREMENT", new UOIMutator(UOIMutator.MutantType.DECREMENT));
 
+        /*
+         * ROR mutators
+         */
         add("ROR_IFEQ", new RORMutator(RORMutator.MutantType.IFEQ));
         add("ROR_IFGE", new RORMutator(RORMutator.MutantType.IFGE));
         add("ROR_IFGT", new RORMutator(RORMutator.MutantType.IFGT));
         add("ROR_IFLE", new RORMutator(RORMutator.MutantType.IFLE));
         add("ROR_IFLT", new RORMutator(RORMutator.MutantType.IFLT));
         add("ROR_IFNE", new RORMutator(RORMutator.MutantType.IFNE));
-      
+
         /*
          * OBBN Mutators which mutates logical operators
          */
         add("OBBN_OR", new OBBNMutator(OBBNMutator.MutantType.OR));
         add("OBBN_XOR", new OBBNMutator(OBBNMutator.MutantType.XOR));
         add("OBBN_AND", new OBBNMutator(OBBNMutator.MutantType.AND));
-      
+
         /*
          * Group of CRCR Mutators - These mutators negate a constant,
          * replace a constant with one,
@@ -95,38 +106,37 @@ public final class Mutator {
          * AOR mutators - These mutators swap the given operand with
          * all other operands of the same type
          */
-        add("AOR_MUTATOR_IADD", new AORMutator(AORMutator.MutantType.IADD));
-        add("AOR_MUTATOR_ISUB", new AORMutator(AORMutator.MutantType.ISUB));
-        add("AOR_MUTATOR_IMUL", new AORMutator(AORMutator.MutantType.IMUL));
-        add("AOR_MUTATOR_IDIV", new AORMutator(AORMutator.MutantType.IDIV));
-        add("AOR_MUTATOR_IREM", new AORMutator(AORMutator.MutantType.IREM));
+        add("AOR_IADD", new AORMutator(AORMutator.MutantType.IADD));
+        add("AOR_ISUB", new AORMutator(AORMutator.MutantType.ISUB));
+        add("AOR_IMUL", new AORMutator(AORMutator.MutantType.IMUL));
+        add("AOR_IDIV", new AORMutator(AORMutator.MutantType.IDIV));
+        add("AOR_IREM", new AORMutator(AORMutator.MutantType.IREM));
 
-        add("AOR_MUTATOR_DADD", new AORMutator(AORMutator.MutantType.DADD));
-        add("AOR_MUTATOR_DSUB", new AORMutator(AORMutator.MutantType.DSUB));
-        add("AOR_MUTATOR_DMUL", new AORMutator(AORMutator.MutantType.DMUL));
-        add("AOR_MUTATOR_DDIV", new AORMutator(AORMutator.MutantType.DDIV));
-        add("AOR_MUTATOR_DREM", new AORMutator(AORMutator.MutantType.DREM));
+        add("AOR_DADD", new AORMutator(AORMutator.MutantType.DADD));
+        add("AOR_DSUB", new AORMutator(AORMutator.MutantType.DSUB));
+        add("AOR_DMUL", new AORMutator(AORMutator.MutantType.DMUL));
+        add("AOR_DDIV", new AORMutator(AORMutator.MutantType.DDIV));
+        add("AOR_DREM", new AORMutator(AORMutator.MutantType.DREM));
 
-        add("AOR_MUTATOR_FADD", new AORMutator(AORMutator.MutantType.DADD));
-        add("AOR_MUTATOR_FSUB", new AORMutator(AORMutator.MutantType.FSUB));
-        add("AOR_MUTATOR_FMUL", new AORMutator(AORMutator.MutantType.FMUL));
-        add("AOR_MUTATOR_FDIV", new AORMutator(AORMutator.MutantType.FDIV));
-        add("AOR_MUTATOR_FREM", new AORMutator(AORMutator.MutantType.FREM));
+        add("AOR_FADD", new AORMutator(AORMutator.MutantType.DADD));
+        add("AOR_FSUB", new AORMutator(AORMutator.MutantType.FSUB));
+        add("AOR_FMUL", new AORMutator(AORMutator.MutantType.FMUL));
+        add("AOR_FDIV", new AORMutator(AORMutator.MutantType.FDIV));
+        add("AOR_FREM", new AORMutator(AORMutator.MutantType.FREM));
 
-        add("AOR_MUTATOR_LADD", new AORMutator(AORMutator.MutantType.LADD));
-        add("AOR_MUTATOR_LSUB", new AORMutator(AORMutator.MutantType.LSUB));
-        add("AOR_MUTATOR_LMUL", new AORMutator(AORMutator.MutantType.LMUL));
-        add("AOR_MUTATOR_LDIV", new AORMutator(AORMutator.MutantType.LDIV));
-        add("AOR_MUTATOR_LREM", new AORMutator(AORMutator.MutantType.LREM));
-      
-         /**
+        add("AOR_LADD", new AORMutator(AORMutator.MutantType.LADD));
+        add("AOR_LSUB", new AORMutator(AORMutator.MutantType.LSUB));
+        add("AOR_LMUL", new AORMutator(AORMutator.MutantType.LMUL));
+        add("AOR_LDIV", new AORMutator(AORMutator.MutantType.LDIV));
+        add("AOR_LREM", new AORMutator(AORMutator.MutantType.LREM));
+
+        /**
          * Set of AOD Mutators
          */
-
         add("AOD_FIRST", new AODMutator(AODMutator.MutantType.FIRST));
         add("AOD_LAST", new AODMutator(AODMutator.MutantType.LAST));
 
-         /**
+        /**
          * Set of ABS Mutators. Intercepts LOAD instructions, STORE instructions
          * and negates the value before/after the instruction respectively
          */
@@ -239,7 +249,7 @@ public final class Mutator {
         addGroup("DEFAULTS", defaults());
         addGroup("STRONGER", stronger());
         addGroup("ALL", all());
-        
+        addGroup("AUGMENTED", augmented());
 
         // New groups added for mutators in the engine.gregor.mutators.augmented package
         addGroup("AOR_I", aorMutatorInteger());
@@ -249,15 +259,16 @@ public final class Mutator {
         addGroup("AOR", aorMutator());
 
         addGroup("AOD", aod());
+
         addGroup("ABS", abs());
-      
+
         addGroup("CRCR", crcr());
-      
-      addGroup("OBBN", obbn());
-    
-      addGroup("ROR", ror());
-    
-    addGroup("UOI", uoi());
+
+        addGroup("OBBN", obbn());
+
+        addGroup("ROR", ror());
+
+        addGroup("UOI", uoi());
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -277,8 +288,18 @@ public final class Mutator {
         l.addAll(b);
         return l;
     }
-  
-  /**
+
+    private static Collection<MethodMutatorFactory> augmented() {
+        return combine(abs(),
+                combine(aod(),
+                        combine(aorMutator(),
+                                combine(crcr(),
+                                        combine(obbn(),
+                                                combine(ror(),
+                                                        uoi()))))));
+    }
+
+    /**
      * Default set of mutators - designed to provide balance between strength
      * and performance
      */
@@ -291,7 +312,6 @@ public final class Mutator {
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
 
-
     public static Collection<MethodMutatorFactory> ror() {
         return group(new RORMutator(RORMutator.MutantType.IFEQ),
                 new RORMutator(RORMutator.MutantType.IFGT),
@@ -300,13 +320,13 @@ public final class Mutator {
                 new RORMutator(RORMutator.MutantType.IFLE),
                 new RORMutator(RORMutator.MutantType.IFNE));
     }
-    
-  
+
     public static Collection<MethodMutatorFactory> obbn() {
         return group(new OBBNMutator(OBBNMutator.MutantType.OR),
                 new OBBNMutator(OBBNMutator.MutantType.AND),
                 new OBBNMutator(OBBNMutator.MutantType.XOR));
     }
+
     public static Collection<MethodMutatorFactory> crcr() {
         return group(new CRCRMutator(CRCRMutator.MutantType.NEGATE),
                 new CRCRMutator(CRCRMutator.MutantType.REPLACE_ONE),
@@ -314,7 +334,7 @@ public final class Mutator {
                 new CRCRMutator(CRCRMutator.MutantType.ADD),
                 new CRCRMutator(CRCRMutator.MutantType.SUB));
     }
-  
+
     /**
      * Integer-based sub-mutators for the AOR parent mutator
      */
@@ -356,20 +376,19 @@ public final class Mutator {
                         combine(aorMutatorFloat(),
                                 aorMutatorLong())));
     }
-      
+
     public static Collection<MethodMutatorFactory> aod() {
         return group(new AODMutator(AODMutator.MutantType.FIRST),
-                new AODMutator(AODMutator.MutantType.LAST)); 
+                new AODMutator(AODMutator.MutantType.LAST));
     }
-  
-    public static Collection<MethodMutatorFactory> uoi() {
-    return group(new UOIMutator(UOIMutator.MutantType.REVERSE),
-            new UOIMutator(UOIMutator.MutantType.REMOVE),
-            new UOIMutator(UOIMutator.MutantType.INCREMENT),
-            new UOIMutator(UOIMutator.MutantType.DECREMENT));
-  }
 
-  
+    public static Collection<MethodMutatorFactory> uoi() {
+        return group(new UOIMutator(UOIMutator.MutantType.REVERSE),
+                new UOIMutator(UOIMutator.MutantType.REMOVE),
+                new UOIMutator(UOIMutator.MutantType.INCREMENT),
+                new UOIMutator(UOIMutator.MutantType.DECREMENT));
+    }
+
     /*
      * Group for ABS Mutators
      */
