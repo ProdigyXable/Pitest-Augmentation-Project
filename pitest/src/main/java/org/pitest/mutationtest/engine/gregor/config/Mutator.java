@@ -31,6 +31,7 @@ import org.pitest.functional.prelude.Prelude;
 import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
+
 import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
@@ -45,6 +46,8 @@ import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.C
 import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.augmented.AODMutator;
+
 import org.pitest.mutationtest.engine.gregor.mutators.augmented.ABSMutator;
 
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
@@ -56,9 +59,17 @@ public final class Mutator {
 
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
+    // TODO Add a new line for each new mutator added
     static {
+      
+         /**
+         * Set of AOD Mutators
+         */
 
-        /*
+        add("AOD_FIRST", new AODMutator(AODMutator.MutantType.FIRST));
+        add("AOD_LAST", new AODMutator(AODMutator.MutantType.LAST));
+
+         /**
          * Set of ABS Mutators. Intercepts LOAD instructions, STORE instructions
          * and negates the value before/after the instruction respectively
          */
@@ -171,7 +182,10 @@ public final class Mutator {
         addGroup("DEFAULTS", defaults());
         addGroup("STRONGER", stronger());
         addGroup("ALL", all());
+
+        addGroup("AOD", aod());
         addGroup("ABS", abs());
+
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -205,6 +219,9 @@ public final class Mutator {
                 IncrementsMutator.INCREMENTS_MUTATOR);
     }
 
+    public static Collection<MethodMutatorFactory> aod() {
+        return group(new AODMutator(AODMutator.MutantType.FIRST),
+                new AODMutator(AODMutator.MutantType.LAST));
     /*
      * Group for ABS Mutators
      */
@@ -263,5 +280,4 @@ public final class Mutator {
             }
         };
     }
-
 }
