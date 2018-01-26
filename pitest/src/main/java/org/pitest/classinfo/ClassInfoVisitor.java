@@ -51,7 +51,18 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
     @Override
     public MethodVisitor visitMethod(final int access, final String name,
             final String desc, final String signature, final String[] exceptions) {
-        
+
+        MethodVisitor mv = super.visitMethod(access, name, desc, signature, exceptions);
+
+        System.out.println("");
+        System.out.println(" ------- New class method/function detected ------- ");
+        System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
+        System.out.println("Method description:\t" + (desc == null ? "No method description" : desc));
+        System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
+        System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
+        System.out.println("");
+
+        return mv;
     }
 
     @Override
@@ -74,7 +85,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
         System.out.println("Class name:\t" + name);
         System.out.println("Class signature:\t" + (signature == null ? "No signature" : signature));
         System.out.println("Class super name:\t" + (superName == null ? "No super class" : superName));
-        System.out.println("Clas interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
+        System.out.println("Class interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
         System.out.println("");
 
         this.classInfo.access = access;
