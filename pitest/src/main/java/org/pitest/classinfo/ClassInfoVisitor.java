@@ -26,10 +26,12 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.pitest.bytecode.NullVisitor;
+import org.pitest.classpath.ProjectClassPaths;
 
 public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     private final ClassInfoBuilder classInfo;
+    private boolean matchedCodeFile = false;
 
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
@@ -54,24 +56,34 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
         MethodVisitor mv = super.visitMethod(access, name, desc, signature, exceptions);
 
-        System.out.println("");
-        System.out.println(" ------- New class method/function detected ------- ");
-        System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
-        System.out.println("Method description:\t" + (desc == null ? "No method description" : desc));
-        System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
-        System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
-        System.out.println("");
-
+        if (this.matchedCodeFile) {
+            System.out.println("");
+            System.out.println(" ------- New class method/function detected ------- ");
+            System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
+            System.out.println("Method description:\t" + (desc == null ? "No method description" : desc));
+            System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
+            System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
+            System.out.println("");
+        }
         return mv;
+    }
+
+    @Override
+    public void visitEnd() {
+
+        this.matchedCodeFile = false;
+        ProjectClassPaths.codeClassPaths.clear();
+
+        super.visitEnd();
     }
 
     @Override
     public void visitSource(final String source, final String debug) {
         super.visitSource(source, debug);
 
-        System.out.println("New source file found!\t: " + source);
-        System.out.println("");
-
+        // Commented out due to these debug messages not being needed
+        // System.out.println("New source file found!\t: " + source);
+        // System.out.println("");
         this.classInfo.sourceFile = source;
     }
 
@@ -80,14 +92,19 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             final String signature, final String superName, final String[] interfaces) {
         super.visit(version, access, name, signature, superName, interfaces);
 
-        System.out.println("");
-        System.out.println("----- New class found -----");
-        System.out.println("Class name:\t" + name);
-        System.out.println("Class signature:\t" + (signature == null ? "No signature" : signature));
-        System.out.println("Class super name:\t" + (superName == null ? "No super class" : superName));
-        System.out.println("Class interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
-        System.out.println("");
+        if (ProjectClassPaths.codeClassPaths.contains(name)) {
 
+            this.matchedCodeFile = true;
+
+            System.out.println("");
+            System.out.println("----- New class found -----");
+            System.out.println("Class name:\t" + name);
+            System.out.println("Class signature:\t" + (signature == null ? "No signature" : signature));
+            System.out.println("Class super name:\t" + (superName == null ? "No super class" : superName));
+            System.out.println("Class interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
+            System.out.println("");
+        }
+        
         this.classInfo.access = access;
         this.classInfo.superClass = superName;
     }

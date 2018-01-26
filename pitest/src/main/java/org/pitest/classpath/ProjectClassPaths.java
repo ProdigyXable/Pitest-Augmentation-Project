@@ -14,11 +14,13 @@
  */
 package org.pitest.classpath;
 
+import java.util.Vector;
 import org.pitest.classinfo.ClassName;
 import org.pitest.functional.FCollection;
 
 public class ProjectClassPaths {
 
+    public static Vector<String> codeClassPaths = new Vector();
     private final ClassPath classPath;
     private final ClassFilter classFilter;
     private final PathFilter pathFilter;
@@ -39,9 +41,10 @@ public class ProjectClassPaths {
         // Seemingly outputs the all files which Pitest mutates. This output seems to signify the begin and end of PIT's control over the code
         System.out.println("");
         System.out.println("************************************************************");
-        
+
         for (ClassName cn : codeFilePaths) {
             System.out.println("Detected code filepath(s) to core project code:\t" + cn.asInternalName());
+            this.codeClassPaths.add(cn.asInternalName());
         }
 
         System.out.println("************************************************************");
