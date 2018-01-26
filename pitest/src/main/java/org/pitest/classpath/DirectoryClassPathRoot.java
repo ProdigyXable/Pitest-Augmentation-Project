@@ -28,63 +28,66 @@ import org.pitest.functional.Option;
  */
 public class DirectoryClassPathRoot implements ClassPathRoot, IOHeavyRoot {
 
-  private final File root;
+    private final File root;
 
-  public DirectoryClassPathRoot(final File root) {
-    this.root = root;
-  }
-
-  @Override
-  public InputStream getData(final String classname) throws IOException {
-    final String filename = classname.replace('.', File.separatorChar).concat(
-        ".class");
-    final File file = new File(this.root, filename);
-    if (file.canRead()) {
-      return new FileInputStream(file);
-    } else {
-      return null;
+    public DirectoryClassPathRoot(final File root) {
+        this.root = root;
     }
-  }
 
-  @Override
-  public URL getResource(final String name) throws MalformedURLException {
-    final File f = new File(this.root, name);
-    if (f.canRead()) {
-      // magically work around encoding issues
-      return f.toURI().toURL();
-    } else {
-      return null;
+    @Override
+    public InputStream getData(final String classname) throws IOException {
+        final String filename = classname.replace('.', File.separatorChar).concat(
+                ".class");
+        final File file = new File(this.root, filename);
+        if (file.canRead()) {
+            return new FileInputStream(file);
+        } else {
+            return null;
+        }
     }
-  }
 
-  @Override
-  public Collection<String> classNames() {
-    return classNames(this.root);
-  }
-
-  private Collection<String> classNames(final File file) {
-    final List<String> classNames = new LinkedList<String>();
-    for (final File f : file.listFiles()) {
-      if (f.isDirectory()) {
-        classNames.addAll(classNames(f));
-      } else if (f.getName().endsWith(".class")) {
-        classNames.add(fileToClassName(f));
-      }
+    @Override
+    public URL getResource(final String name) throws MalformedURLException {
+        final File f = new File(this.root, name);
+        if (f.canRead()) {
+            // magically work around encoding issues
+            return f.toURI().toURL();
+        } else {
+            return null;
+        }
     }
-    return classNames;
-  }
 
-  private String fileToClassName(final File f) {
-    return f
-        .getAbsolutePath()
-        .substring(this.root.getAbsolutePath().length() + 1,
-            (f.getAbsolutePath().length() - ".class".length()))
-            .replace(File.separatorChar, '.');
-  }
+    @Override
+    public Collection<String> classNames() {
+        return classNames(this.root);
+    }
 
-  @Override
-  public Option<String> cacheLocation() {
-    return Option.some(this.root.getAbsolutePath());
-  }
+    private Collection<String> classNames(final File file) {
+        final List<String> classNames = new LinkedList<String>();
+        for (final File f : file.listFiles()) {
+            if (f.isDirectory()) {
+                classNames.addAll(classNames(f));
+            } else if (f.getName().endsWith(".class")) {
+                
+                System.out.println("Class file found on classpath:\t" + f.getAbsolutePath());
+                
+                classNames.add(fileToClassName(f));
+            }
+        }
+        return classNames;
+    }
+
+    private String fileToClassName(final File f) {
+        return f
+                .getAbsolutePath()
+                .substring(this.root.getAbsolutePath().length() + 1,
+                        (f.getAbsolutePath().length() - ".class".length()))
+                .replace(File.separatorChar, '.');
+    }
+
+    @Override
+    public Option<String> cacheLocation() {
+        return Option.some(this.root.getAbsolutePath());
+    }
 
 }
