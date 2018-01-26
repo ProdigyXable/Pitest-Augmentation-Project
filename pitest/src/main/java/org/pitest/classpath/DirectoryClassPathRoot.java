@@ -69,7 +69,7 @@ public class DirectoryClassPathRoot implements ClassPathRoot, IOHeavyRoot {
                 classNames.addAll(classNames(f));
             } else if (f.getName().endsWith(".class")) {
                 
-                System.out.println("Class file found on classpath:\t" + f.getAbsolutePath());
+                // System.out.println("Class file found on classpath:\t" + f.getAbsolutePath());
                 
                 classNames.add(fileToClassName(f));
             }
