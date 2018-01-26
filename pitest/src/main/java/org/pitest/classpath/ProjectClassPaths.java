@@ -41,7 +41,7 @@ public class ProjectClassPaths {
         System.out.println("************************************************************");
         
         for (ClassName cn : codeFilePaths) {
-            System.out.println("Detected code filepath(s) to core project code:\t" + cn.asJavaName());
+            System.out.println("Detected code filepath(s) to core project code:\t" + cn.asInternalName());
         }
 
         System.out.println("************************************************************");
