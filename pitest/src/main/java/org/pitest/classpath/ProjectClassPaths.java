@@ -36,12 +36,12 @@ public class ProjectClassPaths {
                 .findClasses(this.classFilter.getCode()),
                 this.classFilter.getCode()).map(ClassName.stringToClassName());
 
-        // Seemingly outputs the all files which Pitest mutates
+        // Seemingly outputs the all files which Pitest mutates. This output seems to signify the begin and end of PIT's control over the code
         System.out.println("");
         System.out.println("************************************************************");
         
         for (ClassName cn : codeFilePaths) {
-            System.out.println("Detected filepath(s) to core project code:\t" + cn.asJavaName());
+            System.out.println("Detected code filepath(s) to core project code:\t" + cn.asJavaName());
         }
 
         System.out.println("************************************************************");
