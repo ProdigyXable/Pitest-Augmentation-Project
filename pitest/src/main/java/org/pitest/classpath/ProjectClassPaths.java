@@ -31,27 +31,44 @@ public class ProjectClassPaths {
     }
 
     public Iterable<ClassName> code() {
-        return FCollection.filter(
+        Iterable<ClassName> codeFilePaths = FCollection.filter(
                 this.classPath.getComponent(this.pathFilter.getCodeFilter())
                 .findClasses(this.classFilter.getCode()),
                 this.classFilter.getCode()).map(ClassName.stringToClassName());
+
+        // Seemingly outputs the all files which Pitest mutates
+        System.out.println("");
+        System.out.println("******************************");
+        System.out.println("******************************");
+        
+        for (ClassName cn : codeFilePaths) {
+            System.out.println("Detected filepath(s) to core project code:\t" + cn.asJavaName());
+        }
+
+        System.out.println("******************************");
+        System.out.println("******************************");
+        System.out.println("");
+
+        return codeFilePaths;
     }
 
     public Iterable<ClassName> test() {
 
-        Iterable<ClassName> buffer = FCollection.filter(
+        Iterable<ClassName> fileClassNames = FCollection.filter(
                 this.classPath.getComponent(this.pathFilter.getTestFilter())
                 .findClasses(this.classFilter.getTest()),
                 this.classFilter.getTest()).map(ClassName.stringToClassName());
 
-        System.out.println("******************************");
+        /* Seemingly output unique names for the various classes found within the project filepaths supplied to pit
+         System.out.println("******************************");
 
-        for (ClassName cn : buffer) {
-            System.out.println("(Unique) Class file found:\t" + cn.asJavaName());
-        }
+         for (ClassName cn : fileClassNames) {
+         System.out.println("(Unique) Class file found:\t" + cn.asJavaName());
+         }
 
-        System.out.println("******************************");
-        return buffer;
+         System.out.println("******************************");
+         */
+        return fileClassNames;
     }
 
     public ClassPath getClassPath() {
