@@ -38,15 +38,13 @@ public class ProjectClassPaths {
 
         // Seemingly outputs the all files which Pitest mutates
         System.out.println("");
-        System.out.println("******************************");
-        System.out.println("******************************");
+        System.out.println("************************************************************");
         
         for (ClassName cn : codeFilePaths) {
             System.out.println("Detected filepath(s) to core project code:\t" + cn.asJavaName());
         }
 
-        System.out.println("******************************");
-        System.out.println("******************************");
+        System.out.println("************************************************************");
         System.out.println("");
 
         return codeFilePaths;
