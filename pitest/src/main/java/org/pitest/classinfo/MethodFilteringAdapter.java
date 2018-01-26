@@ -35,7 +35,7 @@ public abstract class MethodFilteringAdapter extends ClassVisitor {
   }
 
   @Override
-  public final MethodVisitor visitMethod(final int access, final String name,
+  public MethodVisitor visitMethod(final int access, final String name,
       final String desc, final String signature, final String[] exceptions) {
     final MethodVisitor methodVisitor = this.cv.visitMethod(access, name, desc,
         signature, exceptions);
