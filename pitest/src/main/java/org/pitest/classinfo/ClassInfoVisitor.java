@@ -17,6 +17,7 @@ package org.pitest.classinfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassReader;
@@ -26,12 +27,14 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.pitest.bytecode.NullVisitor;
+import org.pitest.classpath.MethodParameterNode;
 import org.pitest.classpath.ProjectClassPaths;
 
 public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     private final ClassInfoBuilder classInfo;
     private boolean matchedCodeFile = false;
+    private Vector<MethodParameterNode> parameterNodes;
 
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
@@ -60,11 +63,16 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             System.out.println("");
             System.out.println(" ------- New class method/function detected ------- ");
             System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
+            
             System.out.println("Method parameter(s):\t" + (desc == null || Type.getArgumentTypes(desc).length == 0 ? "No method parameters" : Arrays.toString(Type.getArgumentTypes(desc))));
             System.out.println("Method return type:\t" + (desc == null ? "No return type" : Type.getReturnType(desc)));
+            
             System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
             System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
             System.out.println("");
+            
+            this.parameterNodes.add(new MethodParameterNode(name, desc, signature));
+            
         }
         return mv;
     }
