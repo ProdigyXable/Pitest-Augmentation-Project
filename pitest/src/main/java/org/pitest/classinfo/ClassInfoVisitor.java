@@ -60,7 +60,8 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             System.out.println("");
             System.out.println(" ------- New class method/function detected ------- ");
             System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
-            System.out.println("Method description:\t" + (desc == null ? "No method description" : desc));
+            System.out.println("Method parameter(s):\t" + (desc == null || Type.getArgumentTypes(desc).length == 0 ? "No method parameters" : Arrays.toString(Type.getArgumentTypes(desc))));
+            System.out.println("Method return type:\t" + (desc == null ? "No return type" : Type.getReturnType(desc)));
             System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
             System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
             System.out.println("");
@@ -104,7 +105,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             System.out.println("Class interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
             System.out.println("");
         }
-        
+
         this.classInfo.access = access;
         this.classInfo.superClass = superName;
     }
