@@ -36,6 +36,9 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
     private boolean matchedCodeFile = false;
     private static Vector<MethodParameterNode> parameterNodes = new Vector();
 
+    // Variable used to easily turn debug output within this class on/off
+    private final boolean debugOutput = false;
+
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
         super(writer, BridgeMethodFilter.INSTANCE);
@@ -60,30 +63,37 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
         MethodVisitor mv = super.visitMethod(access, name, desc, signature, exceptions);
 
         if (this.matchedCodeFile) {
-            System.out.println("");
-            System.out.println(" ------- New class method/function detected ------- ");
-            System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
-            
-            System.out.println("Method parameter(s):\t" + (desc == null || Type.getArgumentTypes(desc).length == 0 ? "No method parameters" : Arrays.toString(Type.getArgumentTypes(desc))));
-            System.out.println("Method return type:\t" + (desc == null ? "No return type" : Type.getReturnType(desc)));
-            
-            System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
-            System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
-            System.out.println("");
-            
-            ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, signature));
-            System.out.println("Added new MethodParameterNode for method:\t" + name );
-            
+
+            // Set of debug messages when the ClassVisitor visits a (new) method
+            if (debugOutput) {
+                System.out.println("");
+                System.out.println(" ------- New class method/function detected ------- ");
+                System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
+
+                System.out.println("Method parameter(s):\t" + (desc == null || Type.getArgumentTypes(desc).length == 0 ? "No method parameters" : Arrays.toString(Type.getArgumentTypes(desc))));
+                System.out.println("Method return type:\t" + (desc == null ? "No return type" : Type.getReturnType(desc)));
+
+                System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
+                System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
+                System.out.println("");
+            }
+
+            // This if case prevents constructors from being added to the parameterNode pool
+            if (!name.equals("<init>")) {
+                ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, signature));
+                System.out.println("--- Added new MethodParameterNode for method:\t" + name);
+            }
         }
         return mv;
     }
 
     @Override
     public void visitEnd() {
-
+        
         this.matchedCodeFile = false;
-        ProjectClassPaths.codeClassPaths.clear();
-
+        // ProjectClassPaths.codeClassPaths.clear(); (Do not need to clear vector file after each method)
+        System.out.println("");
+        
         super.visitEnd();
     }
 
@@ -92,8 +102,10 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
         super.visitSource(source, debug);
 
         // Commented out due to these debug messages not being needed
+        // if (debugOutput) {
         // System.out.println("New source file found!\t: " + source);
         // System.out.println("");
+        // }
         this.classInfo.sourceFile = source;
     }
 
@@ -106,13 +118,16 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
             this.matchedCodeFile = true;
 
-            System.out.println("");
-            System.out.println("----- New class found -----");
-            System.out.println("Class name:\t" + name);
-            System.out.println("Class signature:\t" + (signature == null ? "No signature" : signature));
-            System.out.println("Class super name:\t" + (superName == null ? "No super class" : superName));
-            System.out.println("Class interfaces:\t" + (interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
-            System.out.println("");
+            if (debugOutput) {
+                // Set of debug messages when the ClassVisitor visits a (new) class
+                System.out.println("");
+                System.out.println("----- New class found -----");
+                System.out.println("Class name:\t" + name);
+                System.out.println("Class signature:\t" + (signature == null ? "No signature" : signature));
+                System.out.println("Class super name:\t" + (superName == null ? "No super class" : superName));
+                System.out.println("Class interfaces:\t" + (interfaces == null || interfaces.length == 0 ? "No class interfaces" : Arrays.toString(interfaces)));
+                System.out.println("");
+            }
         }
 
         this.classInfo.access = access;

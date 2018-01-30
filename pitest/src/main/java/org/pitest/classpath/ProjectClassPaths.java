@@ -39,19 +39,16 @@ public class ProjectClassPaths {
                 this.classFilter.getCode()).map(ClassName.stringToClassName());
 
         // Seemingly outputs the all files which Pitest mutates. This output seems to signify the begin and end of PIT's control over the code
-        System.out.println("");
-        System.out.println("************************************************************");
-
         for (ClassName cn : codeFilePaths) {
-            System.out.println("Detected code filepath(s) to core project code:\t" + cn.asInternalName());
-            if (!this.codeClassPaths.contains(cn.asInternalName())) {
-                this.codeClassPaths.add(cn.asInternalName());
+            if (!ProjectClassPaths.codeClassPaths.contains(cn.asInternalName())) {
+                System.out.println("");
+                System.out.println("************************************************************");
+                System.out.println("Detected code filepath(s) to core project code:\t" + cn.asInternalName());
+                System.out.println("************************************************************");
+                System.out.println("");
+                ProjectClassPaths.codeClassPaths.add(cn.asInternalName());
             }
         }
-
-        System.out.println("************************************************************");
-        System.out.println("");
-
         return codeFilePaths;
     }
 
