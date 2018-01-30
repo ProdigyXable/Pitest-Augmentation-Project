@@ -34,7 +34,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     private final ClassInfoBuilder classInfo;
     private boolean matchedCodeFile = false;
-    private Vector<MethodParameterNode> parameterNodes;
+    private static Vector<MethodParameterNode> parameterNodes = new Vector();
 
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
@@ -71,7 +71,8 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
             System.out.println("");
             
-            this.parameterNodes.add(new MethodParameterNode(name, desc, signature));
+            ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, signature));
+            System.out.println("Added new MethodParameterNode for method:\t" + name );
             
         }
         return mv;

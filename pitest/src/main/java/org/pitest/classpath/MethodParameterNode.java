@@ -41,20 +41,14 @@ public class MethodParameterNode {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof MethodParameterNode) {
-
+        if (obj == null) {
+            return false;
+        } else if (obj instanceof MethodParameterNode) {
             MethodParameterNode mpn = (MethodParameterNode) obj;
-
-            if ((this.methodName.equals(mpn.methodName)) && (this.methodDescriptor.equals(mpn.methodDescriptor))) {
-                return true;
-            } else {
-                return false;
-            }
-
+            return (this.methodName.equals(mpn.methodName)) && (this.methodDescriptor.equals(mpn.methodDescriptor));
         } else {
             return false;
         }
-
     }
 
     @Override
@@ -62,4 +56,23 @@ public class MethodParameterNode {
         return super.hashCode();
     }
 
+    public String getName() {
+        return this.methodName;
+    }
+
+    public String getDescriptor() {
+        return this.methodDescriptor;
+    }
+
+    public Type[] getParameters() {
+        return this.methodParameters;
+    }
+
+    public Type getReturnType() {
+        return this.methodReturnType;
+    }
+
+    public String getSignature() {
+        return this.methodSignature;
+    }
 }
