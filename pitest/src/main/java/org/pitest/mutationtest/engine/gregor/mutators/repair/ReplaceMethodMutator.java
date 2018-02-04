@@ -17,7 +17,6 @@ package org.pitest.mutationtest.engine.gregor.mutators.repair;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Vector;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.pitest.classinfo.ClassInfoVisitor;
@@ -64,7 +63,7 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
     }
 
     private Collection<MethodParameterNode> parseMethod(String owner, String name, String desc) {
-        Collection<MethodParameterNode> matchedMethods = new Vector<MethodParameterNode>();
+        ArrayList<MethodParameterNode> matchedMethods = new ArrayList<MethodParameterNode>();
 
         System.out.println("--- Method invocation detected:\t [" + name + "]");
         System.out.println("--- Method found?:\t" + ClassInfoVisitor.parameterNodes.contains(new MethodParameterNode(name, desc, owner)));
@@ -117,7 +116,7 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
             return null;
         } else {
 
-            // Some algorithim to decide which method to pull
+            // Some algorithim to decide which MethodParameterNode to pull/return
             return matchedMethods.get(0);
 
         }

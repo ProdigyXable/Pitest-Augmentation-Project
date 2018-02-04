@@ -17,7 +17,6 @@ package org.pitest.classinfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Vector;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassReader;
@@ -39,10 +38,10 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
     // Used to relate a method to the class which contains the method
     private String owningClass = "";
 
-    public static Vector<MethodParameterNode> parameterNodes = new Vector();
+    public static ArrayList<MethodParameterNode> parameterNodes = new ArrayList();
 
     // Variable used to easily turn debug output within this class on/off
-    private final boolean debugOutput = false;
+    private final boolean debugOutput = true;
 
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
