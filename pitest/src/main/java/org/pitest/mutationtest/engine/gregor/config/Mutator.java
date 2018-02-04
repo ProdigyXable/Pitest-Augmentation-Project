@@ -58,12 +58,16 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiver
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
-
+import org.pitest.mutationtest.engine.gregor.mutators.repair.ReplaceMethodMutator;
 public final class Mutator {
 
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
-
+    
     static {
+        
+        // ReplaceMethodMutator
+        add("REPLACE_METHOD", new ReplaceMethodMutator());
+        
         /*
          * UOI Mutators
          */

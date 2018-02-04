@@ -18,6 +18,7 @@ package org.pitest.classpath;
 import org.objectweb.asm.Type;
 
 /**
+ * 
  *
  * @author Sam Benton's PC
  */
@@ -28,15 +29,37 @@ public class MethodParameterNode {
     private final Type methodReturnType;
     private final Type[] methodParameters;
     private final String methodSignature;
+    private final String ownerClass;
 
-    public MethodParameterNode(String name, String descriptor, String signature) {
+    public MethodParameterNode(String name, String descriptor, String parentClass, String signature) {
         this.methodName = name;
 
         this.methodDescriptor = descriptor;
         this.methodReturnType = Type.getReturnType(methodDescriptor);
         this.methodParameters = Type.getArgumentTypes(methodDescriptor);
-
+        this.ownerClass = parentClass;
         this.methodSignature = signature;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    
+    public MethodParameterNode(String name, String descriptor, String parentClass) {
+        this.methodName = name;
+
+        this.methodDescriptor = descriptor;
+        this.methodReturnType = Type.getReturnType(methodDescriptor);
+        this.methodParameters = Type.getArgumentTypes(methodDescriptor);
+        this.ownerClass = parentClass;
+        this.methodSignature = "No Method Signature";
     }
 
     @Override
@@ -49,11 +72,6 @@ public class MethodParameterNode {
         } else {
             return false;
         }
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
     }
 
     public String getName() {
@@ -74,5 +92,14 @@ public class MethodParameterNode {
 
     public String getSignature() {
         return this.methodSignature;
+    }
+
+    public String getOwnerClass() {
+        return this.ownerClass;
+    }
+
+    @Override
+    public String toString() {
+        return this.methodName + ":" + this.methodDescriptor;
     }
 }

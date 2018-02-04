@@ -33,8 +33,13 @@ import org.pitest.classpath.ProjectClassPaths;
 public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     private final ClassInfoBuilder classInfo;
+
     private boolean matchedCodeFile = false;
-    private static Vector<MethodParameterNode> parameterNodes = new Vector();
+
+    // Used to relate a method to the class which contains the method
+    private String owningClass = "";
+
+    public static Vector<MethodParameterNode> parameterNodes = new Vector();
 
     // Variable used to easily turn debug output within this class on/off
     private final boolean debugOutput = false;
@@ -67,7 +72,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             // Set of debug messages when the ClassVisitor visits a (new) method
             if (debugOutput) {
                 System.out.println("");
-                System.out.println(" ------- New class method/function detected ------- ");
+                System.out.println(" ------- New method/function detected ------- ");
                 System.out.println("Method name:\t" + (name.equals("<init>") ? "Class constructor" : name));
 
                 System.out.println("Method parameter(s):\t" + (desc == null || Type.getArgumentTypes(desc).length == 0 ? "No method parameters" : Arrays.toString(Type.getArgumentTypes(desc))));
@@ -75,13 +80,15 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
                 System.out.println("Method signature:\t" + (signature == null ? "No method signature" : signature));
                 System.out.println("Method execeptions:\t" + ((exceptions == null) || (exceptions.length == 0) ? "No method exceptions" : Arrays.toString(exceptions)));
+                System.out.println("Method access level:\t" + access);
                 System.out.println("");
             }
 
             // This if case prevents constructors from being added to the parameterNode pool
-            if (!name.equals("<init>")) {
-                ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, signature));
-                System.out.println("--- Added new MethodParameterNode for method:\t" + name);
+            if (!name.equals("<init>") && !name.equals("<clinit>")) {
+                ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, owningClass, signature));
+
+                System.out.println("--- Added new MethodParameterNode for method:\t" + name + ":" + desc);
             }
         }
         return mv;
@@ -89,11 +96,13 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     @Override
     public void visitEnd() {
-        
+
         this.matchedCodeFile = false;
+        this.owningClass = "";
+
         // ProjectClassPaths.codeClassPaths.clear(); (Do not need to clear vector file after each method)
         System.out.println("");
-        
+
         super.visitEnd();
     }
 
@@ -117,6 +126,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
         if (ProjectClassPaths.codeClassPaths.contains(name)) {
 
             this.matchedCodeFile = true;
+            this.owningClass = name;
 
             if (debugOutput) {
                 // Set of debug messages when the ClassVisitor visits a (new) class
