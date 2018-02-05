@@ -15,6 +15,7 @@
  */
 package org.pitest.classpath;
 
+import java.io.Serializable;
 import org.objectweb.asm.Type;
 
 /**
@@ -22,14 +23,15 @@ import org.objectweb.asm.Type;
  *
  * @author Sam Benton's PC
  */
-public class MethodParameterNode {
+public class MethodParameterNode implements Serializable {
 
     private final String methodName;
     private final String methodDescriptor;
-    private final Type methodReturnType;
-    private final Type[] methodParameters;
+    private final transient Type methodReturnType;
+    private final transient Type[] methodParameters;
     private final String methodSignature;
     private final String ownerClass;
+    
 
     public MethodParameterNode(String name, String descriptor, String parentClass, String signature) {
         this.methodName = name;
