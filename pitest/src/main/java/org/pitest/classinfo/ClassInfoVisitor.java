@@ -14,8 +14,15 @@
  */
 package org.pitest.classinfo;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.objectweb.asm.AnnotationVisitor;
@@ -37,8 +44,9 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     // Used to relate a method to the class which contains the method
     private String owningClass = "";
+    private String serializedFilename = "methodParameterData.txt";
 
-    public static ArrayList<MethodParameterNode> parameterNodes = new ArrayList();
+    public ArrayList<MethodParameterNode> parameterNodes = new ArrayList();
 
     // Variable used to easily turn debug output within this class on/off
     private final boolean debugOutput = true;
@@ -84,8 +92,8 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             }
 
             // This if case prevents constructors from being added to the parameterNode pool
-            if (!name.equals("<init>") && !name.equals("<clinit>")) {
-                ClassInfoVisitor.parameterNodes.add(new MethodParameterNode(name, desc, owningClass, signature));
+            if (!name.equals("<init>")) {
+                this.parameterNodes.add(new MethodParameterNode(name, desc, owningClass, signature));
 
                 System.out.println("--- Added new MethodParameterNode for method:\t" + name + ":" + desc);
             }
@@ -101,8 +109,49 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
         // ProjectClassPaths.codeClassPaths.clear(); (Do not need to clear vector file after each method)
         System.out.println("");
+        
+        serializeMethodParameters(this.parameterNodes, serializedFilename);
 
         super.visitEnd();
+    }
+
+    private boolean serializeMethodParameters(ArrayList<MethodParameterNode> serializeObject, String serialFilename) {
+
+        try {
+            FileOutputStream fileStream = new FileOutputStream(serialFilename);
+            ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+
+            objectStream.writeObject(serializeObject);
+
+            objectStream.close();
+            fileStream.close();
+
+            return true;
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return false;
+    }
+
+    private Collection<MethodParameterNode> deserializeMethodParameters(String serialFilename) {
+        try {
+            FileInputStream fileStream = new FileInputStream(serialFilename);
+            ObjectInputStream objectStream = new ObjectInputStream(fileStream);
+            ArrayList<MethodParameterNode> mpnData = (ArrayList) objectStream.readObject();
+
+            objectStream.close();
+            fileStream.close();
+
+            return mpnData;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override
@@ -138,6 +187,10 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
                 System.out.println("");
             }
         }
+        
+        if (new File(serializedFilename).exists()) {
+                this.parameterNodes.addAll(new ArrayList(this.deserializeMethodParameters(serializedFilename)));   
+            }
 
         this.classInfo.access = access;
         this.classInfo.superClass = superName;
