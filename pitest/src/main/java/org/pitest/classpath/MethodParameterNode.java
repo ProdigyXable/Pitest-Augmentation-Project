@@ -103,7 +103,7 @@ public class MethodParameterNode implements Serializable {
 
     @Override
     public String toString() {
-        return this.getOwnerClass() + "\t" + this.methodName + ":" + this.methodDescriptor;
+        return this.methodName + ":" + this.methodDescriptor;
     }
     
         public static boolean serializeMethodParameters(ArrayList<MethodParameterNode> serializeObject, String serialFilename) {
