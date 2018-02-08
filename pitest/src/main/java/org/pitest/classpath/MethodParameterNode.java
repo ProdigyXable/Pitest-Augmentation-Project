@@ -15,11 +15,18 @@
  */
 package org.pitest.classpath;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import org.objectweb.asm.Type;
 
 /**
- * 
+ *
  *
  * @author Sam Benton's PC
  */
@@ -27,18 +34,15 @@ public class MethodParameterNode implements Serializable {
 
     private final String methodName;
     private final String methodDescriptor;
-    private final transient Type methodReturnType;
-    private final transient Type[] methodParameters;
     private final String methodSignature;
     private final String ownerClass;
     
+    public static final String SERIAL_FILEPATH = "methodParameterNode.txt";
 
     public MethodParameterNode(String name, String descriptor, String parentClass, String signature) {
         this.methodName = name;
 
         this.methodDescriptor = descriptor;
-        this.methodReturnType = Type.getReturnType(methodDescriptor);
-        this.methodParameters = Type.getArgumentTypes(methodDescriptor);
         this.ownerClass = parentClass;
         this.methodSignature = signature;
     }
@@ -53,13 +57,10 @@ public class MethodParameterNode implements Serializable {
         return super.hashCode();
     }
 
-    
     public MethodParameterNode(String name, String descriptor, String parentClass) {
         this.methodName = name;
 
         this.methodDescriptor = descriptor;
-        this.methodReturnType = Type.getReturnType(methodDescriptor);
-        this.methodParameters = Type.getArgumentTypes(methodDescriptor);
         this.ownerClass = parentClass;
         this.methodSignature = "No Method Signature";
     }
@@ -85,11 +86,11 @@ public class MethodParameterNode implements Serializable {
     }
 
     public Type[] getParameters() {
-        return this.methodParameters;
+        return Type.getArgumentTypes(methodDescriptor);
     }
 
     public Type getReturnType() {
-        return this.methodReturnType;
+        return Type.getReturnType(methodDescriptor);
     }
 
     public String getSignature() {
@@ -102,6 +103,46 @@ public class MethodParameterNode implements Serializable {
 
     @Override
     public String toString() {
-        return this.methodName + ":" + this.methodDescriptor;
+        return this.getOwnerClass() + "\t" + this.methodName + ":" + this.methodDescriptor;
+    }
+    
+        public static boolean serializeMethodParameters(ArrayList<MethodParameterNode> serializeObject, String serialFilename) {
+
+        try {
+            FileOutputStream fileStream = new FileOutputStream(serialFilename);
+            ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+
+            objectStream.writeObject(serializeObject);
+
+            objectStream.close();
+            fileStream.close();
+
+            return true;
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return false;
+    }
+
+    
+    public static Collection<MethodParameterNode> deserializeMethodParameters(String serialFilename) {
+        try {
+            FileInputStream fileStream = new FileInputStream(serialFilename);
+            ObjectInputStream objectStream = new ObjectInputStream(fileStream);
+            ArrayList<MethodParameterNode> mpnData = (ArrayList) objectStream.readObject();
+
+            objectStream.close();
+            fileStream.close();
+
+            return mpnData;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 }

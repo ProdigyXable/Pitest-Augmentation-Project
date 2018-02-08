@@ -15,11 +15,7 @@
  */
 package org.pitest.mutationtest.engine.gregor.mutators.repair;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.Collection;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.pitest.classpath.MethodParameterNode;
@@ -55,7 +51,6 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
     private final MethodMutatorFactory factory;
     private final MutationContext context;
     private final MethodInfo methodInfo;
-    private final String serializedFilename = "methodParameterData.txt";
 
     ReplaceMethodMutatorMethodVisitor(final MethodMutatorFactory factory,
             final MutationContext context, final MethodVisitor delegateMethodVisitor, final MethodInfo methodInfo) {
@@ -87,7 +82,7 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
 
     private ArrayList<MethodParameterNode> parseMethod(String owner, String name, String desc) {
 
-        ArrayList<MethodParameterNode> mpnClassData = new ArrayList(deserializeMethodParameters(this.serializedFilename));
+        ArrayList<MethodParameterNode> mpnClassData = new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH));
 
         ArrayList<MethodParameterNode> matchedMethods = new ArrayList();
 
@@ -115,24 +110,5 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
         // Some algorithim to decide which MethodParameterNode to pull/return
         return mpnData.get(0);
 
-    }
-
-    private Collection<MethodParameterNode> deserializeMethodParameters(String serialFilename) {
-        try {
-            FileInputStream fileStream = new FileInputStream(serialFilename);
-            ObjectInputStream objectStream = new ObjectInputStream(fileStream);
-            ArrayList<MethodParameterNode> mpnData = (ArrayList) objectStream.readObject();
-
-            objectStream.close();
-            fileStream.close();
-
-            return mpnData;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-
-        return null;
     }
 }
