@@ -37,7 +37,7 @@ public class MethodParameterNode implements Serializable {
     private final String methodSignature;
     private final String ownerClass;
     
-    public static final String SERIAL_FILEPATH = "methodParameterNode.txt";
+    public static final String SERIAL_FILEPATH = "pitProjectMethodData.txt";
 
     public MethodParameterNode(String name, String descriptor, String parentClass, String signature) {
         this.methodName = name;

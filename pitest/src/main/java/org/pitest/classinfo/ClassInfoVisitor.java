@@ -143,8 +143,13 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             }
         }
         
+        // Checks to see if a file exists before attempting to deserialize data
         if (new File(MethodParameterNode.SERIAL_FILEPATH).exists()) {
-                this.parameterNodes.addAll(new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH)));   
+            // Adds any found MethodParameterNode to the pool    
+            this.parameterNodes.addAll(
+                        // Loads previously saved class method data into a new Collection object (ArrayList in this case)
+                        new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH))
+                );   
             }
 
         this.classInfo.access = access;

@@ -68,22 +68,26 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
             MethodParameterNode mpn = getParameterNode(parseMethod(owner, name, desc));
 
             if (mpn != null) {
-                final MutationIdentifier muID = this.context.registerMutation(factory, "Switched method invocation of " + name + " with invocation of " + mpn.getName());
+                final MutationIdentifier muID = this.context.registerMutation(factory, "Switched method invocation of " + name + " with invocation of " + mpn.toString());
 
                 if (this.context.shouldMutate(muID)) {
-
-                    super.visitMethodInsn(opcode, owner, mpn.getName(), desc, itf);
+                    
+                    // Change details of the method invocation
+                    super.visitMethodInsn(opcode, mpn.getOwnerClass(), mpn.getName(), mpn.getDescriptor(), itf);
                     return;
                 }
             }
         }
+        
         super.visitMethodInsn(opcode, owner, name, desc, itf);
     }
 
     private ArrayList<MethodParameterNode> parseMethod(String owner, String name, String desc) {
 
+        // Pulls data which should be saved locally to the project
         ArrayList<MethodParameterNode> mpnClassData = new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH));
 
+        // Method's return object
         ArrayList<MethodParameterNode> matchedMethods = new ArrayList();
 
         for (MethodParameterNode mpn : mpnClassData) {
@@ -96,6 +100,8 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
 
                         // Used in case you want to limit replaced methods to those within the same class
                         if (mpn.getOwnerClass().equals(owner)) {
+
+                            // This methodParameterNode is 'compatible' with the current method. Add this method details to a central pool
                             matchedMethods.add(mpn);
                         }
                     }
@@ -103,12 +109,24 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
             }
         }
 
+        System.out.println("Compatible methods invocation replacements for this method:\t" + matchedMethods.size());
+        System.out.println("");
+        
         return matchedMethods;
     }
 
     private MethodParameterNode getParameterNode(ArrayList<MethodParameterNode> mpnData) {
-        // Some algorithim to decide which MethodParameterNode to pull/return
-        return mpnData.get(0);
+
+        if (mpnData.isEmpty()) {
+
+            // if mpnData is empty, return nothing (null) to prevent the mutator from occuring    
+            return null;
+
+        } else {
+
+            // Some algorithm to decide which MethodParameterNode to pull/return
+            return mpnData.get(0);
+        }
 
     }
 }
