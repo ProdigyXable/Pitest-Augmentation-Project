@@ -71,14 +71,14 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
                 final MutationIdentifier muID = this.context.registerMutation(factory, "Switched method invocation of " + name + " with invocation of " + mpn.toString());
 
                 if (this.context.shouldMutate(muID)) {
-                    
+
                     // Change details of the method invocation
                     super.visitMethodInsn(opcode, mpn.getOwnerClass(), mpn.getName(), mpn.getDescriptor(), itf);
                     return;
                 }
             }
         }
-        
+
         super.visitMethodInsn(opcode, owner, name, desc, itf);
     }
 
@@ -92,16 +92,17 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
 
         for (MethodParameterNode mpn : mpnClassData) {
             if (mpn != null) {
-                // Used to find other stored methods with the same descriptor as the original method
+                // Filters out methods with different descriptors
                 if (mpn.getDescriptor().equals(desc)) {
 
-                    // Used to prevent detection of itself
+                    // Filters out methods whose name is the same as the original method invocation name
                     if (!mpn.getName().equals(name)) {
 
-                        // Used in case you want to limit replaced methods to those within the same class
+                        // Filters out methods outside the original method invocation class
                         if (mpn.getOwnerClass().equals(owner)) {
 
-                            // This methodParameterNode is 'compatible' with the current method. Add this method details to a central pool
+                            // This methodParameterNode is 'compatible' with the current method.
+                            // Add this method details to a central pool for usage later
                             matchedMethods.add(mpn);
                         }
                     }
@@ -109,9 +110,9 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
             }
         }
 
-        System.out.println("Compatible methods invocation replacements for this method:\t" + matchedMethods.size());
+        System.out.println("Compatible method invocation replacements for this method" + owner + " -> " + name + ":\t" + matchedMethods.size());
         System.out.println("");
-        
+
         return matchedMethods;
     }
 
@@ -119,7 +120,7 @@ class ReplaceMethodMutatorMethodVisitor extends MethodVisitor {
 
         if (mpnData.isEmpty()) {
 
-            // if mpnData is empty, return nothing (null) to prevent the mutator from occuring    
+            // If mpnData is empty, return nothing (null) to prevent the mutator from occuring    
             return null;
 
         } else {

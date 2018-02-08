@@ -36,7 +36,7 @@ public class MethodParameterNode implements Serializable {
     private final String methodDescriptor;
     private final String methodSignature;
     private final String ownerClass;
-    
+
     public static final String SERIAL_FILEPATH = "pitProjectMethodData.txt";
 
     public MethodParameterNode(String name, String descriptor, String parentClass, String signature) {
@@ -103,10 +103,10 @@ public class MethodParameterNode implements Serializable {
 
     @Override
     public String toString() {
-        return this.methodName + ":" + this.methodDescriptor;
+        return this.ownerClass + " -> " + this.methodName + ":" + this.methodDescriptor;
     }
-    
-        public static boolean serializeMethodParameters(ArrayList<MethodParameterNode> serializeObject, String serialFilename) {
+
+    public static boolean serializeMethodParameters(ArrayList<MethodParameterNode> serializeObject, String serialFilename) {
 
         try {
             FileOutputStream fileStream = new FileOutputStream(serialFilename);
@@ -126,7 +126,6 @@ public class MethodParameterNode implements Serializable {
         return false;
     }
 
-    
     public static Collection<MethodParameterNode> deserializeMethodParameters(String serialFilename) {
         try {
             FileInputStream fileStream = new FileInputStream(serialFilename);
