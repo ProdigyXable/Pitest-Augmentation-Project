@@ -34,11 +34,16 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
     private final ClassInfoBuilder classInfo;
 
+    // Used to distinguish relevant source code files from irrelevant source code files
     private boolean matchedCodeFile = false;
+
+    // True before any ClassInfoVisitor executes the visit(); False after any execution of the visit()
+    private static boolean firstPass = true;
 
     // Used to relate a method to the class which contains the method
     private String owningClass = "";
 
+    // Contains the (non-constructor) method detail's for all classes within project
     public ArrayList<MethodParameterNode> parameterNodes = new ArrayList();
 
     // Variable used to easily turn debug output within this class on/off
@@ -48,6 +53,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             final ClassVisitor writer) {
         super(writer, BridgeMethodFilter.INSTANCE);
         this.classInfo = classInfo;
+
     }
 
     public static ClassInfoBuilder getClassInfo(final ClassName name,
@@ -85,11 +91,11 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             }
 
             // This if case prevents constructors from being added to the parameterNode pool
-            if (!name.equals("<init>")) {
-                this.parameterNodes.add(new MethodParameterNode(name, desc, owningClass, signature));
+            //       if (!name.equals("<init>") && !name.equals("<clinit>")) {
+            this.parameterNodes.add(new MethodParameterNode(name, desc, owningClass, signature));
 
-                System.out.println("--- Added new MethodParameterNode for method:\t" + name + ":" + desc);
-            }
+            System.out.println("--- Added new MethodParameterNode for method:\t" + owningClass + " -> " + name + ":" + desc);
+            //     }
         }
         return mv;
     }
@@ -102,22 +108,16 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
 
         // ProjectClassPaths.codeClassPaths.clear(); (Do not need to clear vector file after each method)
         System.out.println("");
-        
+
         MethodParameterNode.serializeMethodParameters(this.parameterNodes, MethodParameterNode.SERIAL_FILEPATH);
 
         super.visitEnd();
     }
 
-
     @Override
     public void visitSource(final String source, final String debug) {
         super.visitSource(source, debug);
 
-        // Commented out due to these debug messages not being needed
-        // if (debugOutput) {
-        // System.out.println("New source file found!\t: " + source);
-        // System.out.println("");
-        // }
         this.classInfo.sourceFile = source;
     }
 
@@ -142,15 +142,8 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
                 System.out.println("");
             }
         }
-        
-        // Checks to see if a file exists before attempting to deserialize data
-        if (new File(MethodParameterNode.SERIAL_FILEPATH).exists()) {
-            // Adds any found MethodParameterNode to the pool    
-            this.parameterNodes.addAll(
-                        // Loads previously saved class method data into a new Collection object (ArrayList in this case)
-                        new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH))
-                );   
-            }
+
+        processSerialData();
 
         this.classInfo.access = access;
         this.classInfo.superClass = superName;
@@ -187,6 +180,33 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
             final String[] exceptions, final MethodVisitor methodVisitor) {
 
         return new InfoMethodVisitor(this.classInfo, methodVisitor);
+
+    }
+
+    // Processes the MethodParameterNode serialized information
+    private void processSerialData() {
+        // Checks to see if a file exists before attempting to deserialize data
+        File f = new File(MethodParameterNode.SERIAL_FILEPATH);
+        if (f.exists()) {
+
+            // Executes when the ClassInfoVisitor is not executed for the first time
+            if (!ClassInfoVisitor.firstPass) {
+
+                // Adds any found MethodParameterNode to the pool    
+                this.parameterNodes.addAll(
+                        // Loads previously saved class method data into a new Collection object (ArrayList in this case)
+                        new ArrayList(MethodParameterNode.deserializeMethodParameters(MethodParameterNode.SERIAL_FILEPATH))
+                );
+
+            } else {
+                ClassInfoVisitor.firstPass = false;
+
+                // Deletes any serialized information possibly existing from previous executions
+                // Effectively cleans the MethodParameterData serialized data file.
+                // Needed to prevent previous iteration of the ReplaceMethodMutator from causing issues with the present mutator iteration
+                f.delete();
+            }
+        }
 
     }
 
@@ -269,5 +289,4 @@ class InfoMethodVisitor extends MethodVisitor {
         this.classInfo.registerAnnotation(type);
         return super.visitAnnotation(desc, visible);
     }
-
 }
