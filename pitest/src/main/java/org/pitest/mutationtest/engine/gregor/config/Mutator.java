@@ -66,7 +66,8 @@ public final class Mutator {
     static {
         
         // ReplaceMethodMutator
-        add("REPLACE_METHOD", new ReplaceMethodMutator());
+        add("REPLACE_METHOD_INVOCATION_DESCRIPTOR", ReplaceMethodMutator.SUBSTITUTE_METHOD_DESCRIPTOR);
+        add("REPLACE_METHOD_INVOCATION_NAME", ReplaceMethodMutator.SUBSTITUTE_METHOD_NAME);
         
         /*
          * UOI Mutators

@@ -19,114 +19,118 @@ import org.objectweb.asm.Type;
 
 public class MethodInfo {
 
-  private final ClassInfo owningClass;
-  private final int       access;
-  private final String    methodName;
-  private final String    methodDescriptor;
+    private final ClassInfo owningClass;
+    private final int access;
+    private final String methodName;
+    private final String methodDescriptor;
 
-  public MethodInfo() {
-    this(new ClassInfo(0, 0, "", "", "", new String[0]), 0, "", "()V");
-  }
+    public MethodInfo() {
+        this(new ClassInfo(0, 0, "", "", "", new String[0]), 0, "", "()V");
+    }
 
-  private MethodInfo(final ClassInfo owningClass, final int access,
-      final String name, final String methodDescriptor) {
-    this.owningClass = owningClass;
-    this.access = access;
-    this.methodName = name;
-    this.methodDescriptor = methodDescriptor;
-  }
+    private MethodInfo(final ClassInfo owningClass, final int access,
+            final String name, final String methodDescriptor) {
+        this.owningClass = owningClass;
+        this.access = access;
+        this.methodName = name;
+        this.methodDescriptor = methodDescriptor;
+    }
 
-  public String getDescription() {
-    return this.owningClass.getName() + "::" + getName();
-  }
+    public String getDescription() {
+        return this.owningClass.getName() + "::" + getName();
+    }
 
-  public String getName() {
-    return this.methodName;
-  }
+    public String getName() {
+        return this.methodName;
+    }
 
-  public String getMethodDescriptor() {
-    return this.methodDescriptor;
-  }
+    public String getMethodDescriptor() {
+        return this.methodDescriptor;
+    }
 
-  @Override
-  public String toString() {
-    return "MethodInfo [access=" + this.access + ", desc="
-        + this.methodDescriptor + ",  name=" + this.methodName + "]";
-  }
+    @Override
+    public String toString() {
+        return "MethodInfo [access=" + this.access + ", desc="
+                + this.methodDescriptor + ",  name=" + this.methodName + "]";
+    }
 
-  public boolean isStatic() {
-    return ((this.access & Opcodes.ACC_STATIC) != 0);
-  }
+    public boolean isStatic() {
+        return ((this.access & Opcodes.ACC_STATIC) != 0);
+    }
 
-  public boolean isSynthetic() {
-    return ((this.access & Opcodes.ACC_SYNTHETIC) != 0);
-  }
+    public boolean isSynthetic() {
+        return ((this.access & Opcodes.ACC_SYNTHETIC) != 0);
+    }
 
-  public boolean isConstructor() {
-    return isConstructor(this.methodName);
-  }
+    public boolean isConstructor() {
+        return isConstructor(this.methodName);
+    }
 
-  public static boolean isConstructor(final String methodName) {
-    return "<init>".equals(methodName);
-  }
+    public static boolean isConstructor(final String methodName) {
+        return "<init>".equals(methodName);
+    }
 
-  public Type getReturnType() {
-    return Type.getReturnType(this.methodDescriptor);
-  }
+    public Type getReturnType() {
+        return Type.getReturnType(this.methodDescriptor);
+    }
 
-  public static boolean isVoid(final String desc) {
-    return Type.getReturnType(desc).equals(Type.VOID_TYPE);
-  }
+    public static boolean isVoid(final String desc) {
+        return Type.getReturnType(desc).equals(Type.VOID_TYPE);
+    }
 
-  public boolean isStaticInitializer() {
-    return "<clinit>".equals(this.methodName);
-  }
+    public boolean isStaticInitializer() {
+        return "<clinit>".equals(this.methodName);
+    }
 
-  public boolean isVoid() {
-    return isVoid(this.methodDescriptor);
-  }
+    public boolean isVoid() {
+        return isVoid(this.methodDescriptor);
+    }
 
-  public boolean takesNoParameters() {
-    return this.methodDescriptor.startsWith("()");
-  }
+    public boolean takesNoParameters() {
+        return this.methodDescriptor.startsWith("()");
+    }
 
-  public boolean isInGroovyClass() {
-    return this.owningClass.isGroovyClass();
-  }
+    public boolean isInGroovyClass() {
+        return this.owningClass.isGroovyClass();
+    }
 
-  public boolean isGeneratedEnumMethod() {
-    return this.owningClass.isEnum()
-        && (isValuesMethod() || isValueOfMethod() || isStaticInitializer());
-  }
+    public boolean isGeneratedEnumMethod() {
+        return this.owningClass.isEnum()
+                && (isValuesMethod() || isValueOfMethod() || isStaticInitializer());
+    }
 
-  private boolean isValuesMethod() {
-    return this.getName().equals("values") && takesNoParameters() && isStatic();
-  }
+    private boolean isValuesMethod() {
+        return this.getName().equals("values") && takesNoParameters() && isStatic();
+    }
 
-  private boolean isValueOfMethod() {
-    return this.getName().equals("valueOf")
-        && this.methodDescriptor.startsWith("(Ljava/lang/String;)")
-        && isStatic();
-  }
+    private boolean isValueOfMethod() {
+        return this.getName().equals("valueOf")
+                && this.methodDescriptor.startsWith("(Ljava/lang/String;)")
+                && isStatic();
+    }
 
-  public MethodInfo withMethodDescriptor(final String newDescriptor) {
-    return new MethodInfo(this.owningClass, this.access, this.methodName,
-        newDescriptor);
-  }
+    public MethodInfo withMethodDescriptor(final String newDescriptor) {
+        return new MethodInfo(this.owningClass, this.access, this.methodName,
+                newDescriptor);
+    }
 
-  public MethodInfo withAccess(final int accessModifier) {
-    return new MethodInfo(this.owningClass, accessModifier, this.methodName,
-        this.methodDescriptor);
-  }
+    public MethodInfo withAccess(final int accessModifier) {
+        return new MethodInfo(this.owningClass, accessModifier, this.methodName,
+                this.methodDescriptor);
+    }
 
-  public MethodInfo withMethodName(final String newMethodName) {
-    return new MethodInfo(this.owningClass, this.access, newMethodName,
-        this.methodDescriptor);
-  }
+    public MethodInfo withMethodName(final String newMethodName) {
+        return new MethodInfo(this.owningClass, this.access, newMethodName,
+                this.methodDescriptor);
+    }
 
-  public MethodInfo withOwner(final ClassInfo newOwnerClass) {
-    return new MethodInfo(newOwnerClass, this.access, this.methodName,
-        this.methodDescriptor);
-  }
+    public MethodInfo withOwner(final ClassInfo newOwnerClass) {
+        return new MethodInfo(newOwnerClass, this.access, this.methodName,
+                this.methodDescriptor);
+    }
+
+    public int getAccess() {
+        return this.access;
+    }
 
 }

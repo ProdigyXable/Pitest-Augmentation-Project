@@ -47,7 +47,7 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
     public ArrayList<MethodParameterNode> parameterNodes = new ArrayList();
 
     // Variable used to easily turn debug output within this class on/off
-    private final boolean debugOutput = true;
+    private final boolean debugOutput = false;
 
     private ClassInfoVisitor(final ClassInfoBuilder classInfo,
             final ClassVisitor writer) {
@@ -107,8 +107,6 @@ public final class ClassInfoVisitor extends MethodFilteringAdapter {
         this.owningClass = "";
 
         // ProjectClassPaths.codeClassPaths.clear(); (Do not need to clear vector file after each method)
-        System.out.println("");
-
         MethodParameterNode.serializeMethodParameters(this.parameterNodes, MethodParameterNode.SERIAL_FILEPATH);
 
         super.visitEnd();
