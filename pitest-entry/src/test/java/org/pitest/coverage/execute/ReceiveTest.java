@@ -53,6 +53,8 @@ public class ReceiveTest {
     assertNull(this.result);
   }
 
+  /* Commented out due to internal changes which allow PIT to execute even if a test fails
+  
   @Test
   public void shouldReportWhenTestFails() {
     recordTestCoverage(0, 0, 0, false);
@@ -64,6 +66,8 @@ public class ReceiveTest {
     recordTestCoverage(0, 0, 0, true);
     assertEquals(true, this.result.isGreenTest());
   }
+  
+  */
 
   private void recordTestCoverage(final int executionTime, final int classId,
       final int probeNumber, final boolean testPassed) {

@@ -112,6 +112,7 @@ public class MutationCoverageReportSystemTest extends ReportTestBase {
     verifyResults();
   }
 
+  /* Commented out due to modification which allows PIT to execute even on a failing test suite
   @Test(expected = PitHelpError.class)
   public void shouldFailRunWithHelpfulMessageIfTestsNotGreen() {
     setMutators("MATH");
@@ -122,6 +123,7 @@ public class MutationCoverageReportSystemTest extends ReportTestBase {
     createAndRun();
     // should not get here
   }
+  */
 
   @Test
   public void shouldOnlyRunTestsMathchingSuppliedFilter() {

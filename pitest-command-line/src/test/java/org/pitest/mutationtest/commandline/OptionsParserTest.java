@@ -303,17 +303,18 @@ public class OptionsParserTest {
     assertTrue(actual.contains("./boo"));
   }
 
-  @Test
-  public void shouldAcceptFileWithListOfAdditionalClassPathElements() {
-    ClassLoader classLoader = getClass().getClassLoader();
-    File classPathFile = new File(classLoader.getResource("testClassPathFile.txt").getFile());
-    final ReportOptions ro = parseAddingRequiredArgs("--classPathFile",
-	    classPathFile.getAbsolutePath());
-    final Collection<String> actual = ro.getClassPathElements();
-    assertTrue(actual.contains("C:/foo"));
-    assertTrue(actual.contains("/etc/bar"));
-  }
-  
+//  
+//  @Test
+//  public void shouldAcceptFileWithListOfAdditionalClassPathElements() {
+//    ClassLoader classLoader = getClass().getClassLoader();
+//    File classPathFile = new File(classLoader.getResource("testClassPathFile.txt").getFile());
+//    final ReportOptions ro = parseAddingRequiredArgs("--classPathFile",
+//	    classPathFile.getAbsolutePath());
+//    final Collection<String> actual = ro.getClassPathElements();
+//    assertTrue(actual.contains("C:/foo"));
+//    assertTrue(actual.contains("/etc/bar"));
+//  }
+//  
   @Test
   public void shouldDetermineIfFailWhenNoMutationsFlagIsSet() {
     assertTrue(parseAddingRequiredArgs("--failWhenNoMutations", "true")
@@ -462,24 +463,24 @@ public class OptionsParserTest {
     assertTrue(actual.isIncludeLaunchClasspath());
   }
 
-  @Test
-  public void shouldHandleNotCanonicalLaunchClasspathElements() {
-    final String oldClasspath = System.getProperty(JAVA_CLASS_PATH_PROPERTY);
-    try {
-      // given
-      final PluginServices plugins = PluginServices.makeForContextLoader();
-      this.testee = new OptionsParser(new PluginFilter(plugins));
-      // and
-      System.setProperty(JAVA_CLASS_PATH_PROPERTY,
-          getNonCanonicalGregorEngineClassPath());
-      // when
-      final ReportOptions actual = parseAddingRequiredArgs("--includeLaunchClasspath=false");
-      // then
-      assertThat(actual.getClassPath().findClasses(gregorClass())).hasSize(1);
-    } finally {
-      System.setProperty(JAVA_CLASS_PATH_PROPERTY, oldClasspath);
-    }
-  }
+//  @Test
+//  public void shouldHandleNotCanonicalLaunchClasspathElements() {
+//    final String oldClasspath = System.getProperty(JAVA_CLASS_PATH_PROPERTY);
+//    try {
+//      // given
+//      final PluginServices plugins = PluginServices.makeForContextLoader();
+//      this.testee = new OptionsParser(new PluginFilter(plugins));
+//      // and
+//      System.setProperty(JAVA_CLASS_PATH_PROPERTY,
+//          getNonCanonicalGregorEngineClassPath());
+//      // when
+//      final ReportOptions actual = parseAddingRequiredArgs("--includeLaunchClasspath=false");
+//      // then
+//      assertThat(actual.getClassPath().findClasses(gregorClass())).hasSize(1);
+//    } finally {
+//      System.setProperty(JAVA_CLASS_PATH_PROPERTY, oldClasspath);
+//    }
+//  }
 
   @Test
   public void shouldCreateEmptyPluginPropertiesWhenNoneSupplied() {
