@@ -59,11 +59,30 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncreme
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.groovy.GroovyArithmeticOperatorSubstitution;
+import org.pitest.mutationtest.engine.gregor.mutators.groovy.GroovyRelationalOperatorSubstitution;
+
 public final class Mutator {
 
     private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<String, Iterable<MethodMutatorFactory>>();
 
     static {
+
+        // Groovy Relational Substitution mutators
+        add("GROOVY_GT_OPERATOR", GroovyRelationalOperatorSubstitution.GGreaterThan);
+        add("GROOVY_GTE_OPERATOR", GroovyRelationalOperatorSubstitution.GGreaterThanEqual);
+        add("GROOVY_LT_OPERATOR", GroovyRelationalOperatorSubstitution.GLessThan);
+        add("GROOVY_LTE_OPERATOR", GroovyRelationalOperatorSubstitution.GLessThanEqual);
+        add("GROOVY_EQ_OPERATOR", GroovyRelationalOperatorSubstitution.GEqual);
+        add("GROOVY_NE_OPERATOR", GroovyRelationalOperatorSubstitution.GNotEqual);
+
+        // Groovy Arithmetic Substitution mutators
+        add("GROOVY_ADD_OPERATOR", GroovyArithmeticOperatorSubstitution.GADD);
+        add("GROOVY_SUB_OPERATOR", GroovyArithmeticOperatorSubstitution.GSUB);
+        add("GROOVY_MUL_OPERATOR", GroovyArithmeticOperatorSubstitution.GMUL);
+        add("GROOVY_DIV_OPERATOR", GroovyArithmeticOperatorSubstitution.GDIV);
+        add("GROOVY_REM_OPERATOR", GroovyArithmeticOperatorSubstitution.GREM);
+
         /*
          * UOI Mutators
          */
@@ -269,6 +288,11 @@ public final class Mutator {
         addGroup("ROR", ror());
 
         addGroup("UOI", uoi());
+
+        addGroup("GROOVY_ARITHMETIC", groovyArithmetic());
+
+        addGroup("GROOVY_RELATIONAL", groovyRelational());
+
     }
 
     public static Collection<MethodMutatorFactory> all() {
@@ -395,6 +419,23 @@ public final class Mutator {
     public static Collection<MethodMutatorFactory> abs() {
         return group(new ABSMutator(ABSMutator.MutantType.LOAD),
                 new ABSMutator(ABSMutator.MutantType.STORE));
+    }
+
+    public static Collection<MethodMutatorFactory> groovyRelational() {
+        return group(GroovyRelationalOperatorSubstitution.GGreaterThan,
+                GroovyRelationalOperatorSubstitution.GGreaterThanEqual,
+                GroovyRelationalOperatorSubstitution.GLessThan,
+                GroovyRelationalOperatorSubstitution.GLessThanEqual,
+                GroovyRelationalOperatorSubstitution.GEqual,
+                GroovyRelationalOperatorSubstitution.GNotEqual);
+    }
+
+    public static Collection<MethodMutatorFactory> groovyArithmetic() {
+        return group(GroovyArithmeticOperatorSubstitution.GADD,
+                GroovyArithmeticOperatorSubstitution.GSUB,
+                GroovyArithmeticOperatorSubstitution.GMUL,
+                GroovyArithmeticOperatorSubstitution.GDIV,
+                GroovyArithmeticOperatorSubstitution.GREM);
     }
 
     private static Collection<MethodMutatorFactory> group(

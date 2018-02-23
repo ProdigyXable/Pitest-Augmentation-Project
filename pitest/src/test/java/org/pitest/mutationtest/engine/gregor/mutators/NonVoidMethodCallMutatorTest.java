@@ -63,10 +63,10 @@ public class NonVoidMethodCallMutatorTest extends MutatorTestBase {
 
   }
 
-  @Test
-  public void shouldNotRemoveVoidMethodCalls() throws Exception {
-    assertTrue(findMutationsFor(HasVoidMethodCall.class).isEmpty());
-  }
+//  @Test
+//  public void shouldNotRemoveVoidMethodCalls() throws Exception {
+//    assertTrue(findMutationsFor(HasVoidMethodCall.class).isEmpty());
+//  }
 
   @Test
   public void shouldNotRemoveConstructorCalls() throws Exception {

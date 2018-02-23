@@ -128,8 +128,7 @@ public class GregorMutater implements Mutater {
 
   @SuppressWarnings("unchecked")
   private Predicate<MethodInfo> filterMethods() {
-    return and(this.filter, filterSyntheticMethods(),
-        not(isGeneratedEnumMethod()), not(isGroovyClass()));
+    return and(this.filter, not(isGeneratedEnumMethod()));
   }
 
   private static F<MethodInfo, Boolean> isGroovyClass() {
